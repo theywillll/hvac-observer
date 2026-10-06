@@ -1,0 +1,258 @@
+[
+  {
+    "id": "arduino",
+    "url": "https://docs.arduino.cc/resources/datasheets/ABX00162-datasheet.pdf",
+    "document": "UNO Q user manual",
+    "version": "2026-03-24",
+    "accessed": "2026-10-06",
+    "locator": "MPU/MCU, electrical and pinout sections"
+  },
+  {
+    "id": "arduino-price",
+    "url": "https://blog.arduino.cc/2026/06/26/a-heads-up-on-the-arduino-uno-q-board-pricing-straight-from-marcello-majonchi/",
+    "document": "UNO Q pricing update",
+    "version": "2026-06-26",
+    "accessed": "2026-10-06",
+    "locator": null
+  },
+  {
+    "id": "bridge",
+    "url": "https://github.com/arduino-libraries/Arduino_RouterBridge",
+    "document": "Arduino RouterBridge README",
+    "version": "main accessed 2026-10-06",
+    "accessed": "2026-10-06",
+    "locator": "provide_safe and String return example"
+  },
+  {
+    "id": "pi",
+    "url": "https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/",
+    "document": "Raspberry Pi Zero 2 W product page",
+    "version": null,
+    "accessed": "2026-10-06",
+    "locator": "Specifications and $15 board price"
+  },
+  {
+    "id": "sht",
+    "url": "https://sensirion.com/media/documents/213E6A3B/63A5A569/Datasheet_SHT3x_DIS.pdf",
+    "document": "SHT3x-DIS datasheet",
+    "version": "December 2022 v7",
+    "accessed": "2026-10-06",
+    "locator": "SHT31 accuracy and digital protocol"
+  },
+  {
+    "id": "sdp",
+    "url": "https://sensirion.com/resource/datasheet/sdp800-d/",
+    "document": "SDP800 digital datasheet",
+    "version": "April 2019",
+    "accessed": "2026-10-06",
+    "locator": "6.3.3 triggered mode; 0x362F, 45 ms"
+  },
+  {
+    "id": "sdp-product",
+    "url": "https://sensirion.com/products/catalog/SDP810-500Pa",
+    "document": "SDP810-500Pa product specifications",
+    "version": null,
+    "accessed": "2026-10-06",
+    "locator": "Range, accuracy, supply"
+  },
+  {
+    "id": "ds18",
+    "url": "https://www.analog.com/en/products/DS18B20.html",
+    "document": "DS18B20 datasheet and product page",
+    "version": "Rev 6, 2019-08-09",
+    "accessed": "2026-10-06",
+    "locator": null
+  },
+  {
+    "id": "ads",
+    "url": "https://www.ti.com/lit/ds/symlink/ads1115.pdf",
+    "document": "ADS111x datasheet",
+    "version": null,
+    "accessed": "2026-10-06",
+    "locator": "Multiplexer and conversion rates"
+  },
+  {
+    "id": "adxl",
+    "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/adxl345.pdf",
+    "document": "ADXL345 datasheet",
+    "version": "Rev G",
+    "accessed": "2026-10-06",
+    "locator": "Range, power, sensitivity and bandwidth"
+  },
+  {
+    "id": "opto",
+    "url": "https://www.vishay.com/docs/83608/h11aa1.pdf",
+    "document": "H11AA1 datasheet",
+    "version": null,
+    "accessed": "2026-10-06",
+    "locator": "CTR at +/-10mA and package pinout"
+  },
+  {
+    "id": "ct",
+    "url": "https://magnelab.com/product/sct-0750/",
+    "document": "SCT-0750 specifications",
+    "version": null,
+    "accessed": "2026-10-06",
+    "locator": "050/005 variants; 333mV, 1% linearity"
+  },
+  {
+    "id": "meter",
+    "url": "https://us.shelly.com/blogs/documentation/shelly-pro-3em",
+    "document": "Shelly Pro 3EM documentation",
+    "version": null,
+    "accessed": "2026-10-06",
+    "locator": "Electrical installation, active power and energy"
+  },
+  {
+    "id": "doe",
+    "url": "https://www1.eere.energy.gov/buildings/publications/pdfs/building_america/measure_guide_air_cond_diagnostics.pdf",
+    "document": "Measure Guideline: Air Conditioner Diagnostics, Maintenance, and Replacement",
+    "version": "2012",
+    "accessed": "2026-10-06",
+    "locator": "Airflow diagnostic prerequisite, 300\u2013500 cfm/ton context"
+  },
+  {
+    "id": "epa",
+    "url": "https://www.epa.gov/section608/section-608-technician-certification-0",
+    "document": "Section 608 Technician Certification",
+    "version": null,
+    "accessed": "2026-10-06",
+    "locator": "Certification scope"
+  },
+  {
+    "id": "carrier",
+    "url": "https://www.carrier.com/residential/en/us/products/air-conditioners/24sca5/index.html",
+    "document": "Comfort 24SCA5 product page",
+    "version": null,
+    "accessed": "2026-10-06",
+    "locator": "Technical specifications; family maximum ratings"
+  },
+  {
+    "id": "trane",
+    "url": "https://www.trane.com/residential/en/assets/product-brochures/TT_72-1208-L-42_TR_AC%20ConsBrochure_SV.pdf",
+    "document": "Trane AC consumer brochure",
+    "version": "72-1208-L-42",
+    "accessed": "2026-10-06",
+    "locator": "XR13\u201314 efficiency row; model-specific limits not established"
+  },
+  {
+    "id": "lennox",
+    "url": "https://www.lennox.com/dA/fa2df3f830/ehb_ml14xc1_1ph_2306.pdf",
+    "document": "ML14XC1 single-phase residential specifications",
+    "version": "Bulletin 210834, June 2023",
+    "accessed": "2026-10-06",
+    "locator": "Page 1 model identification and family ratings"
+  },
+  {
+    "id": "rheem",
+    "url": "https://www.rheem.com/product/rheem-ra14az-endeavor-line-classic-series-air-conditioner-ra14az24aj1na/",
+    "document": "RA14AZ24AJ1NA product page",
+    "version": null,
+    "accessed": "2026-10-06",
+    "locator": "SKU nominal capacity"
+  },
+  {
+    "id": "goodman",
+    "url": "https://www.goodmanmfg.com/products/air-conditioners/gsxn4",
+    "document": "GSXN4 product page",
+    "version": null,
+    "accessed": "2026-10-06",
+    "locator": "Family technical specifications"
+  },
+  {
+    "id": "amana",
+    "url": "https://www.amana-hac.com/products/air-conditioners/asxn4",
+    "document": "ASXN4 product page",
+    "version": null,
+    "accessed": "2026-10-06",
+    "locator": "SEER2 headline; not narrative SEER typo"
+  },
+  {
+    "id": "american",
+    "url": "https://www.americanstandardair.com/products/air-conditioners/silver-14-air-conditioner/",
+    "document": "Silver 14 product page",
+    "version": null,
+    "accessed": "2026-10-06",
+    "locator": "Family efficiency and cooling stage"
+  },
+  {
+    "id": "bryant",
+    "url": "https://www.bryant.com/en/us/products/air-conditioners/",
+    "document": "Bryant air-conditioner catalog",
+    "version": null,
+    "accessed": "2026-10-06",
+    "locator": "134SAN product card"
+  },
+  {
+    "id": "york",
+    "url": "https://www.york.com/residential-equipment/heating-and-cooling/split-system-air-conditioners/yc2f_ds/yc2f-152-seer2-air-conditioner",
+    "document": "YC2F product page",
+    "version": null,
+    "accessed": "2026-10-06",
+    "locator": "Features; contradictory efficiency fields excluded"
+  },
+  {
+    "id": "coleman",
+    "url": "https://www.colemanac.com/residential-equipment/heating-and-cooling/split-system-air-conditioners/xc3_col_ds/xc3-134-seer2-single-stage-air-conditioner",
+    "document": "XC3 product page",
+    "version": null,
+    "accessed": "2026-10-06",
+    "locator": "Technical specification and refrigerant"
+  },
+  {
+    "id": "daikin",
+    "url": "https://backend.daikincomfort.com/product/dx3se",
+    "document": "DX3SE product page",
+    "version": null,
+    "accessed": "2026-10-06",
+    "locator": "Family matched-system maximum rating"
+  },
+  {
+    "id": "mitsubishi",
+    "url": "https://www.mylinkdrive.com/viewPdf?srcUrl=http%3A%2F%2Fs3.amazonaws.com%2Fenter.mehvac.com%2FDAMRoot%2FOriginal%2F10008%5CM_SUBMITTAL_MSZ-GL09NA_FOR_MULTI-ZONE_SYSTEMS-en.pdf",
+    "document": "MSZ-GL09NA for multi-zone systems submittal",
+    "version": "202209",
+    "accessed": "2026-10-06",
+    "locator": "Indoor model identity only; paired outdoor data unverified"
+  },
+  {
+    "id": "fujitsu",
+    "url": "https://www.fujitsugeneral.com/us/resources/pdf/support/downloads/pdf-fcus-support-ctlg-halcyon-full-line-brochure-2022-02.pdf",
+    "document": "Halcyon full-line brochure",
+    "version": "February 2022",
+    "accessed": "2026-10-06",
+    "locator": "High Heat table, 09LZAS1 column"
+  },
+  {
+    "id": "bosch",
+    "url": "https://www.bosch-homecomfort.com/us/media/country_pool/documents/downloads-for-bosch-products/heat-pumps-manuals/ids-manuals/bosch_ids_bova15_iom_11.2023.pdf",
+    "document": "BOVA15 IDS Light installation instructions",
+    "version": "BTC 761701317 E / 11.2023",
+    "accessed": "2026-10-06",
+    "locator": "Cover: 2\u20135 ton R410A split heat pump"
+  },
+  {
+    "id": "furnace",
+    "url": "https://apps.goodmanmfg.com/brochures/files/61d63de27cf07CB-GM9S80_11-21.pdf",
+    "document": "GM9S80 gas furnace brochure",
+    "version": "11/2021",
+    "accessed": "2026-10-06",
+    "locator": "Single-stage gas furnace, multi-speed ECM"
+  },
+  {
+    "id": "package",
+    "url": "https://www.colemanac.com/residential-equipment/heating-and-cooling/residential-packaged-equipment/pc3_col_ds/pc3-134-seer2-packaged-air-conditioner",
+    "document": "PC3 packaged AC product page",
+    "version": null,
+    "accessed": "2026-10-06",
+    "locator": "Technical specifications"
+  },
+  {
+    "id": "airhandler",
+    "url": "https://www.bosch-homecomfort.com/us/en/ocs/residential/ids-light-air-handler-unit-r-454b-version-21154519-p/",
+    "document": "IDS Light R-454B air handler page",
+    "version": null,
+    "accessed": "2026-10-06",
+    "locator": "BIVA15; PSC fixed-speed blower"
+  }
+]

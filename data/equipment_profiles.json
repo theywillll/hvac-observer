@@ -1,0 +1,2711 @@
+[
+  {
+    "id": "carrier-24sca5",
+    "manufacturer": "Carrier",
+    "product_family": "24SCA5",
+    "model": "24SCA5",
+    "equipment_type": "split_ac",
+    "scope": "family",
+    "identity_source_id": "carrier",
+    "notes": "",
+    "parameters": {
+      "cooling_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "heating_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER2": {
+        "value": 16.5,
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "carrier",
+        "qualifier": "Family maximum; matched system dependent"
+      },
+      "EER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER2": {
+        "value": 13.5,
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "carrier",
+        "qualifier": "Family maximum"
+      },
+      "HSPF": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_voltage": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_current": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "compressor_type": {
+        "value": "single-stage",
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "carrier",
+        "qualifier": "Family"
+      },
+      "blower_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "refrigerant": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "recommended_temperature_rise": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "expected_cooling_split": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "airflow": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "static_pressure_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "operating_temperature_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "fault_codes": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "thermostat_configuration": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "diagnostic_thresholds": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      }
+    }
+  },
+  {
+    "id": "trane-xr14",
+    "manufacturer": "Trane",
+    "product_family": "XR14",
+    "model": "XR14",
+    "equipment_type": "split_ac",
+    "scope": "family",
+    "identity_source_id": "trane",
+    "notes": "XR13\u201314 grouped brochure exists. Separate XR14 exact rating and SKU limits remain unknown.",
+    "parameters": {
+      "cooling_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "heating_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_voltage": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_current": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "compressor_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "blower_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "refrigerant": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "recommended_temperature_rise": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "expected_cooling_split": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "airflow": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "static_pressure_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "operating_temperature_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "fault_codes": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "thermostat_configuration": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "diagnostic_thresholds": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      }
+    }
+  },
+  {
+    "id": "lennox-ml14xc1",
+    "manufacturer": "Lennox",
+    "product_family": "ML14XC1",
+    "model": "ML14XC1",
+    "equipment_type": "split_ac",
+    "scope": "family",
+    "identity_source_id": "lennox",
+    "notes": "Current marketing page has conflicting refrigerant content. Versioned 2023 bulletin takes precedence for this historical profile.",
+    "parameters": {
+      "cooling_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "heating_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER2": {
+        "value": 16.2,
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "lennox",
+        "qualifier": "June 2023 single-phase family maximum"
+      },
+      "EER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_voltage": {
+        "value": [
+          208,
+          230
+        ],
+        "unit": "VAC",
+        "provenance": "manufacturer_specification",
+        "source_id": "lennox",
+        "qualifier": "Single-phase 60Hz family"
+      },
+      "rated_current": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "compressor_type": {
+        "value": "single-stage",
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "lennox",
+        "qualifier": "Model code definition"
+      },
+      "blower_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "refrigerant": {
+        "value": "R-410A",
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "lennox",
+        "qualifier": "2023 bulletin only"
+      },
+      "recommended_temperature_rise": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "expected_cooling_split": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "airflow": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "static_pressure_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "operating_temperature_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "fault_codes": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "thermostat_configuration": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "diagnostic_thresholds": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      }
+    }
+  },
+  {
+    "id": "rheem-ra14az24",
+    "manufacturer": "Rheem",
+    "product_family": "RA14AZ24AJ1NA",
+    "model": "RA14AZ24AJ1NA",
+    "equipment_type": "split_ac",
+    "scope": "model",
+    "identity_source_id": "rheem",
+    "notes": "",
+    "parameters": {
+      "cooling_capacity": {
+        "value": 24000,
+        "unit": "BTU/h",
+        "provenance": "manufacturer_specification",
+        "source_id": "rheem",
+        "qualifier": "Nominal SKU capacity; not delivered capacity"
+      },
+      "heating_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_voltage": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_current": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "compressor_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "blower_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "refrigerant": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "recommended_temperature_rise": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "expected_cooling_split": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "airflow": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "static_pressure_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "operating_temperature_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "fault_codes": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "thermostat_configuration": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "diagnostic_thresholds": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      }
+    }
+  },
+  {
+    "id": "goodman-gsxn4",
+    "manufacturer": "Goodman",
+    "product_family": "GSXN4",
+    "model": "GSXN4",
+    "equipment_type": "split_ac",
+    "scope": "family",
+    "identity_source_id": "goodman",
+    "notes": "",
+    "parameters": {
+      "cooling_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "heating_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER2": {
+        "value": 14.3,
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "goodman",
+        "qualifier": "Family maximum"
+      },
+      "EER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_voltage": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_current": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "compressor_type": {
+        "value": "single-stage",
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "goodman",
+        "qualifier": "Family"
+      },
+      "blower_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "refrigerant": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "recommended_temperature_rise": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "expected_cooling_split": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "airflow": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "static_pressure_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "operating_temperature_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "fault_codes": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "thermostat_configuration": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "diagnostic_thresholds": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      }
+    }
+  },
+  {
+    "id": "amana-asxn4",
+    "manufacturer": "Amana",
+    "product_family": "ASXN4",
+    "model": "ASXN4",
+    "equipment_type": "split_ac",
+    "scope": "family",
+    "identity_source_id": "amana",
+    "notes": "",
+    "parameters": {
+      "cooling_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "heating_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER2": {
+        "value": 15.2,
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "amana",
+        "qualifier": "Headline family maximum; exact pairing needed"
+      },
+      "EER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_voltage": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_current": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "compressor_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "blower_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "refrigerant": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "recommended_temperature_rise": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "expected_cooling_split": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "airflow": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "static_pressure_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "operating_temperature_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "fault_codes": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "thermostat_configuration": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "diagnostic_thresholds": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      }
+    }
+  },
+  {
+    "id": "american-silver14",
+    "manufacturer": "American Standard",
+    "product_family": "Silver 14",
+    "model": "Silver 14",
+    "equipment_type": "split_ac",
+    "scope": "family",
+    "identity_source_id": "american",
+    "notes": "",
+    "parameters": {
+      "cooling_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "heating_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER2": {
+        "value": 14.3,
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "american",
+        "qualifier": "Family maximum"
+      },
+      "EER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_voltage": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_current": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "compressor_type": {
+        "value": "single-stage",
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "american",
+        "qualifier": "Family"
+      },
+      "blower_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "refrigerant": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "recommended_temperature_rise": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "expected_cooling_split": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "airflow": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "static_pressure_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "operating_temperature_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "fault_codes": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "thermostat_configuration": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "diagnostic_thresholds": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      }
+    }
+  },
+  {
+    "id": "bryant-134san",
+    "manufacturer": "Bryant",
+    "product_family": "134SAN",
+    "model": "134SAN",
+    "equipment_type": "split_ac",
+    "scope": "family",
+    "identity_source_id": "bryant",
+    "notes": "",
+    "parameters": {
+      "cooling_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "heating_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER2": {
+        "value": 16,
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "bryant",
+        "qualifier": "Product-card family maximum"
+      },
+      "EER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_voltage": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_current": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "compressor_type": {
+        "value": "single-stage",
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "bryant",
+        "qualifier": "Family"
+      },
+      "blower_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "refrigerant": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "recommended_temperature_rise": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "expected_cooling_split": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "airflow": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "static_pressure_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "operating_temperature_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "fault_codes": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "thermostat_configuration": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "diagnostic_thresholds": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      }
+    }
+  },
+  {
+    "id": "york-yc2f",
+    "manufacturer": "York",
+    "product_family": "YC2F",
+    "model": "YC2F",
+    "equipment_type": "split_ac",
+    "scope": "family",
+    "identity_source_id": "york",
+    "notes": "Page mixes 15.2 SEER2, 17.5 SEER and 17.5 SEER2. Efficiency and stage left unknown pending a matched submittal.",
+    "parameters": {
+      "cooling_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "heating_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_voltage": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_current": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "compressor_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "blower_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "refrigerant": {
+        "value": "R-410A",
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "york",
+        "qualifier": "Features section"
+      },
+      "recommended_temperature_rise": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "expected_cooling_split": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "airflow": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "static_pressure_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "operating_temperature_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "fault_codes": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "thermostat_configuration": {
+        "value": "conventional",
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "york",
+        "qualifier": "Control options; terminal map unverified"
+      },
+      "diagnostic_thresholds": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      }
+    }
+  },
+  {
+    "id": "coleman-xc3",
+    "manufacturer": "Coleman",
+    "product_family": "XC3",
+    "model": "XC3",
+    "equipment_type": "split_ac",
+    "scope": "family",
+    "identity_source_id": "coleman",
+    "notes": "",
+    "parameters": {
+      "cooling_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "heating_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER2": {
+        "value": 13.4,
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "coleman",
+        "qualifier": "Family headline, not installed rating"
+      },
+      "EER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_voltage": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_current": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "compressor_type": {
+        "value": "single-stage",
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "coleman",
+        "qualifier": "Family"
+      },
+      "blower_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "refrigerant": {
+        "value": "R-454B",
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "coleman",
+        "qualifier": "Current family"
+      },
+      "recommended_temperature_rise": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "expected_cooling_split": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "airflow": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "static_pressure_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "operating_temperature_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "fault_codes": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "thermostat_configuration": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "diagnostic_thresholds": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      }
+    }
+  },
+  {
+    "id": "daikin-dx3se",
+    "manufacturer": "Daikin",
+    "product_family": "DX3SE",
+    "model": "DX3SE",
+    "equipment_type": "split_ac",
+    "scope": "family",
+    "identity_source_id": "daikin",
+    "notes": "",
+    "parameters": {
+      "cooling_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "heating_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER2": {
+        "value": 14.5,
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "daikin",
+        "qualifier": "Family matched-system maximum"
+      },
+      "EER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_voltage": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_current": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "compressor_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "blower_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "refrigerant": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "recommended_temperature_rise": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "expected_cooling_split": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "airflow": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "static_pressure_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "operating_temperature_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "fault_codes": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "thermostat_configuration": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "diagnostic_thresholds": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      }
+    }
+  },
+  {
+    "id": "mitsubishi-gl09",
+    "manufacturer": "Mitsubishi Electric",
+    "product_family": "MSZ-GL09NA",
+    "model": "MSZ-GL09NA",
+    "equipment_type": "mini_split_indoor",
+    "scope": "indoor_model",
+    "identity_source_id": "mitsubishi",
+    "notes": "Indoor unit for multi-zone systems. No standalone system efficiency, capacity or voltage assigned.",
+    "parameters": {
+      "cooling_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "heating_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_voltage": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_current": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "compressor_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "blower_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "refrigerant": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "recommended_temperature_rise": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "expected_cooling_split": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "airflow": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "static_pressure_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "operating_temperature_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "fault_codes": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "thermostat_configuration": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "diagnostic_thresholds": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      }
+    }
+  },
+  {
+    "id": "fujitsu-09lzas1",
+    "manufacturer": "Fujitsu",
+    "product_family": "09LZAS1",
+    "model": "09LZAS1",
+    "equipment_type": "mini_split_heat_pump",
+    "scope": "system",
+    "identity_source_id": "fujitsu",
+    "notes": "Historical system designation. Confirm complete indoor/outdoor nameplate pairing before using installation limits.",
+    "parameters": {
+      "cooling_capacity": {
+        "value": 9000,
+        "unit": "BTU/h",
+        "provenance": "manufacturer_specification",
+        "source_id": "fujitsu",
+        "qualifier": "Rated system cooling"
+      },
+      "heating_capacity": {
+        "value": 12000,
+        "unit": "BTU/h",
+        "provenance": "manufacturer_specification",
+        "source_id": "fujitsu",
+        "qualifier": "Rated system heating"
+      },
+      "SEER": {
+        "value": 33.1,
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "fujitsu",
+        "qualifier": "Legacy SEER; not SEER2"
+      },
+      "SEER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_voltage": {
+        "value": [
+          208,
+          230
+        ],
+        "unit": "VAC",
+        "provenance": "manufacturer_specification",
+        "source_id": "fujitsu",
+        "qualifier": "60Hz single-phase"
+      },
+      "rated_current": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "compressor_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "blower_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "refrigerant": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "recommended_temperature_rise": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "expected_cooling_split": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "airflow": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "static_pressure_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "operating_temperature_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "fault_codes": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "thermostat_configuration": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "diagnostic_thresholds": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      }
+    }
+  },
+  {
+    "id": "bosch-bova15",
+    "manufacturer": "Bosch",
+    "product_family": "BOVA15",
+    "model": "BOVA15",
+    "equipment_type": "heat_pump",
+    "scope": "family",
+    "identity_source_id": "bosch",
+    "notes": "Do not transfer to newer R-454B revision.",
+    "parameters": {
+      "cooling_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "heating_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_voltage": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_current": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "compressor_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "blower_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "refrigerant": {
+        "value": "R-410A",
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "bosch",
+        "qualifier": "2023 manual only"
+      },
+      "recommended_temperature_rise": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "expected_cooling_split": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "airflow": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "static_pressure_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "operating_temperature_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "fault_codes": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "thermostat_configuration": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "diagnostic_thresholds": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      }
+    }
+  },
+  {
+    "id": "goodman-gm9s80",
+    "manufacturer": "Goodman",
+    "product_family": "GM9S80",
+    "model": "GM9S80",
+    "equipment_type": "gas_furnace",
+    "scope": "family",
+    "identity_source_id": "furnace",
+    "notes": "Temperature rise must be transcribed from the exact nameplate. No universal gas-furnace rise applied.",
+    "parameters": {
+      "cooling_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "heating_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_voltage": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_current": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "compressor_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "blower_type": {
+        "value": "multi-speed ECM",
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "furnace",
+        "qualifier": "Family"
+      },
+      "refrigerant": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "recommended_temperature_rise": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "expected_cooling_split": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "airflow": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "static_pressure_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "operating_temperature_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "fault_codes": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "thermostat_configuration": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "diagnostic_thresholds": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      }
+    }
+  },
+  {
+    "id": "coleman-pc3",
+    "manufacturer": "Coleman",
+    "product_family": "PC3",
+    "model": "PC3",
+    "equipment_type": "package_ac_electric_heat",
+    "scope": "family",
+    "identity_source_id": "package",
+    "notes": "",
+    "parameters": {
+      "cooling_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "heating_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER2": {
+        "value": 13.4,
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "package",
+        "qualifier": "Family headline"
+      },
+      "EER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER2": {
+        "value": 11,
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "package",
+        "qualifier": "Technical-specification family headline"
+      },
+      "HSPF": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_voltage": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_current": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "compressor_type": {
+        "value": "single-stage rotary",
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "package",
+        "qualifier": "Technical specification"
+      },
+      "blower_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "refrigerant": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "recommended_temperature_rise": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "expected_cooling_split": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "airflow": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "static_pressure_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "operating_temperature_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "fault_codes": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "thermostat_configuration": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "diagnostic_thresholds": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      }
+    }
+  },
+  {
+    "id": "bosch-biva15",
+    "manufacturer": "Bosch",
+    "product_family": "BIVA15",
+    "model": "BIVA15",
+    "equipment_type": "air_handler",
+    "scope": "family",
+    "identity_source_id": "airhandler",
+    "notes": "",
+    "parameters": {
+      "cooling_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "heating_capacity": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "SEER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "EER2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "HSPF2": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_voltage": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "rated_current": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "compressor_type": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "blower_type": {
+        "value": "fixed-speed PSC",
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "airhandler",
+        "qualifier": "R-454B-version product page"
+      },
+      "refrigerant": {
+        "value": "R-454B",
+        "unit": null,
+        "provenance": "manufacturer_specification",
+        "source_id": "airhandler",
+        "qualifier": "Coil system pairing"
+      },
+      "recommended_temperature_rise": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "expected_cooling_split": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "airflow": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "static_pressure_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "operating_temperature_limits": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "fault_codes": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "thermostat_configuration": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      },
+      "diagnostic_thresholds": {
+        "value": null,
+        "unit": null,
+        "provenance": "unknown",
+        "source_id": null,
+        "qualifier": "Not verified for this profile; never infer from another family."
+      }
+    }
+  }
+]

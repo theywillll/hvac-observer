@@ -1,0 +1,37 @@
+[
+  {
+    "parameter": "airflow_for_refrigerant_diagnostics",
+    "value": [
+      300,
+      500
+    ],
+    "unit": "cfm/ton",
+    "provenance": "industry_reference_guideline",
+    "source_id": "doe",
+    "qualifier": "DOE diagnostic context; not a universal airflow setting or manufacturer limit"
+  },
+  {
+    "parameter": "weak_cooling_split",
+    "value": -5,
+    "unit": "degC supply minus return",
+    "provenance": "prototype_heuristic",
+    "source_id": null,
+    "qualifier": "Alert only after settling and 180s persistence; not a charge diagnosis"
+  },
+  {
+    "parameter": "filter_increase",
+    "value": 1.4,
+    "unit": "ratio",
+    "provenance": "prototype_heuristic",
+    "source_id": null,
+    "qualifier": "Relative to reviewed matched baseline"
+  },
+  {
+    "parameter": "Pa_per_inH2O",
+    "value": 249.08891,
+    "unit": "Pa/inH2O",
+    "provenance": "derived_parameter",
+    "source_id": null,
+    "qualifier": "Conventional conversion; do not confuse duct static with filter differential"
+  }
+]

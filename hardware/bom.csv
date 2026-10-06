@@ -1,0 +1,23 @@
+tier,component,quantity,unit_usd,total_usd,purpose,source,safety
+minimum,Arduino UNO Q 2GB,1,59,59,Linux plus MCU,https://store.arduino.cc/pages/uno-q,Board only; pricing notice June 2026
+minimum,Approved USB-C 5V 3A supply and cable,1,15,15,Isolated power,Arduino / authorized distributor,Verify board and supply compatibility
+minimum,SHT31-DIS 3.3V breakout,2,15,30,Return/supply temperature and RH,Sensirion / authorized breakout vendor,Select 0x44 and 0x45; no wetting
+minimum,Flame-retardant low-voltage enclosure,1,20,20,Protect electronics,DigiKey / Mouser example supplier,No mains inside
+minimum,Keyed harness / terminals / strain relief,1,20,20,Short local bench wiring,DigiKey / Mouser,House-wide cabling extra
+minimum,Independent low-voltage float,1,15,15,Drain status,Qualified low-voltage reed-float supplier,Prototype allowance; listed assembly may cost more
+minimum,Decoupling / sensor protection consumables,1,10,10,Basic protection,DigiKey / Mouser,Not a certified protective device
+recommended_addition,SDP810-500Pa sensor and carrier,1,45,45,Filter differential pressure,https://sensirion.com/products/catalog/SDP810-500Pa,Dry clean air
+recommended_addition,Pressure taps / tubing,1,15,15,Pressure installation,HVAC instrumentation supplier,Professional duct penetration
+recommended_addition,7-channel H11AA1 input assembly parts,1,25,25,Isolated thermostat sensing,https://www.vishay.com/docs/83608/h11aa1.pdf,Parts allowance; field-rated module costs more
+recommended_addition,Branch fuses / holders / divider barrier,1,20,20,Field sense-lead protection,Authorized electrical supplier,Installer selects ratings
+recommended_addition,DS18B20 insulated probes,3,8,24,Outdoor / suction / liquid expansion,https://www.analog.com/en/products/DS18B20.html,Remote driver not in starter sketch
+recommended_addition,3.3V regulator / buffer / local carrier,1,15,15,Expanded accessory supply,DigiKey / Mouser,No backfeeding
+recommended_addition,Remote sensing / bus extension allowance,1,62,62,Separated duct locations,Qualified extension / node hardware,Cable and EMC qualification required
+research_addition,SCT-0750 suitable current-rated variants,3,45,135,Separate motor currents,https://magnelab.com/product/sct-0750/,Technician installation; voltage-output only
+research_addition,ADC protection / bias / waveform acquisition node,1,80,80,Current RMS hardware,MCU / analog-component distributor,Requires waveform firmware qualification
+research_addition,ADXL345 modules,2,10,20,Vibration research,https://www.analog.com/media/en/technical-documentation/data-sheets/adxl345.pdf,Rigid safe casing mount
+research_addition,Professionally installed real-power meter hardware,1,180,180,Voltage / power / energy,https://us.shelly.com/blogs/documentation/shelly-pro-3em,Labor excluded; jurisdiction-appropriate exact meter
+research_addition,Additional SDP810 and I2C mux,1,53,53,Duct static channel,Sensirion + TI distributor,Dry pressure paths
+research_addition,Weatherproof enclosure / sensor node / network allowance,1,120,120,Outdoor acquisition,Qualified enclosure and embedded suppliers,Condensation and surge assessment
+research_addition,Reference instrument rental / calibration allowance,1,150,150,Validate measurements,Local test-instrument supplier,Budget only; rental varies
+research_addition,Professional refrigerant instrument allowance,1,250,250,Optional pressure research,HVAC instrument supplier,Technician-only; not required for normal build

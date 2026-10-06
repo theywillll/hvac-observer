@@ -1,0 +1,358 @@
+profile,manufacturer,model,scope,parameter,value_json,unit,provenance,source_id,qualifier
+carrier-24sca5,Carrier,24SCA5,family,cooling_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+carrier-24sca5,Carrier,24SCA5,family,heating_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+carrier-24sca5,Carrier,24SCA5,family,SEER,null,,unknown,,Not verified for this profile; never infer from another family.
+carrier-24sca5,Carrier,24SCA5,family,SEER2,16.5,,manufacturer_specification,carrier,Family maximum; matched system dependent
+carrier-24sca5,Carrier,24SCA5,family,EER,null,,unknown,,Not verified for this profile; never infer from another family.
+carrier-24sca5,Carrier,24SCA5,family,EER2,13.5,,manufacturer_specification,carrier,Family maximum
+carrier-24sca5,Carrier,24SCA5,family,HSPF,null,,unknown,,Not verified for this profile; never infer from another family.
+carrier-24sca5,Carrier,24SCA5,family,HSPF2,null,,unknown,,Not verified for this profile; never infer from another family.
+carrier-24sca5,Carrier,24SCA5,family,rated_voltage,null,,unknown,,Not verified for this profile; never infer from another family.
+carrier-24sca5,Carrier,24SCA5,family,rated_current,null,,unknown,,Not verified for this profile; never infer from another family.
+carrier-24sca5,Carrier,24SCA5,family,compressor_type,"""single-stage""",,manufacturer_specification,carrier,Family
+carrier-24sca5,Carrier,24SCA5,family,blower_type,null,,unknown,,Not verified for this profile; never infer from another family.
+carrier-24sca5,Carrier,24SCA5,family,refrigerant,null,,unknown,,Not verified for this profile; never infer from another family.
+carrier-24sca5,Carrier,24SCA5,family,recommended_temperature_rise,null,,unknown,,Not verified for this profile; never infer from another family.
+carrier-24sca5,Carrier,24SCA5,family,expected_cooling_split,null,,unknown,,Not verified for this profile; never infer from another family.
+carrier-24sca5,Carrier,24SCA5,family,airflow,null,,unknown,,Not verified for this profile; never infer from another family.
+carrier-24sca5,Carrier,24SCA5,family,static_pressure_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+carrier-24sca5,Carrier,24SCA5,family,operating_temperature_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+carrier-24sca5,Carrier,24SCA5,family,fault_codes,null,,unknown,,Not verified for this profile; never infer from another family.
+carrier-24sca5,Carrier,24SCA5,family,thermostat_configuration,null,,unknown,,Not verified for this profile; never infer from another family.
+carrier-24sca5,Carrier,24SCA5,family,diagnostic_thresholds,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,cooling_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,heating_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,SEER,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,SEER2,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,EER,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,EER2,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,HSPF,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,HSPF2,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,rated_voltage,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,rated_current,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,compressor_type,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,blower_type,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,refrigerant,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,recommended_temperature_rise,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,expected_cooling_split,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,airflow,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,static_pressure_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,operating_temperature_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,fault_codes,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,thermostat_configuration,null,,unknown,,Not verified for this profile; never infer from another family.
+trane-xr14,Trane,XR14,family,diagnostic_thresholds,null,,unknown,,Not verified for this profile; never infer from another family.
+lennox-ml14xc1,Lennox,ML14XC1,family,cooling_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+lennox-ml14xc1,Lennox,ML14XC1,family,heating_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+lennox-ml14xc1,Lennox,ML14XC1,family,SEER,null,,unknown,,Not verified for this profile; never infer from another family.
+lennox-ml14xc1,Lennox,ML14XC1,family,SEER2,16.2,,manufacturer_specification,lennox,June 2023 single-phase family maximum
+lennox-ml14xc1,Lennox,ML14XC1,family,EER,null,,unknown,,Not verified for this profile; never infer from another family.
+lennox-ml14xc1,Lennox,ML14XC1,family,EER2,null,,unknown,,Not verified for this profile; never infer from another family.
+lennox-ml14xc1,Lennox,ML14XC1,family,HSPF,null,,unknown,,Not verified for this profile; never infer from another family.
+lennox-ml14xc1,Lennox,ML14XC1,family,HSPF2,null,,unknown,,Not verified for this profile; never infer from another family.
+lennox-ml14xc1,Lennox,ML14XC1,family,rated_voltage,"[208, 230]",VAC,manufacturer_specification,lennox,Single-phase 60Hz family
+lennox-ml14xc1,Lennox,ML14XC1,family,rated_current,null,,unknown,,Not verified for this profile; never infer from another family.
+lennox-ml14xc1,Lennox,ML14XC1,family,compressor_type,"""single-stage""",,manufacturer_specification,lennox,Model code definition
+lennox-ml14xc1,Lennox,ML14XC1,family,blower_type,null,,unknown,,Not verified for this profile; never infer from another family.
+lennox-ml14xc1,Lennox,ML14XC1,family,refrigerant,"""R-410A""",,manufacturer_specification,lennox,2023 bulletin only
+lennox-ml14xc1,Lennox,ML14XC1,family,recommended_temperature_rise,null,,unknown,,Not verified for this profile; never infer from another family.
+lennox-ml14xc1,Lennox,ML14XC1,family,expected_cooling_split,null,,unknown,,Not verified for this profile; never infer from another family.
+lennox-ml14xc1,Lennox,ML14XC1,family,airflow,null,,unknown,,Not verified for this profile; never infer from another family.
+lennox-ml14xc1,Lennox,ML14XC1,family,static_pressure_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+lennox-ml14xc1,Lennox,ML14XC1,family,operating_temperature_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+lennox-ml14xc1,Lennox,ML14XC1,family,fault_codes,null,,unknown,,Not verified for this profile; never infer from another family.
+lennox-ml14xc1,Lennox,ML14XC1,family,thermostat_configuration,null,,unknown,,Not verified for this profile; never infer from another family.
+lennox-ml14xc1,Lennox,ML14XC1,family,diagnostic_thresholds,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,cooling_capacity,24000,BTU/h,manufacturer_specification,rheem,Nominal SKU capacity; not delivered capacity
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,heating_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,SEER,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,SEER2,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,EER,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,EER2,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,HSPF,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,HSPF2,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,rated_voltage,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,rated_current,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,compressor_type,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,blower_type,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,refrigerant,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,recommended_temperature_rise,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,expected_cooling_split,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,airflow,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,static_pressure_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,operating_temperature_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,fault_codes,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,thermostat_configuration,null,,unknown,,Not verified for this profile; never infer from another family.
+rheem-ra14az24,Rheem,RA14AZ24AJ1NA,model,diagnostic_thresholds,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gsxn4,Goodman,GSXN4,family,cooling_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gsxn4,Goodman,GSXN4,family,heating_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gsxn4,Goodman,GSXN4,family,SEER,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gsxn4,Goodman,GSXN4,family,SEER2,14.3,,manufacturer_specification,goodman,Family maximum
+goodman-gsxn4,Goodman,GSXN4,family,EER,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gsxn4,Goodman,GSXN4,family,EER2,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gsxn4,Goodman,GSXN4,family,HSPF,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gsxn4,Goodman,GSXN4,family,HSPF2,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gsxn4,Goodman,GSXN4,family,rated_voltage,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gsxn4,Goodman,GSXN4,family,rated_current,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gsxn4,Goodman,GSXN4,family,compressor_type,"""single-stage""",,manufacturer_specification,goodman,Family
+goodman-gsxn4,Goodman,GSXN4,family,blower_type,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gsxn4,Goodman,GSXN4,family,refrigerant,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gsxn4,Goodman,GSXN4,family,recommended_temperature_rise,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gsxn4,Goodman,GSXN4,family,expected_cooling_split,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gsxn4,Goodman,GSXN4,family,airflow,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gsxn4,Goodman,GSXN4,family,static_pressure_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gsxn4,Goodman,GSXN4,family,operating_temperature_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gsxn4,Goodman,GSXN4,family,fault_codes,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gsxn4,Goodman,GSXN4,family,thermostat_configuration,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gsxn4,Goodman,GSXN4,family,diagnostic_thresholds,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,cooling_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,heating_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,SEER,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,SEER2,15.2,,manufacturer_specification,amana,Headline family maximum; exact pairing needed
+amana-asxn4,Amana,ASXN4,family,EER,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,EER2,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,HSPF,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,HSPF2,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,rated_voltage,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,rated_current,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,compressor_type,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,blower_type,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,refrigerant,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,recommended_temperature_rise,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,expected_cooling_split,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,airflow,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,static_pressure_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,operating_temperature_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,fault_codes,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,thermostat_configuration,null,,unknown,,Not verified for this profile; never infer from another family.
+amana-asxn4,Amana,ASXN4,family,diagnostic_thresholds,null,,unknown,,Not verified for this profile; never infer from another family.
+american-silver14,American Standard,Silver 14,family,cooling_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+american-silver14,American Standard,Silver 14,family,heating_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+american-silver14,American Standard,Silver 14,family,SEER,null,,unknown,,Not verified for this profile; never infer from another family.
+american-silver14,American Standard,Silver 14,family,SEER2,14.3,,manufacturer_specification,american,Family maximum
+american-silver14,American Standard,Silver 14,family,EER,null,,unknown,,Not verified for this profile; never infer from another family.
+american-silver14,American Standard,Silver 14,family,EER2,null,,unknown,,Not verified for this profile; never infer from another family.
+american-silver14,American Standard,Silver 14,family,HSPF,null,,unknown,,Not verified for this profile; never infer from another family.
+american-silver14,American Standard,Silver 14,family,HSPF2,null,,unknown,,Not verified for this profile; never infer from another family.
+american-silver14,American Standard,Silver 14,family,rated_voltage,null,,unknown,,Not verified for this profile; never infer from another family.
+american-silver14,American Standard,Silver 14,family,rated_current,null,,unknown,,Not verified for this profile; never infer from another family.
+american-silver14,American Standard,Silver 14,family,compressor_type,"""single-stage""",,manufacturer_specification,american,Family
+american-silver14,American Standard,Silver 14,family,blower_type,null,,unknown,,Not verified for this profile; never infer from another family.
+american-silver14,American Standard,Silver 14,family,refrigerant,null,,unknown,,Not verified for this profile; never infer from another family.
+american-silver14,American Standard,Silver 14,family,recommended_temperature_rise,null,,unknown,,Not verified for this profile; never infer from another family.
+american-silver14,American Standard,Silver 14,family,expected_cooling_split,null,,unknown,,Not verified for this profile; never infer from another family.
+american-silver14,American Standard,Silver 14,family,airflow,null,,unknown,,Not verified for this profile; never infer from another family.
+american-silver14,American Standard,Silver 14,family,static_pressure_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+american-silver14,American Standard,Silver 14,family,operating_temperature_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+american-silver14,American Standard,Silver 14,family,fault_codes,null,,unknown,,Not verified for this profile; never infer from another family.
+american-silver14,American Standard,Silver 14,family,thermostat_configuration,null,,unknown,,Not verified for this profile; never infer from another family.
+american-silver14,American Standard,Silver 14,family,diagnostic_thresholds,null,,unknown,,Not verified for this profile; never infer from another family.
+bryant-134san,Bryant,134SAN,family,cooling_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+bryant-134san,Bryant,134SAN,family,heating_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+bryant-134san,Bryant,134SAN,family,SEER,null,,unknown,,Not verified for this profile; never infer from another family.
+bryant-134san,Bryant,134SAN,family,SEER2,16,,manufacturer_specification,bryant,Product-card family maximum
+bryant-134san,Bryant,134SAN,family,EER,null,,unknown,,Not verified for this profile; never infer from another family.
+bryant-134san,Bryant,134SAN,family,EER2,null,,unknown,,Not verified for this profile; never infer from another family.
+bryant-134san,Bryant,134SAN,family,HSPF,null,,unknown,,Not verified for this profile; never infer from another family.
+bryant-134san,Bryant,134SAN,family,HSPF2,null,,unknown,,Not verified for this profile; never infer from another family.
+bryant-134san,Bryant,134SAN,family,rated_voltage,null,,unknown,,Not verified for this profile; never infer from another family.
+bryant-134san,Bryant,134SAN,family,rated_current,null,,unknown,,Not verified for this profile; never infer from another family.
+bryant-134san,Bryant,134SAN,family,compressor_type,"""single-stage""",,manufacturer_specification,bryant,Family
+bryant-134san,Bryant,134SAN,family,blower_type,null,,unknown,,Not verified for this profile; never infer from another family.
+bryant-134san,Bryant,134SAN,family,refrigerant,null,,unknown,,Not verified for this profile; never infer from another family.
+bryant-134san,Bryant,134SAN,family,recommended_temperature_rise,null,,unknown,,Not verified for this profile; never infer from another family.
+bryant-134san,Bryant,134SAN,family,expected_cooling_split,null,,unknown,,Not verified for this profile; never infer from another family.
+bryant-134san,Bryant,134SAN,family,airflow,null,,unknown,,Not verified for this profile; never infer from another family.
+bryant-134san,Bryant,134SAN,family,static_pressure_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+bryant-134san,Bryant,134SAN,family,operating_temperature_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+bryant-134san,Bryant,134SAN,family,fault_codes,null,,unknown,,Not verified for this profile; never infer from another family.
+bryant-134san,Bryant,134SAN,family,thermostat_configuration,null,,unknown,,Not verified for this profile; never infer from another family.
+bryant-134san,Bryant,134SAN,family,diagnostic_thresholds,null,,unknown,,Not verified for this profile; never infer from another family.
+york-yc2f,York,YC2F,family,cooling_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+york-yc2f,York,YC2F,family,heating_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+york-yc2f,York,YC2F,family,SEER,null,,unknown,,Not verified for this profile; never infer from another family.
+york-yc2f,York,YC2F,family,SEER2,null,,unknown,,Not verified for this profile; never infer from another family.
+york-yc2f,York,YC2F,family,EER,null,,unknown,,Not verified for this profile; never infer from another family.
+york-yc2f,York,YC2F,family,EER2,null,,unknown,,Not verified for this profile; never infer from another family.
+york-yc2f,York,YC2F,family,HSPF,null,,unknown,,Not verified for this profile; never infer from another family.
+york-yc2f,York,YC2F,family,HSPF2,null,,unknown,,Not verified for this profile; never infer from another family.
+york-yc2f,York,YC2F,family,rated_voltage,null,,unknown,,Not verified for this profile; never infer from another family.
+york-yc2f,York,YC2F,family,rated_current,null,,unknown,,Not verified for this profile; never infer from another family.
+york-yc2f,York,YC2F,family,compressor_type,null,,unknown,,Not verified for this profile; never infer from another family.
+york-yc2f,York,YC2F,family,blower_type,null,,unknown,,Not verified for this profile; never infer from another family.
+york-yc2f,York,YC2F,family,refrigerant,"""R-410A""",,manufacturer_specification,york,Features section
+york-yc2f,York,YC2F,family,recommended_temperature_rise,null,,unknown,,Not verified for this profile; never infer from another family.
+york-yc2f,York,YC2F,family,expected_cooling_split,null,,unknown,,Not verified for this profile; never infer from another family.
+york-yc2f,York,YC2F,family,airflow,null,,unknown,,Not verified for this profile; never infer from another family.
+york-yc2f,York,YC2F,family,static_pressure_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+york-yc2f,York,YC2F,family,operating_temperature_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+york-yc2f,York,YC2F,family,fault_codes,null,,unknown,,Not verified for this profile; never infer from another family.
+york-yc2f,York,YC2F,family,thermostat_configuration,"""conventional""",,manufacturer_specification,york,Control options; terminal map unverified
+york-yc2f,York,YC2F,family,diagnostic_thresholds,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-xc3,Coleman,XC3,family,cooling_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-xc3,Coleman,XC3,family,heating_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-xc3,Coleman,XC3,family,SEER,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-xc3,Coleman,XC3,family,SEER2,13.4,,manufacturer_specification,coleman,"Family headline, not installed rating"
+coleman-xc3,Coleman,XC3,family,EER,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-xc3,Coleman,XC3,family,EER2,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-xc3,Coleman,XC3,family,HSPF,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-xc3,Coleman,XC3,family,HSPF2,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-xc3,Coleman,XC3,family,rated_voltage,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-xc3,Coleman,XC3,family,rated_current,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-xc3,Coleman,XC3,family,compressor_type,"""single-stage""",,manufacturer_specification,coleman,Family
+coleman-xc3,Coleman,XC3,family,blower_type,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-xc3,Coleman,XC3,family,refrigerant,"""R-454B""",,manufacturer_specification,coleman,Current family
+coleman-xc3,Coleman,XC3,family,recommended_temperature_rise,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-xc3,Coleman,XC3,family,expected_cooling_split,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-xc3,Coleman,XC3,family,airflow,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-xc3,Coleman,XC3,family,static_pressure_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-xc3,Coleman,XC3,family,operating_temperature_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-xc3,Coleman,XC3,family,fault_codes,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-xc3,Coleman,XC3,family,thermostat_configuration,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-xc3,Coleman,XC3,family,diagnostic_thresholds,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,cooling_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,heating_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,SEER,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,SEER2,14.5,,manufacturer_specification,daikin,Family matched-system maximum
+daikin-dx3se,Daikin,DX3SE,family,EER,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,EER2,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,HSPF,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,HSPF2,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,rated_voltage,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,rated_current,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,compressor_type,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,blower_type,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,refrigerant,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,recommended_temperature_rise,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,expected_cooling_split,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,airflow,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,static_pressure_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,operating_temperature_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,fault_codes,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,thermostat_configuration,null,,unknown,,Not verified for this profile; never infer from another family.
+daikin-dx3se,Daikin,DX3SE,family,diagnostic_thresholds,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,cooling_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,heating_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,SEER,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,SEER2,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,EER,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,EER2,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,HSPF,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,HSPF2,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,rated_voltage,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,rated_current,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,compressor_type,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,blower_type,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,refrigerant,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,recommended_temperature_rise,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,expected_cooling_split,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,airflow,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,static_pressure_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,operating_temperature_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,fault_codes,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,thermostat_configuration,null,,unknown,,Not verified for this profile; never infer from another family.
+mitsubishi-gl09,Mitsubishi Electric,MSZ-GL09NA,indoor_model,diagnostic_thresholds,null,,unknown,,Not verified for this profile; never infer from another family.
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,cooling_capacity,9000,BTU/h,manufacturer_specification,fujitsu,Rated system cooling
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,heating_capacity,12000,BTU/h,manufacturer_specification,fujitsu,Rated system heating
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,SEER,33.1,,manufacturer_specification,fujitsu,Legacy SEER; not SEER2
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,SEER2,null,,unknown,,Not verified for this profile; never infer from another family.
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,EER,null,,unknown,,Not verified for this profile; never infer from another family.
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,EER2,null,,unknown,,Not verified for this profile; never infer from another family.
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,HSPF,null,,unknown,,Not verified for this profile; never infer from another family.
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,HSPF2,null,,unknown,,Not verified for this profile; never infer from another family.
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,rated_voltage,"[208, 230]",VAC,manufacturer_specification,fujitsu,60Hz single-phase
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,rated_current,null,,unknown,,Not verified for this profile; never infer from another family.
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,compressor_type,null,,unknown,,Not verified for this profile; never infer from another family.
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,blower_type,null,,unknown,,Not verified for this profile; never infer from another family.
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,refrigerant,null,,unknown,,Not verified for this profile; never infer from another family.
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,recommended_temperature_rise,null,,unknown,,Not verified for this profile; never infer from another family.
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,expected_cooling_split,null,,unknown,,Not verified for this profile; never infer from another family.
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,airflow,null,,unknown,,Not verified for this profile; never infer from another family.
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,static_pressure_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,operating_temperature_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,fault_codes,null,,unknown,,Not verified for this profile; never infer from another family.
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,thermostat_configuration,null,,unknown,,Not verified for this profile; never infer from another family.
+fujitsu-09lzas1,Fujitsu,09LZAS1,system,diagnostic_thresholds,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,cooling_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,heating_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,SEER,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,SEER2,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,EER,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,EER2,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,HSPF,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,HSPF2,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,rated_voltage,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,rated_current,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,compressor_type,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,blower_type,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,refrigerant,"""R-410A""",,manufacturer_specification,bosch,2023 manual only
+bosch-bova15,Bosch,BOVA15,family,recommended_temperature_rise,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,expected_cooling_split,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,airflow,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,static_pressure_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,operating_temperature_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,fault_codes,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,thermostat_configuration,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-bova15,Bosch,BOVA15,family,diagnostic_thresholds,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,cooling_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,heating_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,SEER,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,SEER2,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,EER,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,EER2,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,HSPF,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,HSPF2,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,rated_voltage,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,rated_current,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,compressor_type,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,blower_type,"""multi-speed ECM""",,manufacturer_specification,furnace,Family
+goodman-gm9s80,Goodman,GM9S80,family,refrigerant,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,recommended_temperature_rise,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,expected_cooling_split,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,airflow,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,static_pressure_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,operating_temperature_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,fault_codes,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,thermostat_configuration,null,,unknown,,Not verified for this profile; never infer from another family.
+goodman-gm9s80,Goodman,GM9S80,family,diagnostic_thresholds,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-pc3,Coleman,PC3,family,cooling_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-pc3,Coleman,PC3,family,heating_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-pc3,Coleman,PC3,family,SEER,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-pc3,Coleman,PC3,family,SEER2,13.4,,manufacturer_specification,package,Family headline
+coleman-pc3,Coleman,PC3,family,EER,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-pc3,Coleman,PC3,family,EER2,11,,manufacturer_specification,package,Technical-specification family headline
+coleman-pc3,Coleman,PC3,family,HSPF,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-pc3,Coleman,PC3,family,HSPF2,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-pc3,Coleman,PC3,family,rated_voltage,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-pc3,Coleman,PC3,family,rated_current,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-pc3,Coleman,PC3,family,compressor_type,"""single-stage rotary""",,manufacturer_specification,package,Technical specification
+coleman-pc3,Coleman,PC3,family,blower_type,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-pc3,Coleman,PC3,family,refrigerant,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-pc3,Coleman,PC3,family,recommended_temperature_rise,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-pc3,Coleman,PC3,family,expected_cooling_split,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-pc3,Coleman,PC3,family,airflow,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-pc3,Coleman,PC3,family,static_pressure_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-pc3,Coleman,PC3,family,operating_temperature_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-pc3,Coleman,PC3,family,fault_codes,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-pc3,Coleman,PC3,family,thermostat_configuration,null,,unknown,,Not verified for this profile; never infer from another family.
+coleman-pc3,Coleman,PC3,family,diagnostic_thresholds,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-biva15,Bosch,BIVA15,family,cooling_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-biva15,Bosch,BIVA15,family,heating_capacity,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-biva15,Bosch,BIVA15,family,SEER,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-biva15,Bosch,BIVA15,family,SEER2,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-biva15,Bosch,BIVA15,family,EER,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-biva15,Bosch,BIVA15,family,EER2,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-biva15,Bosch,BIVA15,family,HSPF,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-biva15,Bosch,BIVA15,family,HSPF2,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-biva15,Bosch,BIVA15,family,rated_voltage,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-biva15,Bosch,BIVA15,family,rated_current,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-biva15,Bosch,BIVA15,family,compressor_type,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-biva15,Bosch,BIVA15,family,blower_type,"""fixed-speed PSC""",,manufacturer_specification,airhandler,R-454B-version product page
+bosch-biva15,Bosch,BIVA15,family,refrigerant,"""R-454B""",,manufacturer_specification,airhandler,Coil system pairing
+bosch-biva15,Bosch,BIVA15,family,recommended_temperature_rise,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-biva15,Bosch,BIVA15,family,expected_cooling_split,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-biva15,Bosch,BIVA15,family,airflow,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-biva15,Bosch,BIVA15,family,static_pressure_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-biva15,Bosch,BIVA15,family,operating_temperature_limits,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-biva15,Bosch,BIVA15,family,fault_codes,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-biva15,Bosch,BIVA15,family,thermostat_configuration,null,,unknown,,Not verified for this profile; never infer from another family.
+bosch-biva15,Bosch,BIVA15,family,diagnostic_thresholds,null,,unknown,,Not verified for this profile; never infer from another family.

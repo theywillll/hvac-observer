@@ -1,0 +1,26 @@
+connector,pin,function,connection,conditioning,note
+J1,USB-C,5 V supply,UNO Q USB-C,Approved isolated 5 V/3 A supply,Do not power from R/C
+J2.1,3V3 sensor rail,3.3 V,SHT31s and SDP810 VDD,100 nF each +10 uF branch,Short bench bus
+J2.2,GND,SELV ground,Sensor GND,Star electronics ground,Never HVAC C
+J2.3,SDA header,I2C data,SHT31 0x44/0x45 and SDP 0x25 SDA,4.7k effective pullup to 3.3 V,Do not duplicate breakout pullups excessively
+J2.4,SCL header,I2C clock,SHT31s and SDP SCL,4.7k effective pullup to 3.3 V,100 kHz; qualify cable rise time
+J3.1,D2,R status,R-C isolated channel output,10k pullup; 1k series; 10nF,R is power availability
+J3.2,D3,Y,Y-C isolated output,same,No direct 24 V
+J3.3,D4,Y2,Y2-C isolated output,same,No direct 24 V
+J3.4,D5,W,W-C isolated output,same,No direct 24 V
+J3.5,D6,W2,W2-C isolated output,same,No direct 24 V
+J3.6,D7,G,G-C isolated output,same,No direct 24 V
+J3.7,D8,O/B,O/B-C isolated output,same,Configure valve polarity
+J4.1,D9,Condensate,Independent dry contact to SELV GND,10k pullup; 1k series;100nF proposed,NO means broken wire undetected
+J4.2,GND,Float return,Independent dry contact,SELV only,Never parallel factory interlock
+J5.1 optional,A0,Compressor CT,Conditioned CT waveform,Biased 1.65V; protected 0-3.3 V,High-rate driver not in environmental sketch
+J5.2 optional,A1,Blower CT,Conditioned CT waveform,same,Select current rating for sensitivity
+J5.3 optional,A2,Condenser fan CT,Conditioned CT waveform,same,Do not substitute total outdoor current
+Reserved,A3,Spare analog,Unconnected,None,No floating input read
+Reserved,D10-D13 / JSPI,SPI expansion,Accelerometer node / future adapter,3.3-V logic only,Not driven by supplied firmware
+Reserved,D0-D1,UART,Unconnected,Use Bridge for onboard Linux,Core version may reserve internal serial resources
+Field terminal,C,AC reference,All AC opto LED return sides,Field-side wiring only,NO connection to GPIO GND
+Pi alternative,Physical 1 / 6,3V3 / GND,Dual SHT31,3.3 V only,Use instead of MCU bus host
+Pi alternative,Physical 3 / GPIO2,SDA1,Dual SHT31 SDA,Existing board pullups,Do not attach two I2C masters
+Pi alternative,Physical 5 / GPIO3,SCL1,Dual SHT31 SCL,Existing board pullups,Enable I2C OS support
+Remote expansion,Network,Remote sensors / power meter,Fresh JSONL gateway frames,Authenticated transport outside this adapter,No long outdoor I2C/GPIO bus

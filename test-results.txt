@@ -1,0 +1,31 @@
+test_http_dashboard_readonly_and_bad_query (test_system.API.test_http_dashboard_readonly_and_bad_query) ... ok
+test_baseline_condition_matching (test_system.Data.test_baseline_condition_matching) ... ok
+test_match_does_not_inherit_family_limits (test_system.Data.test_match_does_not_inherit_family_limits) ... ok
+test_persistence_and_indexes (test_system.Data.test_persistence_and_indexes) ... ok
+test_profile_provenance_and_unknowns (test_system.Data.test_profile_provenance_and_unknowns) ... ok
+test_critical_clears_when_float_clears (test_system.Rules.test_critical_clears_when_float_clears) ... ok
+test_defrost_suppresses_cooling_fault (test_system.Rules.test_defrost_suppresses_cooling_fault) ... ok
+test_duplicate_rejected (test_system.Rules.test_duplicate_rejected) ... ok
+test_energy_integration (test_system.Rules.test_energy_integration) ... ok
+test_fault_scenarios (test_system.Rules.test_fault_scenarios) ... ok
+test_gap_resets_persistence (test_system.Rules.test_gap_resets_persistence) ... ok
+test_heat_pump_ob_polarity (test_system.Rules.test_heat_pump_ob_polarity) ... ok
+test_missing_current_not_no_response (test_system.Rules.test_missing_current_not_no_response) ... ok
+test_no_synthetic_baseline_in_engine_default (test_system.Rules.test_no_synthetic_baseline_in_engine_default) ... ok
+test_normals_have_no_faults (test_system.Rules.test_normals_have_no_faults) ... ok
+test_null_power_is_not_estimated_from_amps (test_system.Rules.test_null_power_is_not_estimated_from_amps) ... ok
+test_stage_change_restarts_settling (test_system.Rules.test_stage_change_restarts_settling) ... ok
+test_startup_transient_suppressed (test_system.Rules.test_startup_transient_suppressed) ... ok
+test_unknown_mode_not_idle (test_system.Rules.test_unknown_mode_not_idle) ... ok
+test_calibration_retains_input (test_system.Validation.test_calibration_retains_input) ... ok
+test_crc (test_system.Validation.test_crc) ... ok
+test_reject_naive_timestamp (test_system.Validation.test_reject_naive_timestamp) ... ok
+test_reject_nonfinite_bool_and_bounds (test_system.Validation.test_reject_nonfinite_bool_and_bounds) ... ok
+test_timestamp_normalized (test_system.Validation.test_timestamp_normalized) ... ok
+test_vibration_gravity_removed (test_system.Validation.test_vibration_gravity_removed) ... ok
+test_waveform_rms_and_clipping (test_system.Validation.test_waveform_rms_and_clipping) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 1.523s
+
+OK

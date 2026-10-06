@@ -1,0 +1,20 @@
+[Unit]
+Description=HVAC Observer passive local monitor
+After=network.target
+
+[Service]
+Type=simple
+User=hvac
+WorkingDirectory=/opt/hvac-observer
+ExecStart=/usr/bin/python3 -m backend.server --source pi --db /var/lib/hvac-observer/hvac.sqlite3 --config /etc/hvac-observer.json
+Restart=on-failure
+RestartSec=10
+NoNewPrivileges=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/hvac-observer
+# Add only the required device group (commonly i2c), as appropriate to the OS.
+SupplementaryGroups=i2c
+
+[Install]
+WantedBy=multi-user.target

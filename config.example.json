@@ -1,0 +1,16 @@
+{
+  "manufacturer": "Unknown",
+  "model": "Unknown",
+  "equipment_type": "split_ac",
+  "ob_energized_in_cooling": true,
+  "compressor_on_a": 1.0,
+  "blower_on_a": 0.25,
+  "settle_s": 180,
+  "call_grace_s": 300,
+  "max_gap_s": 15,
+  "verified_heating_rise_c": null,
+  "heating_rise_source": null,
+  "verified_current_limit_a": null,
+  "current_limit_source": null,
+  "calibration": {}
+}

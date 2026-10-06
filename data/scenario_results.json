@@ -1,0 +1,104 @@
+[
+  {
+    "scenario": "normal_cooling",
+    "first_alerts": {},
+    "samples": 900,
+    "duration_s": 4495,
+    "synthetic": true
+  },
+  {
+    "scenario": "normal_heating",
+    "first_alerts": {},
+    "samples": 900,
+    "duration_s": 4495,
+    "synthetic": true
+  },
+  {
+    "scenario": "dirty_filter",
+    "first_alerts": {
+      "filter_restriction": "2026-01-01T00:12:00+00:00",
+      "baseline_anomaly": "2026-01-01T00:13:00+00:00"
+    },
+    "samples": 900,
+    "duration_s": 4495,
+    "synthetic": true
+  },
+  {
+    "scenario": "frozen_evaporator",
+    "first_alerts": {
+      "blower_degradation": "2026-01-01T00:12:00+00:00",
+      "freeze_symptoms": "2026-01-01T00:13:00+00:00",
+      "baseline_anomaly": "2026-01-01T00:13:00+00:00"
+    },
+    "samples": 900,
+    "duration_s": 4495,
+    "synthetic": true
+  },
+  {
+    "scenario": "short_cycling",
+    "first_alerts": {
+      "short_cycling": "2026-01-01T00:12:00+00:00"
+    },
+    "samples": 900,
+    "duration_s": 4495,
+    "synthetic": true
+  },
+  {
+    "scenario": "failed_condenser_fan",
+    "first_alerts": {
+      "condenser_fan_response": "2026-01-01T00:11:00+00:00"
+    },
+    "samples": 900,
+    "duration_s": 4495,
+    "synthetic": true
+  },
+  {
+    "scenario": "blower_degradation",
+    "first_alerts": {
+      "blower_degradation": "2026-01-01T00:12:00+00:00",
+      "baseline_anomaly": "2026-01-01T00:13:00+00:00"
+    },
+    "samples": 900,
+    "duration_s": 4495,
+    "synthetic": true
+  },
+  {
+    "scenario": "compressor_current_anomaly",
+    "first_alerts": {
+      "high_current": "2026-01-01T00:11:30+00:00",
+      "current_vibration": "2026-01-01T00:11:30+00:00",
+      "baseline_anomaly": "2026-01-01T00:13:00+00:00"
+    },
+    "samples": 900,
+    "duration_s": 4495,
+    "synthetic": true
+  },
+  {
+    "scenario": "no_response",
+    "first_alerts": {
+      "no_response": "2026-01-01T00:07:00+00:00",
+      "baseline_anomaly": "2026-01-01T00:08:00+00:00"
+    },
+    "samples": 900,
+    "duration_s": 4495,
+    "synthetic": true
+  },
+  {
+    "scenario": "humidity_degradation",
+    "first_alerts": {
+      "humidity_degradation": "2026-01-01T00:20:00+00:00"
+    },
+    "samples": 900,
+    "duration_s": 4495,
+    "synthetic": true
+  },
+  {
+    "scenario": "condensate",
+    "first_alerts": {
+      "condensate": "2026-01-01T00:10:10+00:00"
+    },
+    "samples": 900,
+    "duration_s": 4495,
+    "synthetic": true
+  }
+]

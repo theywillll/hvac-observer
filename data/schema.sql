@@ -1,0 +1,11 @@
+PRAGMA foreign_keys=ON;
+CREATE TABLE IF NOT EXISTS equipment(id TEXT PRIMARY KEY, manufacturer TEXT, model TEXT, equipment_type TEXT NOT NULL, specifications TEXT NOT NULL, sources TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS sensors(id TEXT PRIMARY KEY, equipment_id TEXT NOT NULL REFERENCES equipment(id), sensor_type TEXT NOT NULL, location TEXT, calibration TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS sessions(id TEXT PRIMARY KEY, equipment_id TEXT NOT NULL REFERENCES equipment(id), started TEXT NOT NULL, source TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS measurements(session_id TEXT NOT NULL REFERENCES sessions(id), timestamp TEXT NOT NULL, sensor_id TEXT NOT NULL REFERENCES sensors(id), raw_value REAL, calibrated_value REAL, units TEXT NOT NULL, quality TEXT NOT NULL, PRIMARY KEY(session_id,timestamp,sensor_id));
+CREATE INDEX IF NOT EXISTS measurement_time ON measurements(timestamp,sensor_id);
+CREATE TABLE IF NOT EXISTS hvac_state(session_id TEXT NOT NULL REFERENCES sessions(id), timestamp TEXT NOT NULL, sequence INTEGER NOT NULL, thermostat_demand TEXT NOT NULL, compressor_state INTEGER, fan_state INTEGER, mode TEXT NOT NULL, payload TEXT NOT NULL, PRIMARY KEY(session_id,timestamp), UNIQUE(session_id,sequence));
+CREATE TABLE IF NOT EXISTS alerts(id INTEGER PRIMARY KEY, session_id TEXT NOT NULL REFERENCES sessions(id), timestamp TEXT NOT NULL, severity TEXT NOT NULL, rule_id TEXT NOT NULL, anomaly_score REAL, confidence REAL, evidence TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS baselines(id TEXT PRIMARY KEY, equipment_id TEXT NOT NULL REFERENCES equipment(id), created TEXT NOT NULL, learning_period TEXT NOT NULL, conditions TEXT NOT NULL, model TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS profile_parameters(profile_id TEXT NOT NULL, parameter TEXT NOT NULL, value_json TEXT, unit TEXT, provenance TEXT NOT NULL, source_id TEXT, qualifier TEXT, PRIMARY KEY(profile_id,parameter));
+CREATE TABLE IF NOT EXISTS sources(id TEXT PRIMARY KEY, url TEXT NOT NULL, document TEXT NOT NULL, version TEXT, accessed TEXT NOT NULL, locator TEXT);

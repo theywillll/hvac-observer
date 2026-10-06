@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "method": "median/MAD",
+  "buckets": {
+    "cooling:1:6:8:5": {
+      "split_c": {
+        "median": -10.00055582787087,
+        "scale": 0.6,
+        "n": 1196
+      },
+      "filter_pa": {
+        "median": 39.96484079544511,
+        "scale": 3.0,
+        "n": 1196
+      },
+      "compressor_a": {
+        "median": 9.00328772907225,
+        "scale": 0.5,
+        "n": 1196
+      },
+      "blower_a": {
+        "median": 2.000518898563225,
+        "scale": 0.2,
+        "n": 1196
+      },
+      "vibration_g": {
+        "median": 0.1202226997810738,
+        "scale": 0.02,
+        "n": 1196
+      },
+      "power_w": {
+        "median": 2300.0,
+        "scale": 100,
+        "n": 1196
+      },
+      "airflow_proxy": {
+        "median": 1.0,
+        "scale": 0.05,
+        "n": 1196
+      }
+    }
+  },
+  "minimum_samples": 30,
+  "synthetic": true
+}
