@@ -5,3 +5,6 @@ __pycache__/
 .env
 *.log
 work/
+*.kicad_prl
+*.lck
+*-backups/

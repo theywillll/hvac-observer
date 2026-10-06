@@ -24,6 +24,8 @@ HTTP endpoint and asset delivery tests passed, as did `node --check dashboard/ap
 
 ## Hardware
 
+The KiCad 10.0.6 schematic project in `hardware/kicad/` loads and exports successfully. Electrical rules checking reports zero errors and warnings; 108 additional netlist checks passed. The four rendered sheets were visually reviewed. These checks cover the drawing and connectivity, not electrical simulation or physical hardware behavior.
+
 No UNO Q or Pi was connected during development. The UNO Q sketch was reviewed against the documented sensor protocols, but hasn't been compiled or uploaded. Sensor accuracy, isolation, electrical behavior, EMC and real HVAC diagnoses haven't been tested. The SVG drawings aren't PCB fabrication files.
 
 Before field use:

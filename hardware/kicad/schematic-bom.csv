@@ -1,0 +1,96 @@
+reference,value,symbol,sheet
+J1,MCU harness,Conn_01x15,sensors.kicad_sch
+J2,SHT31 return,Conn_01x04,sensors.kicad_sch
+C2,100nF,C,sensors.kicad_sch
+J3,SHT31 supply,Conn_01x04,sensors.kicad_sch
+C3,100nF,C,sensors.kicad_sch
+J4,SDP810 pressure,Conn_01x04,sensors.kicad_sch
+C4,100nF,C,sensors.kicad_sch
+R1,4k7,R,sensors.kicad_sch
+R2,4k7,R,sensors.kicad_sch
+J5,3V3 sensor supply,Conn_01x02,sensors.kicad_sch
+C1,10uF,C,sensors.kicad_sch
+J6,Dry-contact float,Conn_01x02,sensors.kicad_sch
+R3,1k,R,sensors.kicad_sch
+R4,10k,R,sensors.kicad_sch
+C5,100nF,C,sensors.kicad_sch
+J101,R / C,Conn_01x02,thermostat-inputs.kicad_sch
+F101,63mA,Fuse,thermostat-inputs.kicad_sch
+R101,1k5 / 0.5W,R,thermostat-inputs.kicad_sch
+U101,H11AA1,H11AA1,thermostat-inputs.kicad_sch
+R102,1k5 / 0.5W,R,thermostat-inputs.kicad_sch
+R103,10k,R,thermostat-inputs.kicad_sch
+R104,1k,R,thermostat-inputs.kicad_sch
+C101,10nF,C,thermostat-inputs.kicad_sch
+J102,Y / C,Conn_01x02,thermostat-inputs.kicad_sch
+F102,63mA,Fuse,thermostat-inputs.kicad_sch
+R111,1k5 / 0.5W,R,thermostat-inputs.kicad_sch
+U102,H11AA1,H11AA1,thermostat-inputs.kicad_sch
+R112,1k5 / 0.5W,R,thermostat-inputs.kicad_sch
+R113,10k,R,thermostat-inputs.kicad_sch
+R114,1k,R,thermostat-inputs.kicad_sch
+C102,10nF,C,thermostat-inputs.kicad_sch
+J103,Y2 / C,Conn_01x02,thermostat-inputs.kicad_sch
+F103,63mA,Fuse,thermostat-inputs.kicad_sch
+R121,1k5 / 0.5W,R,thermostat-inputs.kicad_sch
+U103,H11AA1,H11AA1,thermostat-inputs.kicad_sch
+R122,1k5 / 0.5W,R,thermostat-inputs.kicad_sch
+R123,10k,R,thermostat-inputs.kicad_sch
+R124,1k,R,thermostat-inputs.kicad_sch
+C103,10nF,C,thermostat-inputs.kicad_sch
+J104,W / C,Conn_01x02,thermostat-inputs.kicad_sch
+F104,63mA,Fuse,thermostat-inputs.kicad_sch
+R131,1k5 / 0.5W,R,thermostat-inputs.kicad_sch
+U104,H11AA1,H11AA1,thermostat-inputs.kicad_sch
+R132,1k5 / 0.5W,R,thermostat-inputs.kicad_sch
+R133,10k,R,thermostat-inputs.kicad_sch
+R134,1k,R,thermostat-inputs.kicad_sch
+C104,10nF,C,thermostat-inputs.kicad_sch
+J105,W2 / C,Conn_01x02,thermostat-inputs.kicad_sch
+F105,63mA,Fuse,thermostat-inputs.kicad_sch
+R141,1k5 / 0.5W,R,thermostat-inputs.kicad_sch
+U105,H11AA1,H11AA1,thermostat-inputs.kicad_sch
+R142,1k5 / 0.5W,R,thermostat-inputs.kicad_sch
+R143,10k,R,thermostat-inputs.kicad_sch
+R144,1k,R,thermostat-inputs.kicad_sch
+C105,10nF,C,thermostat-inputs.kicad_sch
+J106,G / C,Conn_01x02,thermostat-inputs.kicad_sch
+F106,63mA,Fuse,thermostat-inputs.kicad_sch
+R151,1k5 / 0.5W,R,thermostat-inputs.kicad_sch
+U106,H11AA1,H11AA1,thermostat-inputs.kicad_sch
+R152,1k5 / 0.5W,R,thermostat-inputs.kicad_sch
+R153,10k,R,thermostat-inputs.kicad_sch
+R154,1k,R,thermostat-inputs.kicad_sch
+C106,10nF,C,thermostat-inputs.kicad_sch
+J107,OB / C,Conn_01x02,thermostat-inputs.kicad_sch
+F107,63mA,Fuse,thermostat-inputs.kicad_sch
+R161,1k5 / 0.5W,R,thermostat-inputs.kicad_sch
+U107,H11AA1,H11AA1,thermostat-inputs.kicad_sch
+R162,1k5 / 0.5W,R,thermostat-inputs.kicad_sch
+R163,10k,R,thermostat-inputs.kicad_sch
+R164,1k,R,thermostat-inputs.kicad_sch
+C107,10nF,C,thermostat-inputs.kicad_sch
+R201,10k / 1%,R,current-inputs.kicad_sch
+R202,10k / 1%,R,current-inputs.kicad_sch
+U201,MCP6002,MCP6002-xP,current-inputs.kicad_sch
+R209,47R,R,current-inputs.kicad_sch
+C201,100nF,C,current-inputs.kicad_sch
+C202,10uF,C,current-inputs.kicad_sch
+C203,10uF,C,current-inputs.kicad_sch
+C204,100nF,C,current-inputs.kicad_sch
+J204,Bias test points,Conn_01x02,current-inputs.kicad_sch
+J201,Compressor CT,Conn_01x02,current-inputs.kicad_sch
+R203,1k,R,current-inputs.kicad_sch
+C205,100nF,C,current-inputs.kicad_sch
+D201,BAS70,D_Schottky,current-inputs.kicad_sch
+D202,BAS70,D_Schottky,current-inputs.kicad_sch
+J202,Blower CT,Conn_01x02,current-inputs.kicad_sch
+R204,1k,R,current-inputs.kicad_sch
+C206,100nF,C,current-inputs.kicad_sch
+D203,BAS70,D_Schottky,current-inputs.kicad_sch
+D204,BAS70,D_Schottky,current-inputs.kicad_sch
+J203,Condenser fan CT,Conn_01x02,current-inputs.kicad_sch
+R205,1k,R,current-inputs.kicad_sch
+C207,100nF,C,current-inputs.kicad_sch
+D205,BAS70,D_Schottky,current-inputs.kicad_sch
+D206,BAS70,D_Schottky,current-inputs.kicad_sch

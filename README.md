@@ -66,6 +66,7 @@ See the [validation record](docs/validation.md) for completed checks and the rem
 - [API and sensor frame format](docs/api.md)
 - [Equipment data and source notes](data/README.md)
 - [Hardware drawings](hardware/README.md)
+- [Editable KiCad schematics](hardware/kicad/README.md)
 - [Contributing](CONTRIBUTING.md)
 
 Licensed under [MIT](LICENSE).

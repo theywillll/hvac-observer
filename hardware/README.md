@@ -8,6 +8,8 @@ These are prototype reference drawings, not a construction-approved PCB. They co
 
 ![Wiring diagram](wiring.svg)
 
+The [editable KiCad project](kicad/README.md) contains the sensor interface, all seven isolated thermostat channels and the optional three-channel current front end. It includes CAD-generated previews, a netlist and a component inventory. KiCad 10.0.6 reported zero electrical-rule errors or warnings; hardware validation is still required.
+
 ## Power and enclosure
 
 UNO Q: approved USB-C 5 V / 3 A supply; verify the board revision's requirements. Pi Zero alternative: its approved supply. No connection to HVAC R/C for power. Use a separate 3.3-V low-noise regulator from a protected 5-V accessory rail for expanded sensors, with its ground joined to MCU GND at one low-voltage star point. Do not backfeed board 3.3 V. Breakouts must have 3.3-V logic pullups.
@@ -36,7 +38,7 @@ Firmware latches active-low half-cycle pulses for 150 ms. Confirm at 50 and 60 H
 
 ## AC current: optional analog front end (not enabled by default)
 
-Use a **voltage-output** SCT-0750-050 50 A/0.333 Vrms for compressor; choose lower-current variants for motor sensitivity. The CT contains its burden. Connect CT low to buffered 1.65 V bias; CT high through 1 kΩ to ADC. Add 100 nF ADC-to-bias (fc≈1.59 kHz), low-leakage rail clamps after the series resistor, and 100 nF + 10 µF bias bypassing. Generate bias using 10 kΩ/10 kΩ from 3.3 V and a rail-to-rail buffer such as MCP6002. Keep the bias stable under all connected CTs. These component values require analog prototype validation; clamps and an RC do not provide complete surge protection or strong anti-alias rejection.
+Use a **voltage-output** SCT-0750-050 50 A/0.333 Vrms for compressor; choose lower-current variants for motor sensitivity. The CT contains its burden. Connect CT low to buffered 1.65 V bias; CT high through 1 kΩ to ADC. Add 100 nF ADC-to-bias (fc≈1.59 kHz), low-leakage rail clamps after the series resistor, and 100 nF + 10 µF bias bypassing. Generate bias using 10 kΩ/10 kΩ from 3.3 V and a rail-to-rail buffer such as MCP6002. The KiCad front end adds a 47-ohm isolation resistor between the buffer output and the bias reservoir capacitors; feedback stays ahead of that resistor. Qualify stability and transient response with all CTs connected. These component values require analog prototype validation; clamps and an RC do not provide complete surge protection or strong anti-alias rejection.
 
 At rated current: ADC sees 1.65 V ± 0.471 V; at 130%, ±0.612 V. Headroom is adequate at normal current, but motor inrush can clip: detect/report clipping rather than trust the RMS. `I_RMS = sqrt(mean((V[n] − mean(V))²)) * I_rated / 0.333`. Use sample mean, not a fixed 1.65 V subtraction. Reference/calibrate the full chain with a true-RMS instrument. The stated CT linearity is ±1% in its stated current range; low fan current may be below it. [CT specification](https://magnelab.com/product/sct-0750/)
 

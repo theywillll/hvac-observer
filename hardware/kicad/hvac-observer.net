@@ -1,0 +1,7616 @@
+(export
+	(version "E")
+	(design
+		(source "C:\\Users\\devja\\Documents\\Codex\\2026-10-06\\files-pasted-by-the-user-act\\outputs\\hvac-observer\\hardware\\kicad\\hvac-observer.kicad_sch")
+		(date "2026-10-06T11:19:43")
+		(tool "Eeschema 10.0.6")
+		(sheet
+			(number "1")
+			(name "/")
+			(tstamps "/")
+			(title_block
+				(title "HVAC Observer sensing interface")
+				(company "HVAC Observer")
+				(rev "0.1")
+				(date "2026-10-06")
+				(source "hvac-observer.kicad_sch")
+				(comment
+					(number "1")
+					(value "Prototype schematic - bench validation required")
+				)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+		(sheet
+			(number "2")
+			(name "/Sensors and MCU interface/")
+			(tstamps "/a05b7826-93c0-4bf6-8a03-d6bdd04d89d0/")
+			(title_block
+				(title "Sensors and MCU interface")
+				(company "HVAC Observer")
+				(rev "0.1")
+				(date "2026-10-06")
+				(source "sensors.kicad_sch")
+				(comment
+					(number "1")
+					(value "Prototype schematic - bench validation required")
+				)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+		(sheet
+			(number "3")
+			(name "/Isolated thermostat inputs/")
+			(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			(title_block
+				(title "Isolated thermostat inputs")
+				(company "HVAC Observer")
+				(rev "0.1")
+				(date "2026-10-06")
+				(source "thermostat-inputs.kicad_sch")
+				(comment
+					(number "1")
+					(value "Prototype schematic - bench validation required")
+				)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+		(sheet
+			(number "4")
+			(name "/Optional current inputs/")
+			(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			(title_block
+				(title "Optional current acquisition front end")
+				(company "HVAC Observer")
+				(rev "0.1")
+				(date "2026-10-06")
+				(source "current-inputs.kicad_sch")
+				(comment
+					(number "1")
+					(value "Prototype schematic - bench validation required")
+				)
+				(comment
+					(number "2")
+					(value "")
+				)
+				(comment
+					(number "3")
+					(value "")
+				)
+				(comment
+					(number "4")
+					(value "")
+				)
+				(comment
+					(number "5")
+					(value "")
+				)
+				(comment
+					(number "6")
+					(value "")
+				)
+				(comment
+					(number "7")
+					(value "")
+				)
+				(comment
+					(number "8")
+					(value "")
+				)
+				(comment
+					(number "9")
+					(value "")
+				)
+			)
+		)
+	)
+	(components
+		(comp
+			(ref "C1")
+			(value "10uF")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Sensors and MCU interface")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Sensors and MCU interface/")
+				(tstamps "/a05b7826-93c0-4bf6-8a03-d6bdd04d89d0/")
+			)
+			(tstamps "5c696de5-e1ad-4612-9057-844bc33fec0f")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C2")
+			(value "100nF")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Sensors and MCU interface")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Sensors and MCU interface/")
+				(tstamps "/a05b7826-93c0-4bf6-8a03-d6bdd04d89d0/")
+			)
+			(tstamps "54651f77-f95f-4416-9690-a99830d4aeba")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C3")
+			(value "100nF")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Sensors and MCU interface")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Sensors and MCU interface/")
+				(tstamps "/a05b7826-93c0-4bf6-8a03-d6bdd04d89d0/")
+			)
+			(tstamps "1afbc158-1aca-4e1c-bc1b-913c4bcc33cf")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C4")
+			(value "100nF")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Sensors and MCU interface")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Sensors and MCU interface/")
+				(tstamps "/a05b7826-93c0-4bf6-8a03-d6bdd04d89d0/")
+			)
+			(tstamps "1cf90086-536d-4710-990b-ac2db065d93f")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C5")
+			(value "100nF")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Sensors and MCU interface")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Sensors and MCU interface/")
+				(tstamps "/a05b7826-93c0-4bf6-8a03-d6bdd04d89d0/")
+			)
+			(tstamps "fcb2f5ef-30de-4fee-a2d5-48d5d26d46fc")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J1")
+			(value "MCU harness")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Conn_01x15")
+				(description "Generic connector, single row, 01x15, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Sensors and MCU interface")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/Sensors and MCU interface/")
+				(tstamps "/a05b7826-93c0-4bf6-8a03-d6bdd04d89d0/")
+			)
+			(tstamps "884b4df3-a7b5-4ff3-aee3-fea1778d6f23")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "9")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "15")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J2")
+			(value "SHT31 return")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Conn_01x04")
+				(description "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Sensors and MCU interface")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/Sensors and MCU interface/")
+				(tstamps "/a05b7826-93c0-4bf6-8a03-d6bdd04d89d0/")
+			)
+			(tstamps "2eb709de-a18d-480e-8baf-d55f7def0476")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J3")
+			(value "SHT31 supply")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Conn_01x04")
+				(description "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Sensors and MCU interface")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/Sensors and MCU interface/")
+				(tstamps "/a05b7826-93c0-4bf6-8a03-d6bdd04d89d0/")
+			)
+			(tstamps "b4d8fcef-ec6f-4af8-96b6-8c292f391408")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J4")
+			(value "SDP810 pressure")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Conn_01x04")
+				(description "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Sensors and MCU interface")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/Sensors and MCU interface/")
+				(tstamps "/a05b7826-93c0-4bf6-8a03-d6bdd04d89d0/")
+			)
+			(tstamps "de4e9768-fdff-4421-b23a-bee90695cdb4")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J5")
+			(value "3V3 sensor supply")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Conn_01x02")
+				(description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Sensors and MCU interface")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/Sensors and MCU interface/")
+				(tstamps "/a05b7826-93c0-4bf6-8a03-d6bdd04d89d0/")
+			)
+			(tstamps "84ef754e-1d76-4b22-9468-e4f7b2057040")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J6")
+			(value "Dry-contact float")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Conn_01x02")
+				(description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Sensors and MCU interface")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/Sensors and MCU interface/")
+				(tstamps "/a05b7826-93c0-4bf6-8a03-d6bdd04d89d0/")
+			)
+			(tstamps "feb1dec4-cf4b-47cc-9063-5e6a36c6a266")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R1")
+			(value "4k7")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Sensors and MCU interface")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Sensors and MCU interface/")
+				(tstamps "/a05b7826-93c0-4bf6-8a03-d6bdd04d89d0/")
+			)
+			(tstamps "bdeddcd7-32f1-4d7c-9ad4-c68389feb6a0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R2")
+			(value "4k7")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Sensors and MCU interface")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Sensors and MCU interface/")
+				(tstamps "/a05b7826-93c0-4bf6-8a03-d6bdd04d89d0/")
+			)
+			(tstamps "cfd5d1c7-1825-4a7c-a79f-c869f814bc4c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R3")
+			(value "1k")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Sensors and MCU interface")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Sensors and MCU interface/")
+				(tstamps "/a05b7826-93c0-4bf6-8a03-d6bdd04d89d0/")
+			)
+			(tstamps "8c8ffd95-b5c7-412f-ada0-26b7e45be7e6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R4")
+			(value "10k")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Sensors and MCU interface")
+			)
+			(property
+				(name "Sheetfile")
+				(value "sensors.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Sensors and MCU interface/")
+				(tstamps "/a05b7826-93c0-4bf6-8a03-d6bdd04d89d0/")
+			)
+			(tstamps "8a1c5c25-5fd9-439e-9d58-bc23eb07f77f")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C101")
+			(value "10nF")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "203ed880-66f5-4b52-9a06-1d8052972bee")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C102")
+			(value "10nF")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "35fd17ea-fcf8-40c6-af7a-24b0fcf1d936")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C103")
+			(value "10nF")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "838b7a0d-764e-4e30-8d88-458cf6cfb0b3")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C104")
+			(value "10nF")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "525c9467-48c6-43f5-928d-3f6ad7250395")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C105")
+			(value "10nF")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "d687d976-fc9d-43c7-b6db-89082e189652")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C106")
+			(value "10nF")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "e3bdb436-50da-4092-a1bd-2844bf637171")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C107")
+			(value "10nF")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "1a381e7c-bb86-4510-8a85-b86f2a6aaff8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "F101")
+			(value "63mA")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Fuse")
+				(description "Fuse")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "fuse")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "*Fuse*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "f8e7a9e3-c044-4107-91d6-0b8a598943d9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "F102")
+			(value "63mA")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Fuse")
+				(description "Fuse")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "fuse")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "*Fuse*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "f3e5ce36-a15c-41bf-be39-67e27e7fdb24")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "F103")
+			(value "63mA")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Fuse")
+				(description "Fuse")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "fuse")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "*Fuse*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "91058108-9ac5-4660-8b8c-f1a9c4ec5f66")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "F104")
+			(value "63mA")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Fuse")
+				(description "Fuse")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "fuse")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "*Fuse*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "99d3c641-8040-4324-b6f5-3a82307ac0f0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "F105")
+			(value "63mA")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Fuse")
+				(description "Fuse")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "fuse")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "*Fuse*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "8974cf1d-5214-4ce1-a504-37f7eb0c763c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "F106")
+			(value "63mA")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Fuse")
+				(description "Fuse")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "fuse")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "*Fuse*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "b2206ce9-3f12-42dd-bcd1-12a4b4f24808")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "F107")
+			(value "63mA")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Fuse")
+				(description "Fuse")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "fuse")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "*Fuse*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "6bac35b8-a087-4113-9a71-f16dc4399322")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J101")
+			(value "R / C")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Conn_01x02")
+				(description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "72b654c7-fd23-4140-b673-2f21474fafde")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J102")
+			(value "Y / C")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Conn_01x02")
+				(description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "e55d8ee4-0e4e-45a0-9298-ac8e174c5272")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J103")
+			(value "Y2 / C")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Conn_01x02")
+				(description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "f6bccca0-dceb-4c2a-9ff0-d61062675786")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J104")
+			(value "W / C")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Conn_01x02")
+				(description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "0610be69-a48c-4071-a040-ceac048c2844")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J105")
+			(value "W2 / C")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Conn_01x02")
+				(description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "3069a19c-764e-4855-af70-a7d1c74d0ffd")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J106")
+			(value "G / C")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Conn_01x02")
+				(description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "2757e7a6-8234-48eb-95eb-f22347d83db8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J107")
+			(value "OB / C")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Conn_01x02")
+				(description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "9c88dc6d-b613-48d1-bacf-0f066167bbaf")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R101")
+			(value "1k5 / 0.5W")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "28002da4-ac20-4ea8-be5b-a7d872c17629")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R102")
+			(value "1k5 / 0.5W")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "a1f16090-a363-40aa-bdae-aec7e40a7e5a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R103")
+			(value "10k")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "e0cd7342-90b1-4c3c-861d-748b1cf3fd67")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R104")
+			(value "1k")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "aeff4d93-2ad6-4396-945b-93a965e169a8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R111")
+			(value "1k5 / 0.5W")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "20d2185b-fea6-415c-b07c-c0bc608fe5c0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R112")
+			(value "1k5 / 0.5W")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "d352035e-0ddf-4958-8418-e178371bcf84")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R113")
+			(value "10k")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "28f45270-786a-445a-9df7-9bd8699caeb8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R114")
+			(value "1k")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "5d2ae5a6-6521-408a-8337-92a5a8ef3353")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R121")
+			(value "1k5 / 0.5W")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "91c4ad16-abcd-4afd-80f3-9fbf4b45b9da")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R122")
+			(value "1k5 / 0.5W")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "afdef1a6-169d-4856-9a2c-41d331af33ae")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R123")
+			(value "10k")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "ffba951f-7950-465e-b445-974f35e5576e")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R124")
+			(value "1k")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "8142e40c-810f-419b-8586-b18810009671")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R131")
+			(value "1k5 / 0.5W")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "5cf8e411-bed5-4688-adda-a45f095a44e6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R132")
+			(value "1k5 / 0.5W")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "cc2827bf-9276-480a-9f39-a42a12db2dd2")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R133")
+			(value "10k")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "f7bb281b-a71b-42ea-9b99-b5d35446c55e")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R134")
+			(value "1k")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "c69ae2af-3de2-4909-a099-61ba99582255")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R141")
+			(value "1k5 / 0.5W")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "549179a2-2d71-427e-8b58-837c31892da6")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R142")
+			(value "1k5 / 0.5W")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "1f5d1d6e-0ad4-4ca5-8863-916549b40a40")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R143")
+			(value "10k")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "38d540b8-716a-44fd-ab07-ef1350df520e")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R144")
+			(value "1k")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "09232753-8f1f-4739-b3c6-4b4d6de18118")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R151")
+			(value "1k5 / 0.5W")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "ac9c27bc-60df-4958-8703-edbc539cbb9e")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R152")
+			(value "1k5 / 0.5W")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "bebcf4ae-a985-4624-894e-b8b86218b53b")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R153")
+			(value "10k")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "0752202d-8e89-4151-80ad-c21f28c5ade9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R154")
+			(value "1k")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "96f80f27-3664-4f7c-9b1d-847052ec30a0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R161")
+			(value "1k5 / 0.5W")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "266efe8b-8c7b-4134-986f-6a73343cea64")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R162")
+			(value "1k5 / 0.5W")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "8ce8fbd6-bd3a-4610-a5f8-1a46f040f0bf")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R163")
+			(value "10k")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "a4cec196-4ab5-4a60-a640-376926679250")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R164")
+			(value "1k")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "8a0e769d-626d-49f3-bbff-a2f6f87dbb16")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U101")
+			(value "H11AA1")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "H11AA1")
+				(description "AC/DC NPN Optocoupler, DIP-6")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "NPN AC DC Optocoupler")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "DIP*W7.62mm*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "dea64a70-e381-4be7-9cb1-400134eb9974")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U102")
+			(value "H11AA1")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "H11AA1")
+				(description "AC/DC NPN Optocoupler, DIP-6")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "NPN AC DC Optocoupler")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "DIP*W7.62mm*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "5838ab8c-b0c7-4999-9fa0-0c5bd8ce5698")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U103")
+			(value "H11AA1")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "H11AA1")
+				(description "AC/DC NPN Optocoupler, DIP-6")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "NPN AC DC Optocoupler")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "DIP*W7.62mm*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "e9eeec58-e7b9-4a7d-bea3-8b1c64292149")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U104")
+			(value "H11AA1")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "H11AA1")
+				(description "AC/DC NPN Optocoupler, DIP-6")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "NPN AC DC Optocoupler")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "DIP*W7.62mm*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "7fb73ac8-ca04-44c4-bda0-e6d138dd928c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U105")
+			(value "H11AA1")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "H11AA1")
+				(description "AC/DC NPN Optocoupler, DIP-6")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "NPN AC DC Optocoupler")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "DIP*W7.62mm*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "c4875483-f7fd-4efa-a8c3-0766b0464148")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U106")
+			(value "H11AA1")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "H11AA1")
+				(description "AC/DC NPN Optocoupler, DIP-6")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "NPN AC DC Optocoupler")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "DIP*W7.62mm*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "50fa9495-f879-4bbe-9a0f-eecfcb426e7d")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U107")
+			(value "H11AA1")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "H11AA1")
+				(description "AC/DC NPN Optocoupler, DIP-6")
+			)
+			(property
+				(name "Sheetname")
+				(value "Isolated thermostat inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "thermostat-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "NPN AC DC Optocoupler")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "DIP*W7.62mm*")
+			)
+			(sheetpath
+				(names "/Isolated thermostat inputs/")
+				(tstamps "/9a2ccfee-1e68-46b1-954e-c8990d269cc4/")
+			)
+			(tstamps "c59e9583-f7e5-4f40-aab7-037ee35a8a10")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C201")
+			(value "100nF")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "5284584c-8645-454c-84cf-d0a2a8a7e887")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C202")
+			(value "10uF")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "acff9ba5-87bd-4e5a-a3c8-003761ffec10")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C203")
+			(value "10uF")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "9c934dc6-c53f-40a4-9016-c11b09d737f8")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C204")
+			(value "100nF")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "0c8621c9-009d-416c-ac05-38b7fc097443")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C205")
+			(value "100nF")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "eaeba017-f41b-4099-b7cf-adecf3daa5da")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C206")
+			(value "100nF")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "9a99ccfa-a630-45a6-824d-f7a0dc4ac7e9")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C207")
+			(value "100nF")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "C")
+				(description "Unpolarized capacitor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "cap capacitor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "f69fa0a6-9e47-49b9-a6f0-150ad41049d5")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D201")
+			(value "BAS70")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "D_Schottky")
+				(description "Schottky diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "diode Schottky")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "TO-???* *_Diode_* *SingleDiode* D_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "1ace0dbb-5cb6-4342-ba4c-41747cd5b33a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D202")
+			(value "BAS70")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "D_Schottky")
+				(description "Schottky diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "diode Schottky")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "TO-???* *_Diode_* *SingleDiode* D_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "10394cc1-acf9-42e1-ad5b-b1c0edc5ebcb")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D203")
+			(value "BAS70")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "D_Schottky")
+				(description "Schottky diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "diode Schottky")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "TO-???* *_Diode_* *SingleDiode* D_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "84271490-9ae0-464d-8251-d91348296ac1")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D204")
+			(value "BAS70")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "D_Schottky")
+				(description "Schottky diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "diode Schottky")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "TO-???* *_Diode_* *SingleDiode* D_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "a7632991-18c3-4998-bbdc-bd4cd4eb965c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D205")
+			(value "BAS70")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "D_Schottky")
+				(description "Schottky diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "diode Schottky")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "TO-???* *_Diode_* *SingleDiode* D_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "0fc416c4-b924-42c8-9556-ba010454094f")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "D206")
+			(value "BAS70")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "D_Schottky")
+				(description "Schottky diode")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "diode Schottky")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "TO-???* *_Diode_* *SingleDiode* D_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "d151d9c1-de2e-460c-94c2-ed267eb9ba74")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J201")
+			(value "Compressor CT")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Conn_01x02")
+				(description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "6eaced25-bc78-4cc6-b8d7-23f876174e59")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J202")
+			(value "Blower CT")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Conn_01x02")
+				(description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "c79d685a-9176-4f1a-9d68-388ec592e946")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J203")
+			(value "Condenser fan CT")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Conn_01x02")
+				(description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "cbdd2172-e9c3-444b-b6e7-c65b83aa88fa")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J204")
+			(value "Bias test points")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "Conn_01x02")
+				(description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "d3932916-a842-4cce-9dff-ebe2f275ac9c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R201")
+			(value "10k / 1%")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "6f1479c9-dede-4836-973b-a432e3cc2a6a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R202")
+			(value "10k / 1%")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "a294287d-c006-41a2-a7f9-5a6493b1165a")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R203")
+			(value "1k")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "0d1a839f-a197-432a-90ef-b89d4330a9bb")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R204")
+			(value "1k")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "3400929c-cde1-4a7a-9f7d-d0387954ca64")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R205")
+			(value "1k")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "26dd7273-e552-4c79-b823-001c3dc9484c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R209")
+			(value "47R")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "R")
+				(description "Resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R res resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "7f9b84f2-9f8d-460f-bc24-8460e562844c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "U201")
+			(value "MCP6002")
+			(fields
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "HVAC")
+				(part "MCP6002-xP")
+				(description "1MHz, Low-Power Op Amp, DIP-8")
+			)
+			(property
+				(name "Sheetname")
+				(value "Optional current inputs")
+			)
+			(property
+				(name "Sheetfile")
+				(value "current-inputs.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "dual opamp")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "SOIC*3.9x4.9mm*P1.27mm* DIP*W7.62mm* TO*99* OnSemi*Micro8* TSSOP*3x3mm*P0.65mm* TSSOP*4.4x3mm*P0.65mm* MSOP*3x3mm*P0.65mm* SSOP*3.9x4.9mm*P0.635mm* LFCSP*2x2mm*P0.5mm* *SIP* SOIC*5.3x6.2mm*P1.27mm*")
+			)
+			(sheetpath
+				(names "/Optional current inputs/")
+				(tstamps "/a86ab8fb-0820-4d7c-ac82-4fe639014bd5/")
+			)
+			(tstamps "a8633c5c-1b8d-4a5b-81b5-7a413f26b32b" "cb108065-9a26-498f-a84b-b78557079e3d"
+				"47f819b7-86ef-43c5-90d7-4303217c1d64"
+			)
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "1")
+						)
+					)
+				)
+				(unit
+					(name "B")
+					(pins
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+					)
+				)
+				(unit
+					(name "C")
+					(pins
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "4")
+						)
+					)
+				)
+			)
+		)
+	)
+	(groups)
+	(variants)
+	(libparts
+		(libpart
+			(lib "HVAC")
+			(part "C")
+			(description "Unpolarized capacitor")
+			(footprints
+				(fp "C_*")
+			)
+			(fields
+				(field
+					(name "Reference") "C")
+				(field
+					(name "Value") "C")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "HVAC")
+			(part "Conn_01x02")
+			(description "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			(footprints
+				(fp "Connector*:*_1x??_*")
+			)
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "Conn_01x02")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "Pin_1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "Pin_2")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "HVAC")
+			(part "Conn_01x04")
+			(description "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			(footprints
+				(fp "Connector*:*_1x??_*")
+			)
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "Conn_01x04")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "Pin_1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "Pin_2")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "Pin_3")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "Pin_4")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "HVAC")
+			(part "Conn_01x15")
+			(description "Generic connector, single row, 01x15, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			(footprints
+				(fp "Connector*:*_1x??_*")
+			)
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "Conn_01x15")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Generic connector, single row, 01x15, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "Pin_1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "Pin_2")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "Pin_3")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "Pin_4")
+					(type "passive")
+				)
+				(pin
+					(num "5")
+					(name "Pin_5")
+					(type "passive")
+				)
+				(pin
+					(num "6")
+					(name "Pin_6")
+					(type "passive")
+				)
+				(pin
+					(num "7")
+					(name "Pin_7")
+					(type "passive")
+				)
+				(pin
+					(num "8")
+					(name "Pin_8")
+					(type "passive")
+				)
+				(pin
+					(num "9")
+					(name "Pin_9")
+					(type "passive")
+				)
+				(pin
+					(num "10")
+					(name "Pin_10")
+					(type "passive")
+				)
+				(pin
+					(num "11")
+					(name "Pin_11")
+					(type "passive")
+				)
+				(pin
+					(num "12")
+					(name "Pin_12")
+					(type "passive")
+				)
+				(pin
+					(num "13")
+					(name "Pin_13")
+					(type "passive")
+				)
+				(pin
+					(num "14")
+					(name "Pin_14")
+					(type "passive")
+				)
+				(pin
+					(num "15")
+					(name "Pin_15")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "HVAC")
+			(part "D_Schottky")
+			(description "Schottky diode")
+			(footprints
+				(fp "TO-???*")
+				(fp "*_Diode_*")
+				(fp "*SingleDiode*")
+				(fp "D_*")
+			)
+			(fields
+				(field
+					(name "Reference") "D")
+				(field
+					(name "Value") "D_Schottky")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Schottky diode")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "K")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "A")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "HVAC")
+			(part "Fuse")
+			(description "Fuse")
+			(footprints
+				(fp "*Fuse*")
+			)
+			(fields
+				(field
+					(name "Reference") "F")
+				(field
+					(name "Value") "Fuse")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Fuse")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "HVAC")
+			(part "H11AA1")
+			(description "AC/DC NPN Optocoupler, DIP-6")
+			(docs "https://www.vishay.com/docs/83608/h11aa1.pdf")
+			(footprints
+				(fp "DIP*W7.62mm*")
+			)
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "H11AA1")
+				(field
+					(name "Footprint") "Package_DIP:DIP-6_W7.62mm")
+				(field
+					(name "Datasheet") "https://www.vishay.com/docs/83608/h11aa1.pdf")
+				(field
+					(name "Description") "AC/DC NPN Optocoupler, DIP-6")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "NC")
+					(type "no_connect")
+				)
+				(pin
+					(num "4")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "5")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "6")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "HVAC")
+			(part "MCP6002-xP")
+			(description "1MHz, Low-Power Op Amp, DIP-8")
+			(docs "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf")
+			(footprints
+				(fp "SOIC*3.9x4.9mm*P1.27mm*")
+				(fp "DIP*W7.62mm*")
+				(fp "TO*99*")
+				(fp "OnSemi*Micro8*")
+				(fp "TSSOP*3x3mm*P0.65mm*")
+				(fp "TSSOP*4.4x3mm*P0.65mm*")
+				(fp "MSOP*3x3mm*P0.65mm*")
+				(fp "SSOP*3.9x4.9mm*P0.635mm*")
+				(fp "LFCSP*2x2mm*P0.5mm*")
+				(fp "*SIP*")
+				(fp "SOIC*5.3x6.2mm*P1.27mm*")
+			)
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "MCP6002-xP")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet") "http://ww1.microchip.com/downloads/en/DeviceDoc/21733j.pdf")
+				(field
+					(name "Description") "1MHz, Low-Power Op Amp, DIP-8")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "output")
+				)
+				(pin
+					(num "2")
+					(name "-")
+					(type "input")
+				)
+				(pin
+					(num "3")
+					(name "+")
+					(type "input")
+				)
+				(pin
+					(num "4")
+					(name "V-")
+					(type "power_in")
+				)
+				(pin
+					(num "5")
+					(name "+")
+					(type "input")
+				)
+				(pin
+					(num "6")
+					(name "-")
+					(type "input")
+				)
+				(pin
+					(num "7")
+					(name "")
+					(type "output")
+				)
+				(pin
+					(num "8")
+					(name "V+")
+					(type "power_in")
+				)
+			)
+		)
+		(libpart
+			(lib "HVAC")
+			(part "R")
+			(description "Resistor")
+			(footprints
+				(fp "R_*")
+			)
+			(fields
+				(field
+					(name "Reference") "R")
+				(field
+					(name "Value") "R")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "")
+					(type "passive")
+				)
+			)
+		)
+	)
+	(libraries
+		(library
+			(logical "HVAC")
+			(uri "${KIPRJMOD}/hvac-observer.kicad_sym")
+		)
+	)
+	(nets
+		(net
+			(code "1")
+			(name "+3V3")
+			(class "Default")
+			(node
+				(ref "C1")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C2")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C201")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C202")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C3")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C4")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "D201")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "D203")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "D205")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J2")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J3")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J4")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J5")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R1")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R103")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R113")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R123")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R133")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R143")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R153")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R163")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R2")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R201")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R4")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U201")
+				(pin "8")
+				(pinfunction "V+_8")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "2")
+			(name "BIAS_CT")
+			(class "Default")
+			(node
+				(ref "C203")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C204")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "C205")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C206")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C207")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J201")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J202")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J203")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J204")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R209")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "3")
+			(name "BIAS_DIV")
+			(class "Default")
+			(node
+				(ref "R201")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R202")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U201")
+				(pin "3")
+				(pinfunction "+_3")
+				(pintype "input")
+			)
+			(node
+				(ref "U201")
+				(pin "5")
+				(pinfunction "+_5")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "4")
+			(name "BIAS_SPARE")
+			(class "Default")
+			(node
+				(ref "J204")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U201")
+				(pin "6")
+				(pinfunction "-_6")
+				(pintype "input")
+			)
+			(node
+				(ref "U201")
+				(pin "7")
+				(pintype "output")
+			)
+		)
+		(net
+			(code "5")
+			(name "GND_SELV")
+			(class "Default")
+			(node
+				(ref "C1")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C101")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C102")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C103")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C104")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C105")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C106")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C107")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C2")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C201")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C202")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C203")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C204")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C3")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C4")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C5")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "D202")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "D204")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "D206")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J2")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J3")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J4")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J5")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J6")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R202")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U101")
+				(pin "4")
+				(pintype "passive")
+			)
+			(node
+				(ref "U102")
+				(pin "4")
+				(pintype "passive")
+			)
+			(node
+				(ref "U103")
+				(pin "4")
+				(pintype "passive")
+			)
+			(node
+				(ref "U104")
+				(pin "4")
+				(pintype "passive")
+			)
+			(node
+				(ref "U105")
+				(pin "4")
+				(pintype "passive")
+			)
+			(node
+				(ref "U106")
+				(pin "4")
+				(pintype "passive")
+			)
+			(node
+				(ref "U107")
+				(pin "4")
+				(pintype "passive")
+			)
+			(node
+				(ref "U201")
+				(pin "4")
+				(pinfunction "V-_4")
+				(pintype "power_in")
+			)
+		)
+		(net
+			(code "6")
+			(name "HVAC_C")
+			(class "Default")
+			(node
+				(ref "J101")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J102")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J103")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J104")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J105")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J106")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J107")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R102")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R112")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R122")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R132")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R142")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R152")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R162")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "7")
+			(name "I2C_SCL")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "4")
+				(pinfunction "Pin_4_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "J2")
+				(pin "4")
+				(pinfunction "Pin_4_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "J3")
+				(pin "4")
+				(pinfunction "Pin_4_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "J4")
+				(pin "4")
+				(pinfunction "Pin_4_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "R2")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "8")
+			(name "I2C_SDA")
+			(class "Default")
+			(node
+				(ref "J1")
+				(pin "3")
+				(pinfunction "Pin_3_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "J2")
+				(pin "3")
+				(pinfunction "Pin_3_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "J3")
+				(pin "3")
+				(pinfunction "Pin_3_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "J4")
+				(pin "3")
+				(pinfunction "Pin_3_3")
+				(pintype "passive")
+			)
+			(node
+				(ref "R1")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "9")
+			(name "MCU_A0_CT")
+			(class "Default")
+			(node
+				(ref "C205")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "D201")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "D202")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "13")
+				(pinfunction "Pin_13_13")
+				(pintype "passive")
+			)
+			(node
+				(ref "R203")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "10")
+			(name "MCU_A1_CT")
+			(class "Default")
+			(node
+				(ref "C206")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "D203")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "D204")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "14")
+				(pinfunction "Pin_14_14")
+				(pintype "passive")
+			)
+			(node
+				(ref "R204")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "11")
+			(name "MCU_A2_CT")
+			(class "Default")
+			(node
+				(ref "C207")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "D205")
+				(pin "2")
+				(pinfunction "A_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "D206")
+				(pin "1")
+				(pinfunction "K_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "15")
+				(pinfunction "Pin_15_15")
+				(pintype "passive")
+			)
+			(node
+				(ref "R205")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "12")
+			(name "MCU_D2_R")
+			(class "Default")
+			(node
+				(ref "C101")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "5")
+				(pinfunction "Pin_5_5")
+				(pintype "passive")
+			)
+			(node
+				(ref "R104")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "13")
+			(name "MCU_D3_Y")
+			(class "Default")
+			(node
+				(ref "C102")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "6")
+				(pinfunction "Pin_6_6")
+				(pintype "passive")
+			)
+			(node
+				(ref "R114")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "14")
+			(name "MCU_D4_Y2")
+			(class "Default")
+			(node
+				(ref "C103")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "7")
+				(pinfunction "Pin_7_7")
+				(pintype "passive")
+			)
+			(node
+				(ref "R124")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "15")
+			(name "MCU_D5_W")
+			(class "Default")
+			(node
+				(ref "C104")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "8")
+				(pinfunction "Pin_8_8")
+				(pintype "passive")
+			)
+			(node
+				(ref "R134")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "16")
+			(name "MCU_D6_W2")
+			(class "Default")
+			(node
+				(ref "C105")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "9")
+				(pinfunction "Pin_9_9")
+				(pintype "passive")
+			)
+			(node
+				(ref "R144")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "17")
+			(name "MCU_D7_G")
+			(class "Default")
+			(node
+				(ref "C106")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "10")
+				(pinfunction "Pin_10_10")
+				(pintype "passive")
+			)
+			(node
+				(ref "R154")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "18")
+			(name "MCU_D8_OB")
+			(class "Default")
+			(node
+				(ref "C107")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "11")
+				(pinfunction "Pin_11_11")
+				(pintype "passive")
+			)
+			(node
+				(ref "R164")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "19")
+			(name "MCU_D9_FLOAT")
+			(class "Default")
+			(node
+				(ref "C5")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J1")
+				(pin "12")
+				(pinfunction "Pin_12_12")
+				(pintype "passive")
+			)
+			(node
+				(ref "R3")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R4")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "20")
+			(name "Net-(F101-Pad2)")
+			(class "Default")
+			(node
+				(ref "F101")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R101")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "21")
+			(name "Net-(F102-Pad2)")
+			(class "Default")
+			(node
+				(ref "F102")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R111")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "22")
+			(name "Net-(F103-Pad2)")
+			(class "Default")
+			(node
+				(ref "F103")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R121")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "23")
+			(name "Net-(F104-Pad2)")
+			(class "Default")
+			(node
+				(ref "F104")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R131")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "24")
+			(name "Net-(F105-Pad2)")
+			(class "Default")
+			(node
+				(ref "F105")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R141")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "25")
+			(name "Net-(F106-Pad2)")
+			(class "Default")
+			(node
+				(ref "F106")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R151")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "26")
+			(name "Net-(F107-Pad2)")
+			(class "Default")
+			(node
+				(ref "F107")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R161")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "27")
+			(name "Net-(J6-Pin_1)")
+			(class "Default")
+			(node
+				(ref "J6")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R3")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "28")
+			(name "Net-(J101-Pin_1)")
+			(class "Default")
+			(node
+				(ref "F101")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J101")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "29")
+			(name "Net-(J102-Pin_1)")
+			(class "Default")
+			(node
+				(ref "F102")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J102")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "30")
+			(name "Net-(J103-Pin_1)")
+			(class "Default")
+			(node
+				(ref "F103")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J103")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "31")
+			(name "Net-(J104-Pin_1)")
+			(class "Default")
+			(node
+				(ref "F104")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J104")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "32")
+			(name "Net-(J105-Pin_1)")
+			(class "Default")
+			(node
+				(ref "F105")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J105")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "33")
+			(name "Net-(J106-Pin_1)")
+			(class "Default")
+			(node
+				(ref "F106")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J106")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "34")
+			(name "Net-(J107-Pin_1)")
+			(class "Default")
+			(node
+				(ref "F107")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "J107")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "35")
+			(name "Net-(J201-Pin_1)")
+			(class "Default")
+			(node
+				(ref "J201")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R203")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "36")
+			(name "Net-(J202-Pin_1)")
+			(class "Default")
+			(node
+				(ref "J202")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R204")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "37")
+			(name "Net-(J203-Pin_1)")
+			(class "Default")
+			(node
+				(ref "J203")
+				(pin "1")
+				(pinfunction "Pin_1_1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R205")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "38")
+			(name "Net-(R101-Pad2)")
+			(class "Default")
+			(node
+				(ref "R101")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U101")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "39")
+			(name "Net-(R102-Pad2)")
+			(class "Default")
+			(node
+				(ref "R102")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U101")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "40")
+			(name "Net-(R103-Pad2)")
+			(class "Default")
+			(node
+				(ref "R103")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R104")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U101")
+				(pin "5")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "41")
+			(name "Net-(R111-Pad2)")
+			(class "Default")
+			(node
+				(ref "R111")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U102")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "42")
+			(name "Net-(R112-Pad2)")
+			(class "Default")
+			(node
+				(ref "R112")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U102")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "43")
+			(name "Net-(R113-Pad2)")
+			(class "Default")
+			(node
+				(ref "R113")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R114")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U102")
+				(pin "5")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "44")
+			(name "Net-(R121-Pad2)")
+			(class "Default")
+			(node
+				(ref "R121")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U103")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "45")
+			(name "Net-(R122-Pad2)")
+			(class "Default")
+			(node
+				(ref "R122")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U103")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "46")
+			(name "Net-(R123-Pad2)")
+			(class "Default")
+			(node
+				(ref "R123")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R124")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U103")
+				(pin "5")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "47")
+			(name "Net-(R131-Pad2)")
+			(class "Default")
+			(node
+				(ref "R131")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U104")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "48")
+			(name "Net-(R132-Pad2)")
+			(class "Default")
+			(node
+				(ref "R132")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U104")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "49")
+			(name "Net-(R133-Pad2)")
+			(class "Default")
+			(node
+				(ref "R133")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R134")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U104")
+				(pin "5")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "50")
+			(name "Net-(R141-Pad2)")
+			(class "Default")
+			(node
+				(ref "R141")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U105")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "51")
+			(name "Net-(R142-Pad2)")
+			(class "Default")
+			(node
+				(ref "R142")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U105")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "52")
+			(name "Net-(R143-Pad2)")
+			(class "Default")
+			(node
+				(ref "R143")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R144")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U105")
+				(pin "5")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "53")
+			(name "Net-(R151-Pad2)")
+			(class "Default")
+			(node
+				(ref "R151")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U106")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "54")
+			(name "Net-(R152-Pad2)")
+			(class "Default")
+			(node
+				(ref "R152")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U106")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "55")
+			(name "Net-(R153-Pad2)")
+			(class "Default")
+			(node
+				(ref "R153")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R154")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U106")
+				(pin "5")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "56")
+			(name "Net-(R161-Pad2)")
+			(class "Default")
+			(node
+				(ref "R161")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U107")
+				(pin "1")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "57")
+			(name "Net-(R162-Pad2)")
+			(class "Default")
+			(node
+				(ref "R162")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "U107")
+				(pin "2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "58")
+			(name "Net-(R163-Pad2)")
+			(class "Default")
+			(node
+				(ref "R163")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R164")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U107")
+				(pin "5")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "59")
+			(name "Net-(U201A--)")
+			(class "Default")
+			(node
+				(ref "R209")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "U201")
+				(pin "1")
+				(pintype "output")
+			)
+			(node
+				(ref "U201")
+				(pin "2")
+				(pinfunction "-_2")
+				(pintype "input")
+			)
+		)
+		(net
+			(code "60")
+			(name "unconnected-(U101-NC-Pad3)")
+			(class "Default")
+			(node
+				(ref "U101")
+				(pin "3")
+				(pinfunction "NC_3")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "61")
+			(name "unconnected-(U101-Pad6)")
+			(class "Default")
+			(node
+				(ref "U101")
+				(pin "6")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "62")
+			(name "unconnected-(U102-NC-Pad3)")
+			(class "Default")
+			(node
+				(ref "U102")
+				(pin "3")
+				(pinfunction "NC_3")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "63")
+			(name "unconnected-(U102-Pad6)")
+			(class "Default")
+			(node
+				(ref "U102")
+				(pin "6")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "64")
+			(name "unconnected-(U103-NC-Pad3)")
+			(class "Default")
+			(node
+				(ref "U103")
+				(pin "3")
+				(pinfunction "NC_3")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "65")
+			(name "unconnected-(U103-Pad6)")
+			(class "Default")
+			(node
+				(ref "U103")
+				(pin "6")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "66")
+			(name "unconnected-(U104-NC-Pad3)")
+			(class "Default")
+			(node
+				(ref "U104")
+				(pin "3")
+				(pinfunction "NC_3")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "67")
+			(name "unconnected-(U104-Pad6)")
+			(class "Default")
+			(node
+				(ref "U104")
+				(pin "6")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "68")
+			(name "unconnected-(U105-NC-Pad3)")
+			(class "Default")
+			(node
+				(ref "U105")
+				(pin "3")
+				(pinfunction "NC_3")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "69")
+			(name "unconnected-(U105-Pad6)")
+			(class "Default")
+			(node
+				(ref "U105")
+				(pin "6")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "70")
+			(name "unconnected-(U106-NC-Pad3)")
+			(class "Default")
+			(node
+				(ref "U106")
+				(pin "3")
+				(pinfunction "NC_3")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "71")
+			(name "unconnected-(U106-Pad6)")
+			(class "Default")
+			(node
+				(ref "U106")
+				(pin "6")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "72")
+			(name "unconnected-(U107-NC-Pad3)")
+			(class "Default")
+			(node
+				(ref "U107")
+				(pin "3")
+				(pinfunction "NC_3")
+				(pintype "no_connect")
+			)
+		)
+		(net
+			(code "73")
+			(name "unconnected-(U107-Pad6)")
+			(class "Default")
+			(node
+				(ref "U107")
+				(pin "6")
+				(pintype "passive+no_connect")
+			)
+		)
+	)
+)
