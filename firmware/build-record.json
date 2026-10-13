@@ -1,0 +1,67 @@
+{
+  "checked_at": "2026-10-13",
+  "host": "Windows x86_64",
+  "fqbn": "arduino:zephyr:unoq",
+  "arduino_cli": "1.5.1",
+  "core": "arduino:zephyr@1.0.0",
+  "core_source_commit": "79b3f1afdad455f55e4a25030953617152c0227c",
+  "core_archive": "ArduinoCore-zephyr_unoq-79b3f1af.tar.bz2",
+  "core_archive_checksum": "SHA-256:d4510d5772f12d4b11df7d1b41d24f71eb3629fbd3037b127fee5ac41d673a3d",
+  "compiler_package": "zephyr:arm-zephyr-eabi@1.0.1",
+  "compiler_gcc_version": "14.3.0",
+  "libraries": {
+    "Arduino_RouterBridge": "0.4.3",
+    "Arduino_RPClite": "0.3.0",
+    "MsgPack": "0.4.2",
+    "DebugLog": "0.8.4",
+    "ArxTypeTraits": "0.3.2",
+    "ArxContainer": "0.7.0"
+  },
+  "python_tests": {
+    "count": 34,
+    "result": "passed",
+    "fixtures": "Synthetic CSV; existing software scenarios/integration"
+  },
+  "physical_validation": false,
+  "uploaded_to_board": false,
+  "waveform_acquisition_implemented": false,
+  "notes": [
+    "Hashes identify this host build; debug paths/tool differences can change builds elsewhere.",
+    "Compiler size reports apply to the sketch, not total board/Zephyr memory usage.",
+    "Upstream Wire emits missing-field-initializer warnings with --warnings all."
+  ],
+  "sketches": {
+    "environmental": {
+      "source": "firmware/hvac_observer/hvac_observer.ino",
+      "source_sha256": "926dd2b773a2531edde1f3c576e2f06c28974ee5d68b61eca375fb8a6402e717",
+      "compile_result": "passed",
+      "reported_sketch_bytes": 94756,
+      "reported_global_bytes": 39548,
+      "artifact_sha256": {
+        "hvac_observer.ino.bin": "9132c588b1f6d94bcc7a4728497e446597c09e50dbdcae1891158c8a09978707",
+        "hvac_observer.ino.bin-zsk.bin": "85722cfd868a6cfbd4289dca20ce495ded61508559398329c63c976cafd893a6",
+        "hvac_observer.ino.elf": "b6fefec7f5a767975375cc659452fc1fd90bba17565ac10948be7071baec511a",
+        "hvac_observer.ino.elf-zsk.bin": "26a4288a83a012ccc7f1fb5b0d4b7fe55278d216e05ae808e1f84c7532c2f537"
+      }
+    },
+    "raw_adc_probe": {
+      "source": "firmware/current_adc_probe/current_adc_probe.ino",
+      "source_sha256": "898d92ce1d5ff924cf1043379ec682f601fa4367ee63668866a64ca0bfd0fabd",
+      "compile_result": "passed",
+      "reported_sketch_bytes": 85136,
+      "reported_global_bytes": 34776,
+      "artifact_sha256": {
+        "current_adc_probe.ino.bin": "8e3fd755802c4c6d0eb3f1ef13eaba3a4412c18f20e274e66bcaccb893a71efd",
+        "current_adc_probe.ino.bin-zsk.bin": "a4cb1a7605f64ebcbe0bd1105c08f18ee298ca24020eb2460a1b19847bd409a1",
+        "current_adc_probe.ino.elf": "3ef844aab4af91f7a58b21b5f57b70aa27378123c73c3302696cbdbcdd7bc5f8",
+        "current_adc_probe.ino.elf-zsk.bin": "b2f168b6482299fd58e5f78e4a6a3510d494aa68dba5c257cfcdadd13cf22dc0"
+      }
+    }
+  },
+  "target_files": {
+    "llext-edk/include/zephyr/include/generated/zephyr/autoconf.h": "52178f5eefcf276720b859bdd60fc87ca4207b0130ac1fd5ba099af74b877a0c",
+    "llext-edk/include/zephyr/include/generated/zephyr/devicetree_generated.h": "5b0e9b1d0f7d878415d53a5d724e976061aca52177967d90d7c76c3cb0b0fb80",
+    "syms-static.ld": "f4f05a8a411196fad575360a1b6cc9f5f10a337864548e7387fb8580c4092d62",
+    "cores/arduino/wiring_analog.cpp": "32d805872068e175b03cc291d3697f3ea7443501424dd870165d0bebeddd6c98"
+  }
+}

@@ -40,9 +40,9 @@ Read the [safety notes](docs/safety.md) before connecting hardware. Field wiring
 
 ## Project status
 
-The simulator, service, database and dashboard data endpoints have automated test coverage. The 26-test suite passed locally and in GitHub Actions. JavaScript syntax was checked; visual browser testing is still outstanding.
+The simulator, service, database and dashboard data endpoints have automated test coverage. The current 34-test suite passed locally; the earlier 26-test suite passed in GitHub Actions. JavaScript syntax was checked; visual browser testing is still outstanding.
 
-The UNO Q sketch hasn't been compiled or tested on a board, and no real HVAC installation has been validated. The diagrams are reference designs, not PCB fabrication files. Synthetic fault detections show how the rules behave; they don't establish diagnostic accuracy in the field.
+The environmental UNO Q sketch and a separate raw ADC bench probe compile against the pinned UNO Q toolchain. Neither has been tested on a board, and no real HVAC installation has been validated. The probe is a slow characterization tool, not the optional RMS-current driver. See the [firmware development record](firmware/progress.md). The diagrams are reference designs, not PCB fabrication files. Synthetic fault detections show how the rules behave; they don't establish diagnostic accuracy in the field.
 
 The server listens on loopback for local use. Alerts are shown in the dashboard and saved in the database; there are no outbound notifications. It doesn't estimate refrigerant charge, SEER or COP, and it can't assess combustion safety, CO or refrigerant leaks.
 
