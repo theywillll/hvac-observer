@@ -1,5 +1,11 @@
 # Firmware and acquisition adapters
 
+The [raw block contract](block-contract.md) now provides fixed-capacity storage,
+serialized ownership, per-channel timing bounds and explicit invalid-block flags.
+Its shared synthetic tests run natively and compile in a separate UNO Q self-test
+sketch. It is not integrated with an ADC backend or the production frame, and
+does not calculate calibrated RMS current.
+
 `hvac_observer/hvac_observer.ino` is an UNO Q sketch using `Wire` and `Arduino_RouterBridge`, with no third-party sensor libraries. It implements dual SHT31 acquisition, SDP810 triggered reads, CRC checking, nullable channels, isolated-demand pulse latching and an optional independent float. All input-only controls are disabled until installation is commissioned.
 
 The verified compilation target is `arduino:zephyr:unoq` with Arduino CLI 1.5.1 and core 1.0.0. See [the pinned build commands and acquisition design](current-acquisition.md). Board loading remains a manually supervised bench step. On the Linux side, run the Python service within an environment that exposes `arduino.app_utils.Bridge`:

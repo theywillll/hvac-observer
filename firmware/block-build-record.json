@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-15",
+  "baseline_commit": "dc15fcf5dfa473d9080feec9d7dc47a87b042774",
+  "target": {
+    "fqbn": "arduino:zephyr:unoq",
+    "cli": "1.5.1",
+    "core": "arduino:zephyr@1.0.0",
+    "result": "passed",
+    "sketch_storage_bytes": 99396,
+    "sketch_global_bytes": 48272
+  },
+  "native_tests": {
+    "compiler": "Zig 0.13.0 C++ driver",
+    "standard": "C++11",
+    "checks": "undefined behavior, no recovery; Wall/Wextra/Werror",
+    "result": "passed",
+    "queue_reuse_cycles": 1000,
+    "example_pool_bytes": 9888
+  },
+  "python_tests": {
+    "count": 34,
+    "result": "passed"
+  },
+  "source_sha256": {
+    "firmware/libraries/HvacCurrent/src/RawBlock.h": "4076a1ae5ab80752da1a73f840046dd5ee16ada861c9b7a0a4907284c50ab592",
+    "firmware/current_block_selftest/RawBlockTests.h": "0beec48f8250b54d4ccf5b9d6fde238af7a0e616649a10446e71357c34fe9f2e",
+    "firmware/current_block_selftest/current_block_selftest.ino": "5c51acbe75be6df1a3b54dedcf81df0aa2610cffbc451045ae7290d944c826bf",
+    "tests/current_block_test.cpp": "487e5801ce6cdb7161491866100b54ca4a11880e25f78909d5999e08d2ba5a32"
+  },
+  "target_artifact_sha256": {
+    "current_block_selftest.ino.bin": "9c9ebb668f322803351db74f2cd74fb5c0fc52d1f8d63c9a82e565a1d433692a",
+    "current_block_selftest.ino.bin-zsk.bin": "692586c58f5db9be7278ed0b0238f6d24156ce23d5856f0be5c0e2049d538445",
+    "current_block_selftest.ino.elf": "b01241a2397e4f2a370342f5d895c0ce45960b0f82eb1e1fdf4d96864d354404",
+    "current_block_selftest.ino.elf-zsk.bin": "184c971ab21c259485ee110e13ad59c944be28ae6d7bb501c6fc14f95530deee",
+    "current_block_selftest.ino_debug.elf": "58d83fc47632916e4234d9c1deed45092b52e2cbc36c83cf5321cf8691386b2c",
+    "current_block_selftest.ino_temp.elf": "8ed5f9f20e7560bb593251ba8510832a5d0fece5f9dff20cb3949ebae9c4939b"
+  },
+  "hardware_execution": false,
+  "uploaded": false,
+  "adc_backend_implemented": false,
+  "concurrency_synchronized": false,
+  "rms_calibration_implemented": false,
+  "ci_validation": "Configured; consult the commit workflow runs for remote results."
+}

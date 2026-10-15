@@ -4,6 +4,11 @@ Status on 2026-10-13: the environmental sketch and a separate raw ADC probe comp
 for UNO Q. No board has been connected, no upload has been performed, and no
 waveform acquisition or RMS-current firmware is implemented yet.
 
+Update 2026-10-15: a [bounded block contract and synthetic self-test](block-contract.md)
+are implemented separately. Hardware acquisition remains unimplemented. The
+contract requires externally serialized calls; backend synchronization is still
+a prerequisite to integration with a sampling worker.
+
 ## Build target
 
 Use the published `arduino:zephyr:unoq` target, not classic AVR UNO or Ventuno Q.

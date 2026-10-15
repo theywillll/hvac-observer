@@ -1,5 +1,38 @@
 # Current-sensing development record
 
+## 2026-10-15 — Bounded raw-block ownership and timing contract
+
+Write access restored. Remote baseline checked:
+`dc15fcf5dfa473d9080feec9d7dc47a87b042774`; existing local histories preserved.
+
+Added a fixed-capacity three-channel block pool with explicit fill/ready/read
+ownership, FIFO leases, stale-lease rejection and reset invalidation. Unread
+blocks are never overwritten; full pools report overruns. Each channel retains
+its own timing bounds. Invalid codes, ADC errors, near-rail observations,
+overlapping/backward calls and incomplete/aborted blocks remain invalid.
+All access must be serialized externally; this is not a concurrent DMA queue.
+
+Validation: 34 Python tests pass. Shared C++ synthetic tests pass on Windows
+using Zig 0.13.0 as a C++11 compiler with undefined-behavior checks, including
+1,000 queue reuse cycles. The same test logic compiles for the pinned UNO Q
+target in `current_block_selftest`, without uploading. Final sketch report:
+99,396 bytes storage / 48,272 bytes globals. Native pool size is 9,888 bytes for
+two 800-sample/channel slots. See [the build record](block-build-record.json).
+CI now runs native address/undefined-behavior checks and compiles this third
+sketch. Passing local checks does not claim that remote CI has already run.
+
+The pinned headers/configuration were reviewed again: blocking device-dispatch
+ADC API exists, interval precision depends on the driver, and async ADC remains
+disabled. A direct Zephyr sequence backend has not been compiled or selected.
+Details and reproduction: [raw block contract](block-contract.md).
+Publication is recorded in the [commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
+Remaining: no board capture, deterministic scheduler, synchronized acquisition
+worker, RMS/calibration or current-frame integration. No HVAC controls added.
+Next increment: qualify the stock-core blocking multi-channel sequence API and
+its pin/configuration ordering, then define worker synchronization and explicit
+timing-failure handling. Hardware timing and calibration remain separate gates.
+
 ## 2026-10-13 — Build target and raw ADC characterization tools
 
 First increment: established `arduino:zephyr:unoq` on CLI 1.5.1 / core 1.0.0,

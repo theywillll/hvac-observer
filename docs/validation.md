@@ -39,6 +39,15 @@ Before field use:
 
 ## Open work
 
+The 2026-10-15 increment adds a fixed-capacity C++ raw-block contract. Shared
+synthetic tests exercise ownership, full queues, stale leases, reset, independent
+channel intervals, timer rollover and invalid data. They run natively on Windows
+with undefined-behavior checks, and the same test logic compiles for UNO Q.
+CI also runs the native tests with address/undefined-behavior sanitizers.
+The self-test has not been uploaded or run on a board. It has no ADC backend,
+and it does not validate physical sampling performance. See
+[the contract and synchronization limits](../firmware/block-contract.md).
+
 The initial compilation milestone is complete. Next are a repeatable sensor bench test and a separately qualified waveform acquisition backend. Expanded acquisition drivers, watchdog/recovery tests and a qualified enclosure/input assembly are still needed.
 
 For longer deployments, storage needs disk-full and long-duration tests, multi-session aggregation and tested migrations. Automatic baseline adaptation, alert acknowledgement, outbound notifications, authenticated multi-user access and signed updates aren't implemented.
