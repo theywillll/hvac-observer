@@ -8,7 +8,7 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-      - name: Run native block contract tests with sanitizers
+      - name: Run native acquisition contract tests with sanitizers
         run: |
           g++ -std=c++17 -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -g -Ifirmware/libraries/HvacCurrent/src tests/current_block_test.cpp -o /tmp/current-block-test
           /tmp/current-block-test
@@ -20,7 +20,7 @@ jobs:
           arduino-cli core update-index
           arduino-cli core install arduino:zephyr@1.0.0
           arduino-cli lib install --no-deps 'Arduino_RouterBridge@0.4.3' 'Arduino_RPClite@0.3.0' 'MsgPack@0.4.2' 'DebugLog@0.8.4' 'ArxTypeTraits@0.3.2' 'ArxContainer@0.7.0'
-      - name: Compile environmental sketch and raw ADC probe
+      - name: Compile environmental sketch and acquisition bench tools
         run: |
           arduino-cli version
           arduino-cli core list
@@ -28,6 +28,7 @@ jobs:
           arduino-cli compile --fqbn arduino:zephyr:unoq --warnings all --output-dir build/environmental firmware/hvac_observer
           arduino-cli compile --fqbn arduino:zephyr:unoq --warnings all --output-dir build/adc-probe firmware/current_adc_probe
           arduino-cli compile --fqbn arduino:zephyr:unoq --warnings all --libraries firmware/libraries --output-dir build/block-selftest firmware/current_block_selftest
+          arduino-cli compile --fqbn arduino:zephyr:unoq --warnings all --libraries firmware/libraries --output-dir build/sequence-probe firmware/current_sequence_probe
           find build -type f -exec sha256sum {} + > build/sha256.txt
       - uses: actions/upload-artifact@v4
         with:

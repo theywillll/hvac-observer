@@ -40,9 +40,14 @@ Read the [safety notes](docs/safety.md) before connecting hardware. Field wiring
 
 ## Project status
 
-The simulator, service, database and dashboard data endpoints have automated test coverage. The current 34-test suite passed locally and in GitHub Actions. The separate C++ raw-block contract has synthetic ownership/timing tests, including 1,000 queue reuse cycles. JavaScript syntax was checked; visual browser testing is still outstanding.
+The simulator, service, database and dashboard data endpoints have automated test coverage. The current 43-test Python suite passed locally; the previous 34-test suite also passed in GitHub Actions. Separate C++ acquisition contracts have synthetic ownership/timing and buffer-publication tests, including 1,000 queue reuse cycles. JavaScript syntax was checked; visual browser testing is still outstanding.
 
 The environmental UNO Q sketch and a separate raw ADC bench probe compile against the pinned UNO Q toolchain. Neither has been tested on a board, and no real HVAC installation has been validated. The probe is a slow characterization tool, not the optional RMS-current driver. See the [firmware development record](firmware/progress.md). The diagrams are reference designs, not PCB fabrication files. Synthetic fault detections show how the rules behave; they don't establish diagnostic accuracy in the field.
+
+A second [bench probe](firmware/sequence-probe.md) compiles a buffered,
+multi-channel ADC request. Its request-level timestamps do not establish sample
+timing. Production acquisition, calibrated RMS current and field validation
+remain pending.
 
 The server listens on loopback for local use. Alerts are shown in the dashboard and saved in the database; there are no outbound notifications. It doesn't estimate refrigerant charge, SEER or COP, and it can't assess combustion safety, CO or refrigerant leaks.
 

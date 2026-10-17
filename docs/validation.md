@@ -39,6 +39,15 @@ Before field use:
 
 ## Open work
 
+On 2026-10-17, the direct blocking sequence probe compiled for the pinned UNO Q
+target without a loader change. The Python suite passed 43 tests (nine new
+synthetic sequence-capture cases). Native C++ tests with undefined-behavior
+checks passed, including guard damage, unwritten buffers and error-return
+publication gates. CI now compiles four sketches and runs native sanitizers.
+No sequence has executed on a board; API/link compatibility does not establish
+physical ordering, rate, continuity or accuracy. See
+[sequence format and remaining bench gates](../firmware/sequence-probe.md).
+
 The 2026-10-15 increment adds a fixed-capacity C++ raw-block contract. Shared
 synthetic tests exercise ownership, full queues, stale leases, reset, independent
 channel intervals, timer rollover and invalid data. They run natively on Windows

@@ -9,6 +9,11 @@ are implemented separately. Hardware acquisition remains unimplemented. The
 contract requires externally serialized calls; backend synchronization is still
 a prerequisite to integration with a sampling worker.
 
+Update 2026-10-17: the separate [sequence probe](sequence-probe.md) compiles a
+blocking multi-channel Zephyr read on the stock core. This qualifies API/linkage,
+not hardware operation or cadence. It publishes no per-sample timestamps and
+does not feed assumed timestamps to the raw block pool.
+
 ## Build target
 
 Use the published `arduino:zephyr:unoq` target, not classic AVR UNO or Ventuno Q.

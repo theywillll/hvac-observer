@@ -88,6 +88,11 @@ an MCU. Any later board upload and serial-output check is manually supervised.
 
 ## Backend evidence and next dependency
 
+Update 2026-10-17: a separate [blocking sequence probe](sequence-probe.md) now
+compiles those direct ADC APIs on the pinned target. It records one request
+bracket, so it does not yet meet this pool's per-channel timing contract.
+The observations below describe the earlier 2026-10-15 increment.
+
 The installed core 1.0.0 headers expose blocking `adc_read`, whose inline
 implementation calls the device's read API, and `adc_sequence_options` including
 extra samplings and driver-dependent intervals. Its generated configuration has

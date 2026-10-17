@@ -1,5 +1,11 @@
 # Firmware and acquisition adapters
 
+The [multi-channel sequence probe](sequence-probe.md) compiles direct blocking
+Zephyr ADC calls for the pinned core. It requests 16 sweeps of A0-A2 in one
+buffer and reports request-level timing/errors as JSON lines. Its analyzer
+keeps actual sample timing unknown. It has not run on a board and is not an
+RMS-current backend or part of the environmental sketch.
+
 The [raw block contract](block-contract.md) now provides fixed-capacity storage,
 serialized ownership, per-channel timing bounds and explicit invalid-block flags.
 Its shared synthetic tests run natively and compile in a separate UNO Q self-test

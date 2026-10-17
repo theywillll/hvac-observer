@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-17",
+  "baseline_commit": "fc456963e758437c21ed9d5799912283a1ccf722",
+  "target": {
+    "fqbn": "arduino:zephyr:unoq",
+    "cli": "1.5.1",
+    "core": "arduino:zephyr@1.0.0",
+    "result": "passed",
+    "sketch_storage_bytes": 85260,
+    "sketch_global_bytes": 34980
+  },
+  "native_tests": {
+    "compiler": "Zig 0.13.0 C++ driver",
+    "standard": "C++11",
+    "checks": "undefined behavior, no recovery; Wall/Wextra/Werror",
+    "result": "passed",
+    "inputs": "Synthetic codes, statuses, buffer damage; no ADC data"
+  },
+  "python_tests": {
+    "count": 43,
+    "sequence_capture_cases": 9,
+    "result": "passed",
+    "inputs": "Synthetic fixtures and existing software integration tests"
+  },
+  "capture_cli_smoke_test": "passed with a labeled synthetic two-request fixture",
+  "source_sha256": {
+    "firmware/current_sequence_probe/current_sequence_probe.ino": "fe3cbe806d047d3a64237c322515efed996b69e6cf5facd0a3779e0ae9d6d99e",
+    "firmware/libraries/HvacCurrent/src/RawSequence.h": "fddfd88d4da66f30631f4f576ba97dad26cd5beb2c155458bd0e2eb05b15c5c8",
+    "scripts/check_adc_sequence.py": "11603935b52576e9f2d0b81f4b30b4e8d3d80c006820a223aaf205c67091252b",
+    "tests/test_adc_sequence.py": "6cc25e0b0a963f1558986d6293268bfeb80476609fe66b7f6135ea1a5510cd86",
+    "tests/raw_sequence_tests.h": "05b7d88a3287069ac0c288466c7eac691b896f9078543fd7286d9e34cc7fe64a",
+    "tests/current_block_test.cpp": "ee644929aa367dbf3bf6d88f915d7b9741f0a961a236fa4af56e239c9fd41eee"
+  },
+  "target_artifact_sha256": {
+    "current_sequence_probe.ino.bin": "a61e90259e807c9a1321fca4f1047c55ce2f436a6d69ee2f5d2c118eec8c5ff9",
+    "current_sequence_probe.ino.bin-zsk.bin": "6274a76dc73847f2c78a327ca44e8481c4311572e937da7fd919366c82c0d1f3",
+    "current_sequence_probe.ino.elf": "1f2d69b03e897d77fe972e287f2b197c9da1e5a99cf3bab2a36a577017f6ce5c",
+    "current_sequence_probe.ino.elf-zsk.bin": "e3f7e9179f7a037dc92dd8c622c498ca82e709d657b86ed14296bdbdf2249dec",
+    "current_sequence_probe.ino_debug.elf": "2d79deceecf9346d510bb2af4ef381c84e8e227e434ad9506d995552bfc169c2",
+    "current_sequence_probe.ino_temp.elf": "6ddcc40ff179179f85335071765acc7feeba086326380804b6c678f169643580"
+  },
+  "hardware_execution": false,
+  "uploaded": false,
+  "sample_timing_measured": false,
+  "production_backend_integrated": false,
+  "rms_calibration_implemented": false,
+  "ci_validation": "Configured; see commit workflow runs for remote results."
+}

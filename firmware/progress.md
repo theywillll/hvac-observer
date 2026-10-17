@@ -1,5 +1,36 @@
 # Current-sensing development record
 
+## 2026-10-17 — Stock-core multi-channel sequence bench probe
+
+Remote baseline inspected: `fc456963e758437c21ed9d5799912283a1ccf722`.
+Added a standalone blocking Zephyr ADC probe for 16 sweeps of channels 9/10/11
+on ADC1, with native 14-bit output. Pin configuration and initialization errors
+fail closed. Failed/delayed requests, damaged guards and incomplete fills never
+publish code arrays. Guard damage stops further requests until manual reset.
+The JSON-lines analyzer checks one complete session and demultiplexes by ADC ID.
+It reports request timing only, leaving actual sample timing unknown.
+
+Validation: 43 Python tests passed. Native C++11 tests with undefined-behavior
+checks passed. The direct probe compiled and linked on the stock UNO Q
+CLI 1.5.1 / core 1.0.0 target. Final sizes and source/binary hashes are in
+[sequence-build-record.json](sequence-build-record.json). CI is configured to
+compile all four sketches and run native address/undefined-behavior checks;
+remote results belong to the commit's workflow runs, not this local claim.
+
+Sources: pinned ADC and pin-control implementations, overlay and installed ADC
+headers. See [probe design and manual bench procedure](sequence-probe.md).
+Publication is traceable in the [commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
+Limitations: no hardware upload or capture, no proven sample cadence/aperture,
+no synchronized worker, RMS/calibration or current-frame integration. The
+existing block pool is deliberately not fed invented per-sample timestamps.
+Protected fixtures, a board and reference instruments are needed to qualify
+actual channel order, interval behavior, blocking latency and accuracy.
+
+Next increment: define a bounded worker/session interface with explicit timing
+provenance and synchronization, or develop raw-code feature calculations behind
+strict validity gates while physical timing qualification remains pending.
+
 ## 2026-10-15 — Bounded raw-block ownership and timing contract
 
 Write access restored. Remote baseline checked:
