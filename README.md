@@ -49,6 +49,10 @@ multi-channel ADC request. Its request-level timestamps do not establish sample
 timing. Production acquisition, calibrated RMS current and field validation
 remain pending.
 
+Per-window [raw-code mean and AC RMS](firmware/raw-features.md) now have shared
+native/target-build tests and invalid-window gates. They run only in synthetic
+self-tests, with no calibrated current output or production integration.
+
 The server listens on loopback for local use. Alerts are shown in the dashboard and saved in the database; there are no outbound notifications. It doesn't estimate refrigerant charge, SEER or COP, and it can't assess combustion safety, CO or refrigerant leaks.
 
 See the [validation record](docs/validation.md) for completed checks and the remaining bench work.

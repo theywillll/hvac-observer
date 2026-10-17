@@ -39,6 +39,15 @@ Before field use:
 
 ## Open work
 
+The later 2026-10-17 increment adds mean removal and raw-code AC RMS math.
+Native C++11 tests with undefined-behavior checks passed, including 100 varied
+two-pass reference comparisons and the 65,535-sample arithmetic bound. The
+expanded synthetic self-test compiled for UNO Q; it has not executed on a board.
+Invalid/source-incomplete/clipped windows produce unavailable statistics. The
+existing 43 Python tests still pass. ADC-code statistics do not qualify timing,
+convert to amperes or establish physical measurement accuracy. See
+[raw feature limits](../firmware/raw-features.md).
+
 On 2026-10-17, the direct blocking sequence probe compiled for the pinned UNO Q
 target without a loader change. The Python suite passed 43 tests (nine new
 synthetic sequence-capture cases). Native C++ tests with undefined-behavior

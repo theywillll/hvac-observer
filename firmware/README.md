@@ -1,5 +1,11 @@
 # Firmware and acquisition adapters
 
+[Raw-code feature calculations](raw-features.md) now implement per-window mean
+removal and AC RMS with strict invalid-window gates. Shared native/UNO Q
+self-tests cover the arithmetic, but only native execution has occurred. These
+are ADC-code statistics, not calibrated current, and are not integrated with
+the probes or environmental sketch.
+
 The [multi-channel sequence probe](sequence-probe.md) compiles direct blocking
 Zephyr ADC calls for the pinned core. It requests 16 sweeps of A0-A2 in one
 buffer and reports request-level timing/errors as JSON lines. Its analyzer

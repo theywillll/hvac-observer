@@ -1,6 +1,7 @@
 // Synthetic contract tests only. No analogRead, I2C, outputs, or board upload.
 #include <Arduino.h>
 #include "RawBlockTests.h"
+#include "RawFeatureTests.h"
 #if !defined(ARDUINO_UNO_Q) || !defined(ARDUINO_ARCH_ZEPHYR)
 #error "Compile this self-test for arduino:zephyr:unoq"
 #endif
@@ -12,6 +13,10 @@ void setup() {
   const int failure = hvac_current_test::run();
   Serial.print("Synthetic block contract: ");
   if (failure) { Serial.print("FAIL at test line "); Serial.println(failure); }
+  else Serial.println("PASS");
+  const int featureFailure = hvac_feature_test::run();
+  Serial.print("Synthetic raw-code features: ");
+  if (featureFailure) { Serial.print("FAIL at test line "); Serial.println(featureFailure); }
   else Serial.println("PASS");
   Serial.print("800-sample/channel pool bytes: "); Serial.println(sizeof(researchPool));
 }

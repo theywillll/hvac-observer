@@ -1,5 +1,34 @@
 # Current-sensing development record
 
+## 2026-10-17 — Raw-code offset removal and RMS math
+
+Remote baseline inspected: `d8b599a07c239a4b22e49da40432fa30e43396d1`.
+Added a bounded, independent-per-channel/window accumulator for estimated DC
+offset and AC RMS in ADC codes. Exact 64-bit integer centering prevents loss of
+small ripple under a large DC offset. Configuration/source/length/code/rail/
+overflow faults leave numeric features unavailable rather than returning zero
+or old-window values. Reset clears every prior sum and fault.
+
+Validation: shared synthetic C++11 tests passed natively with undefined-behavior
+checks. They include a rounded sine, DC/offset invariance, independent channels,
+near-rail/error gates, reset, 100 varied reference comparisons and the full
+65,535-sample arithmetic boundary. The expanded UNO Q self-test compiled with
+CLI 1.5.1 / core 1.0.0, reporting 104,228 bytes storage / 51,488 bytes globals.
+The existing 43 Python tests passed. See [feature-build-record.json](feature-build-record.json).
+CI runs the shared tests under address/undefined-behavior checks and compiles all
+four sketches. Remote conclusions belong to the commit's workflow runs.
+
+Only the synthetic self-test invokes these calculations. No ADC backend,
+environmental sketch or production frame uses them yet. There is no amperes
+conversion, physical timing/accuracy evidence, board upload or hardware control.
+The estimated sample mean is not a measured bias voltage; zero raw AC RMS does
+not prove zero motor current. See [math and validity contract](raw-features.md).
+Publication is traceable in the [commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
+Next increment: explicit timing/session/window-age qualification and versioned
+calibration contracts before frame integration. Hardware measurements are still
+required to select a trustworthy acquisition cadence and establish coefficients.
+
 ## 2026-10-17 — Stock-core multi-channel sequence bench probe
 
 Remote baseline inspected: `fc456963e758437c21ed9d5799912283a1ccf722`.

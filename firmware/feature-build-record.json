@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-17",
+  "baseline_commit": "d8b599a07c239a4b22e49da40432fa30e43396d1",
+  "target": {
+    "fqbn": "arduino:zephyr:unoq",
+    "cli": "1.5.1",
+    "core": "arduino:zephyr@1.0.0",
+    "result": "passed",
+    "sketch_storage_bytes": 104228,
+    "sketch_global_bytes": 51488
+  },
+  "native_tests": {
+    "compiler": "Zig 0.13.0 C++ driver",
+    "standard": "C++11",
+    "checks": "undefined behavior, no recovery; Wall/Wextra/Werror",
+    "result": "passed",
+    "independent_reference_windows": 100,
+    "max_window_test_samples": 65535,
+    "inputs": "Synthetic codes, known waveforms and invalid-window cases"
+  },
+  "python_tests": {
+    "count": 43,
+    "result": "passed"
+  },
+  "source_sha256": {
+    "firmware/libraries/HvacCurrent/src/RawFeatures.h": "df9820e23ca28d33d2e3744ce59247816d01fd5e56b0cfc5a007e27f394f6ae5",
+    "firmware/current_block_selftest/RawFeatureTests.h": "011111c1f34518f7edb1be86341a67fe4b790dfc28768678231aea42af0820d8",
+    "firmware/current_block_selftest/current_block_selftest.ino": "8d1a0618155feadc3478e0e5ab6264000a45e0634fd6326be58ffc41dc1e1297",
+    "tests/current_block_test.cpp": "0bb4dace4f651552a2e277683371d43f0bb5560218ca51a149ccccaf78dfe1eb"
+  },
+  "target_artifact_sha256": {
+    "current_block_selftest.ino.bin": "7b35fa2d06999260041dd9867ac0b2d0ed6dadf5f6462c9cc41048ab5360b0e2",
+    "current_block_selftest.ino.bin-zsk.bin": "8397dd6d5993c6be0251e3008be9e52f7f35caa7be597d38e95f8c9d5fea4bde",
+    "current_block_selftest.ino.elf": "50c2e8f86c9d6be39f98cff40930ec677d2ce3dc76b872d61f2634deced2d9e5",
+    "current_block_selftest.ino.elf-zsk.bin": "bdd860eeb567b13af11569c96245cd1c7c29af04d4e09f112927ed9213cd0897",
+    "current_block_selftest.ino_debug.elf": "d1a4395e7160d95ef9541e041498071f0fc5c8a81879456f11d68b4010ae06e4",
+    "current_block_selftest.ino_temp.elf": "b7cdc082c4331f5789aecf1cbe687ebf2d4eb2d9cf3e1342702b1c4facf5c6e9"
+  },
+  "hardware_execution": false,
+  "uploaded": false,
+  "sample_timing_measured": false,
+  "calibrated_current_implemented": false,
+  "production_frame_integration": false,
+  "units": "raw ADC codes only",
+  "ci_validation": "Configured; see commit workflow runs for remote results."
+}

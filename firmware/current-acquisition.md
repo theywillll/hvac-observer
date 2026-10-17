@@ -14,6 +14,10 @@ blocking multi-channel Zephyr read on the stock core. This qualifies API/linkage
 not hardware operation or cadence. It publishes no per-sample timestamps and
 does not feed assumed timestamps to the raw block pool.
 
+Later 2026-10-17 increment: [raw-code mean/RMS math](raw-features.md) is tested
+separately and compiles in the synthetic self-test. Timing/session qualification,
+ADC/CT calibration and production current-frame integration remain pending.
+
 ## Build target
 
 Use the published `arduino:zephyr:unoq` target, not classic AVR UNO or Ventuno Q.
