@@ -1,5 +1,38 @@
 # Current-sensing development record
 
+## 2026-10-19 — Window qualification and calibration contract
+
+Remote baseline inspected: `534bb39a5201c884aa8134460f462996c370f38f`.
+Added a per-channel gate for strictly increasing sessions, ordered windows,
+gaps/duplicates, freshness, qualified aperture timing and expected ADC code
+scale. Raw features now retain their code maximum. Unsupported/unqualified or
+unapproved calibration records cannot enable conversion. The policy pins an
+active record/revision per channel; a new session is required to change it.
+
+Schema 1 conditionally multiplies raw-code RMS by a finite measured-chain gain
+only inside its calibrated range. Every failure returns an unavailable numeric
+result. Old windows are not resurrected after failure or reset. All calibration
+records, evidence IDs and timestamps in the tests are synthetic fixtures.
+
+Validation: shared native C++11 tests passed with undefined-behavior checks;
+the existing 43 Python tests passed. The expanded self-test compiled on pinned
+UNO Q CLI 1.5.1 / core 1.0.0. Final build sizes/hashes and boundaries are in
+[window-build-record.json](window-build-record.json). CI runs native address/
+undefined-behavior tests and compiles all four sketches; consult commit workflow
+runs for their remote conclusions. Publication is traceable in the
+[commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
+No real calibration or timing record exists. The gate is not wired to probes,
+the environmental sketch or production frames. No board upload, physical
+measurement, hardware control or validated current reading occurred.
+The existing request-bracket probes deliberately cannot pass the timing gate.
+See [contract, state semantics and bench requirements](current-window.md).
+
+Next increment: bounded session/worker orchestration and nullable quality-frame
+integration without asserting unmeasured aperture timing. Actual cadence/skew,
+calibration coefficients and accuracy remain dependencies on a physical UNO Q,
+reviewed SELV fixtures and reference instruments.
+
 ## 2026-10-17 — Raw-code offset removal and RMS math
 
 Remote baseline inspected: `d8b599a07c239a4b22e49da40432fa30e43396d1`.

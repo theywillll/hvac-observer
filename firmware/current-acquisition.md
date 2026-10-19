@@ -18,6 +18,11 @@ Later 2026-10-17 increment: [raw-code mean/RMS math](raw-features.md) is tested
 separately and compiles in the synthetic self-test. Timing/session qualification,
 ADC/CT calibration and production current-frame integration remain pending.
 
+Update 2026-10-19: the [current-window contract](current-window.md) implements
+software gates for session/order, age, qualified timing and versioned calibration.
+It is tested using synthetic metadata/coefficients only; no live backend or
+frame adapter uses it, and no physical calibration has been performed.
+
 ## Build target
 
 Use the published `arduino:zephyr:unoq` target, not classic AVR UNO or Ventuno Q.

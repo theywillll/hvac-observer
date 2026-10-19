@@ -1,5 +1,10 @@
 # Firmware and acquisition adapters
 
+The [current-window gate](current-window.md) now tests session/sequence,
+freshness, timing provenance and pinned calibration revisions before conditional
+code-to-amp conversion. Only synthetic self-tests invoke it. No real timing or
+calibration record is approved, and production current fields remain unknown.
+
 [Raw-code feature calculations](raw-features.md) now implement per-window mean
 removal and AC RMS with strict invalid-window gates. Shared native/UNO Q
 self-tests cover the arithmetic, but only native execution has occurred. These

@@ -1,0 +1,45 @@
+{
+  "date": "2026-10-19",
+  "baseline_commit": "534bb39a5201c884aa8134460f462996c370f38f",
+  "target": {
+    "fqbn": "arduino:zephyr:unoq",
+    "cli": "1.5.1",
+    "core": "arduino:zephyr@1.0.0",
+    "result": "passed",
+    "sketch_storage_bytes": 112736,
+    "sketch_global_bytes": 58404
+  },
+  "native_tests": {
+    "compiler": "Zig 0.13.0 C++ driver",
+    "standard": "C++11",
+    "checks": "undefined behavior, no recovery; Wall/Wextra/Werror",
+    "result": "passed",
+    "inputs": "Synthetic feature, timing, session and calibration fixtures only"
+  },
+  "python_tests": {
+    "count": 43,
+    "result": "passed"
+  },
+  "source_sha256": {
+    "firmware/libraries/HvacCurrent/src/CurrentWindow.h": "062e4116950494676b7d3d9a1f04f69ed6617f3b0c10cbb31f64fba7cb7a5df2",
+    "firmware/libraries/HvacCurrent/src/RawFeatures.h": "155421302bf138192aad3f541c259b4ec17d3e749ecdb3115a399a1970afcdce",
+    "firmware/current_block_selftest/CurrentWindowTests.h": "7ce1e4d619a119d1ec1c4615a9576ed4e054ebaa61c4cc280da3dc7806dc4328",
+    "firmware/current_block_selftest/current_block_selftest.ino": "17f55c323a9b89386f2a6aea66f057a2f66e6c8ed98f626f0e3d42bc8616786d",
+    "tests/current_block_test.cpp": "1954eac6946eb911811b66ca04d38346cf4f1c6f7707bd6a6f5c5fc3e513cd78"
+  },
+  "target_artifact_sha256": {
+    "current_block_selftest.ino.bin": "35dfdfcbe5930e80739c5b5322c1f05cf5ba0b36118996ccc8f776c91a45df69",
+    "current_block_selftest.ino.bin-zsk.bin": "dc5f27e469372c936f490f7c9e1ac41b0b0e2b5230dd20c1db38c9f1a8a9a62e",
+    "current_block_selftest.ino.elf": "ebfbd9ae87b845ed114745411fd38e6cd324be2ac1f245fc5396a83a16374b7a",
+    "current_block_selftest.ino.elf-zsk.bin": "8bb0ddfa8a25139545854e8fdba7455928aee7433d723388b0e363cf0c2f4a57",
+    "current_block_selftest.ino_debug.elf": "f6bec8cc130443341e18a048f01853da71e8d9e5834f32111572f3c7b26185e8",
+    "current_block_selftest.ino_temp.elf": "b5e82c72140d610054deb68fa1b78e65fa38447c95acc4d2b913df529f5e694f"
+  },
+  "hardware_execution": false,
+  "uploaded": false,
+  "sample_timing_measured": false,
+  "real_calibration_record_supplied": false,
+  "calibration_contract_implemented": true,
+  "production_frame_integration": false,
+  "ci_validation": "Configured; see commit workflow runs for remote results."
+}

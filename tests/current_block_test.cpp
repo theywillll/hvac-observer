@@ -2,6 +2,7 @@
 #include "../firmware/current_block_selftest/RawBlockTests.h"
 #include "raw_sequence_tests.h"
 #include "../firmware/current_block_selftest/RawFeatureTests.h"
+#include "../firmware/current_block_selftest/CurrentWindowTests.h"
 int main() {
   const int failure = hvac_current_test::run();
   if (failure) { fprintf(stderr, "Block contract failed at test line %d\n", failure); return 1; }
@@ -13,5 +14,8 @@ int main() {
   const int featureFailure = hvac_feature_test::run();
   if (featureFailure) { fprintf(stderr, "Raw feature test failed at line %d\n", featureFailure); return 1; }
   printf("Synthetic offset removal and raw-code RMS tests passed.\n");
+  const int windowFailure = hvac_window_test::run();
+  if (windowFailure) { fprintf(stderr, "Window gate test failed at line %d\n", windowFailure); return 1; }
+  printf("Synthetic session, timing, freshness and calibration gate tests passed.\n");
   return 0;
 }

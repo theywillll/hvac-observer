@@ -20,6 +20,7 @@ struct FeatureConfig {
 struct RawFeatures {
   uint32_t faults = FeatureBadConfig, attempts = 0, sampleCount = 0, nearRailCount = 0;
   uint16_t minCode = 0, maxCode = 0;
+  uint16_t codeMax = 0;
   double meanCode = NAN, acRmsCode = NAN;
   bool statisticsAvailable() const { return faults == 0; }
 };
@@ -59,6 +60,7 @@ class RawFeatureAccumulator {
     if (!sourceCompleteAndUsable) out.faults |= FeatureSource;
     if (configured_ && count_ < config_.minSamples) out.faults |= FeatureShort;
     out.attempts = attempts_; out.sampleCount = count_; out.nearRailCount = rails_;
+    out.codeMax = configured_ ? config_.codeMax : 0;
     if (count_) { out.minCode = min_; out.maxCode = max_; }
     if (out.faults) return out; // Numeric outputs stay NaN, never stale or false zero.
     // Exact integer centering avoids cancellation of a small ripple on large DC.

@@ -39,6 +39,15 @@ Before field use:
 
 ## Open work
 
+On 2026-10-19, the current-window/calibration contract passed synthetic native
+C++11 tests with undefined-behavior checks. Tests cover session/order, freshness,
+clock rollover, rejected call-bracket timing, bad features, pinned calibration
+IDs/revisions, disabled channels, calibrated-range limits and numeric underflow.
+The expanded self-test is compiled for UNO Q; target execution, real calibration
+and physical timing remain unverified. The existing 43 Python tests still pass.
+Only synthetic fixtures call the gate; production current remains unknown. See
+[the contract and external evidence requirements](../firmware/current-window.md).
+
 The later 2026-10-17 increment adds mean removal and raw-code AC RMS math.
 Native C++11 tests with undefined-behavior checks passed, including 100 varied
 two-pass reference comparisons and the 65,535-sample arithmetic bound. The

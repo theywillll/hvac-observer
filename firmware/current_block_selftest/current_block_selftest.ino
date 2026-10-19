@@ -2,6 +2,7 @@
 #include <Arduino.h>
 #include "RawBlockTests.h"
 #include "RawFeatureTests.h"
+#include "CurrentWindowTests.h"
 #if !defined(ARDUINO_UNO_Q) || !defined(ARDUINO_ARCH_ZEPHYR)
 #error "Compile this self-test for arduino:zephyr:unoq"
 #endif
@@ -13,6 +14,10 @@ void setup() {
   const int failure = hvac_current_test::run();
   Serial.print("Synthetic block contract: ");
   if (failure) { Serial.print("FAIL at test line "); Serial.println(failure); }
+  else Serial.println("PASS");
+  const int windowFailure = hvac_window_test::run();
+  Serial.print("Synthetic qualified-window contract: ");
+  if (windowFailure) { Serial.print("FAIL at test line "); Serial.println(windowFailure); }
   else Serial.println("PASS");
   const int featureFailure = hvac_feature_test::run();
   Serial.print("Synthetic raw-code features: ");

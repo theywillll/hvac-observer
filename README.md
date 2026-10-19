@@ -53,6 +53,11 @@ Per-window [raw-code mean and AC RMS](firmware/raw-features.md) now have shared
 native/target-build tests and invalid-window gates. They run only in synthetic
 self-tests, with no calibrated current output or production integration.
 
+A separate [current-window contract](firmware/current-window.md) adds software
+checks for timing, freshness, session/order and approved calibration revisions.
+Its conditional amp conversion runs only in synthetic tests. Real calibration,
+qualified acquisition timing and nullable production-frame integration remain pending.
+
 The server listens on loopback for local use. Alerts are shown in the dashboard and saved in the database; there are no outbound notifications. It doesn't estimate refrigerant charge, SEER or COP, and it can't assess combustion safety, CO or refrigerant leaks.
 
 See the [validation record](docs/validation.md) for completed checks and the remaining bench work.

@@ -78,6 +78,11 @@ electrical safety or acquisition throughput follows from a passing math test.
 
 ## Verification and next integration gates
 
+Update 2026-10-19: features now retain their ADC code maximum for the separate
+[window/calibration gate](current-window.md). That gate prevents scale mismatches
+and applies only explicitly approved calibration records; its current fixtures
+are synthetic, and production conversion remains disabled.
+
 The shared C++ tests run natively with undefined-behavior checks and in CI with
 address/undefined-behavior sanitizers. They cover constant and alternating
 inputs, offset invariance, a rounded full-cycle sine, conservative rail flags,
