@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-20",
+  "baseline_commit": "e8e6800421d2c84a4e731875ff5770844642b5c3",
+  "target": {
+    "fqbn": "arduino:zephyr:unoq",
+    "cli": "1.5.1",
+    "core": "arduino:zephyr@1.0.0",
+    "result": "passed",
+    "sketch_storage_bytes": 119244,
+    "sketch_global_bytes": 63012
+  },
+  "native_tests": {
+    "compiler": "Zig 0.13.0 C++ driver",
+    "standard": "C++11",
+    "checks": "undefined behavior, no recovery; Wall/Wextra/Werror",
+    "result": "passed",
+    "inputs": "Synthetic feature/window/snapshot fixtures only"
+  },
+  "python_tests": {
+    "count": 43,
+    "result": "passed"
+  },
+  "source_hash_convention": "SHA256 of UTF-8 source with LF newlines, matching published blobs",
+  "source_sha256": {
+    "firmware/libraries/HvacCurrent/src/CurrentSnapshot.h": "8c78a5cf63615fc7741508f2a5e6aa1f06bb4eef847e974b337446a33c6509af",
+    "firmware/libraries/HvacCurrent/src/CurrentWindow.h": "4b5ba2bc2a67e6a3637bcd21821120686f957fb54e18abfbb324807b6847bca2",
+    "firmware/current_block_selftest/CurrentSnapshotTests.h": "43b1a6e24099f4d5391ba59ef78dfb95b1e38895e32e187754e1eba48489b5db",
+    "firmware/current_block_selftest/current_block_selftest.ino": "0ae8277dfece4d8785a13f52fe50320ad4a30b436aebbbf5e89b3d8db59414f1",
+    "tests/current_block_test.cpp": "ff55608d53787970ba8e41a91a5ee8b11d6eb2e9c011318e988c8c7a779acf40"
+  },
+  "target_artifact_sha256": {
+    "current_block_selftest.ino.bin": "5cae68f523783f2ffc1f61b6ab7dd3db805370d8ad02ff1ff3cb70435c2d34e7",
+    "current_block_selftest.ino.bin-zsk.bin": "9ec7eb72b9ff48b7aa16143b7379e36afa0ec59454e76308df5e95a613276a22",
+    "current_block_selftest.ino.elf": "ddd450a387b7711e8a5969c4f04ed9561db255614121099a78067e5e12d6faef",
+    "current_block_selftest.ino.elf-zsk.bin": "14c84bea7558cdf44142d814a4fd8d1cc621cc1295560a40a8ff791eb9e43616",
+    "current_block_selftest.ino_debug.elf": "bebc4384832205dfbb185318292a36406d0e13fccc1c48fa68f81c4a34993ef4",
+    "current_block_selftest.ino_temp.elf": "c2b7ddac42a8aff209ce9ac61be1c3e46156c76985e1132817934f562fc5a1d1"
+  },
+  "hardware_execution": false,
+  "uploaded": false,
+  "sample_timing_measured": false,
+  "real_calibration_record_supplied": false,
+  "snapshot_store_implemented": true,
+  "extended_clock_provider_implemented": false,
+  "synchronized_worker_implemented": false,
+  "production_frame_integration": false,
+  "ci_validation": "Configured; see commit workflow runs for remote results."
+}

@@ -1,5 +1,43 @@
 # Current-sensing development record
 
+## 2026-10-20 — Expiring per-channel current snapshots
+
+Remote baseline inspected: `e8e6800421d2c84a4e731875ff5770844642b5c3`.
+Added fixed storage that replaces each channel's previous result even when a
+new window fails. Snapshot requests recheck age rather than reusing the age at
+publication. Expired, duplicate, failed or stopped readings remain unavailable.
+Wrong-session/channel callbacks cannot alter the active session. Stop or a
+backward clock requires a strictly newer session before publication resumes.
+
+Publication binds the low-counter stamp to an extended 64-bit sample end. Age
+uses the full monotonic clock, so a skipped 32-bit timer cycle cannot resurrect
+stale current. The caller must provide a trustworthy extended clock and sample
+epoch; no clock extension, persistent boot identity or timing evidence is
+invented. All store access requires one owner or external synchronization.
+
+Validation: shared native C++11 tests passed with undefined-behavior checks;
+the existing 43 Python tests passed. Tests cover independent channel expiry,
+future/mismatched timestamps, low-counter rollover, a skipped full timer cycle,
+full-width clock limits, failure/recovery, reset, stop and backward-clock paths.
+The expanded self-test compiles on pinned UNO Q CLI 1.5.1 / core 1.0.0. See
+[snapshot-build-record.json](snapshot-build-record.json) for local sizes/hashes.
+Remote CI runs address/undefined-behavior tests and compiles all four sketches;
+its conclusions are recorded in the commit's workflow runs. Publication is
+traceable in the [commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
+Only synthetic tests invoke the store. No board upload, live capture, qualified
+timing/calibration, production current fields or physical HVAC operation occurred.
+The environmental sketch and backend are unchanged. There is no synchronized
+acquisition worker or nullable wire adapter yet. See
+[snapshot lifetime and integration contract](current-snapshot.md).
+
+Next: define a bounded nullable JSON/quality contract and validate it end to end
+in C++ and Python. Freshness must be evaluated at frame request; transport-age
+limits and calibration ownership need explicit handling. In particular, a
+server must not silently calibrate an already calibrated MCU current twice.
+After that, integrate worker synchronization behind unqualified defaults.
+Hardware aperture qualification and measured calibration remain bench dependencies.
+
 ## 2026-10-19 — Window qualification and calibration contract
 
 Remote baseline inspected: `534bb39a5201c884aa8134460f462996c370f38f`.

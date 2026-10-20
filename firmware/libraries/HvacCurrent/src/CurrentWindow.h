@@ -6,7 +6,8 @@ enum WindowFault : uint32_t {
   WindowConfig = 1u, WindowSession = 2u, WindowChannel = 4u,
   WindowSequence = 8u, WindowGap = 16u, WindowFeatures = 32u,
   WindowTiming = 64u, WindowAge = 128u, WindowCalibration = 256u,
-  WindowRange = 512u, WindowNumeric = 1024u
+  WindowRange = 512u, WindowNumeric = 1024u,
+  WindowPending = 2048u, WindowStopped = 4096u, WindowClock = 8192u
 };
 enum class SampleTimeKind : uint8_t { Unknown, CallBracket, QualifiedAperture };
 struct WindowPolicy {

@@ -1,5 +1,11 @@
 # Firmware and acquisition adapters
 
+The [current snapshot store](current-snapshot.md) now tests per-channel result
+replacement, expiry at request time, extended-clock rollover and stop/reset
+invalidation. It uses fixed storage and requires external serialization. Only
+synthetic self-tests use it; the nullable wire adapter and acquisition worker
+remain pending, and production current fields remain unknown.
+
 The [current-window gate](current-window.md) now tests session/sequence,
 freshness, timing provenance and pinned calibration revisions before conditional
 code-to-amp conversion. Only synthetic self-tests invoke it. No real timing or

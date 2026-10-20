@@ -26,6 +26,9 @@ requires a fresh session; it never silently restarts at zero.
 The gate returns no cached previous current on failure. Numeric output remains
 NaN unless every check passes. A future frame adapter must serialize unavailable
 measurements as null with reasons; it must not emit non-standard JSON NaN.
+The [snapshot store](current-snapshot.md) now handles bounded result retention
+and rechecks extended-clock age at request time, in synthetic tests only. It
+does not yet supply a JSON adapter or concurrent worker.
 
 Gate objects cannot be copied, avoiding accidental forks of sequence/session
 state. Unknown age is represented internally by UINT32_MAX and must also remain

@@ -3,6 +3,7 @@
 #include "raw_sequence_tests.h"
 #include "../firmware/current_block_selftest/RawFeatureTests.h"
 #include "../firmware/current_block_selftest/CurrentWindowTests.h"
+#include "../firmware/current_block_selftest/CurrentSnapshotTests.h"
 int main() {
   const int failure = hvac_current_test::run();
   if (failure) { fprintf(stderr, "Block contract failed at test line %d\n", failure); return 1; }
@@ -17,5 +18,8 @@ int main() {
   const int windowFailure = hvac_window_test::run();
   if (windowFailure) { fprintf(stderr, "Window gate test failed at line %d\n", windowFailure); return 1; }
   printf("Synthetic session, timing, freshness and calibration gate tests passed.\n");
+  const int snapshotFailure = hvac_snapshot_test::run();
+  if (snapshotFailure) { fprintf(stderr, "Snapshot store test failed at line %d\n", snapshotFailure); return 1; }
+  printf("Synthetic snapshot expiry, invalidation and extended-clock tests passed.\n");
   return 0;
 }
