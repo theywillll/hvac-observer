@@ -4,6 +4,7 @@
 #include "RawFeatureTests.h"
 #include "CurrentWindowTests.h"
 #include "CurrentSnapshotTests.h"
+#include "CurrentWireTests.h"
 #if !defined(ARDUINO_UNO_Q) || !defined(ARDUINO_ARCH_ZEPHYR)
 #error "Compile this self-test for arduino:zephyr:unoq"
 #endif
@@ -15,6 +16,10 @@ void setup() {
   const int failure = hvac_current_test::run();
   Serial.print("Synthetic block contract: ");
   if (failure) { Serial.print("FAIL at test line "); Serial.println(failure); }
+  else Serial.println("PASS");
+  const int wireFailure = hvac_wire_test::run();
+  Serial.print("Synthetic bounded current wire format: ");
+  if (wireFailure) { Serial.print("FAIL at test line "); Serial.println(wireFailure); }
   else Serial.println("PASS");
   const int snapshotFailure = hvac_snapshot_test::run();
   Serial.print("Synthetic current snapshot store: ");

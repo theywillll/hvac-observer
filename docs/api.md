@@ -16,10 +16,20 @@ Unknown paths return 404; invalid history limits return 400. The acquisition ada
 Example input frame (other sensors omitted = null):
 
 ```json
-{"ts":"2026-10-06T06:00:00Z","seq":12,"source":"hardware","stage":1,"return_c":25.0,"supply_c":15.0,"indoor_rh":52.0,"outdoor_c":32.0,"compressor_a":9.1,"blower_a":2.0,"filter_pa":42.0,"Y":true,"Y2":false,"W":false,"W2":false,"G":true,"OB":false,"R":true,"condensate":false,"defrost":false}
+{"ts":"2026-10-06T06:00:00Z","seq":12,"source":"hardware","stage":1,"return_c":25.0,"supply_c":15.0,"indoor_rh":52.0,"outdoor_c":32.0,"compressor_a":null,"blower_a":null,"filter_pa":42.0,"Y":true,"Y2":false,"W":false,"W2":false,"G":true,"OB":false,"R":true,"condensate":false,"defrost":false}
 ```
 
 `seq` must increase during a session; restart service after device reset. `source` is `hardware`, `simulator` or `replay`; simulation is selected explicitly at service startup. Temperature fields are °C, currents A RMS, pressure Pa, power real W, voltage V RMS, vibration dynamic g RMS, airflow proxy dimensionless with 1.0 representing the commissioned reference. Thermostat fields are bool/null. Stage is integer 1 or 2. Unknown keys and booleans masquerading as numbers are rejected.
+
+Numeric hardware currents now require the strict [current-quality schema](../firmware/current-wire.md).
+Unavailable channels must be null with failure reasons. Legacy hardware frames
+with no numeric current remain accepted; explicit simulator/replay examples can
+keep legacy numbers. Quality metadata is retained in state/history payloads.
+Do not configure server calibration for current fields when `current_quality`
+is present: these measurements already declare MCU calibration ownership.
+The current serializer is tested with synthetic fixtures but is not connected
+to the environmental sketch or live sampling. Declared snapshot age alone does
+not bound transport delay or how long a consumer displays the received value.
 
 `latest` contains state, quality, measured values, active alerts, newly emitted alert events, feature metrics and gap flag. Each alert contains severity, timestamp, rule ID, heuristic confidence, evidence, explanation, possible causes, recommended next action, threshold provenance and anomaly score. Anomaly score is a normalized deviation (0…1), not fault probability.
 

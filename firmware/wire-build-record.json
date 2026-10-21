@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-21",
+  "baseline_commit": "a0776d4a53525fadf959b620ef425d24b99a0193",
+  "target": {
+    "fqbn": "arduino:zephyr:unoq",
+    "cli": "1.5.1",
+    "core": "arduino:zephyr@1.0.0",
+    "result": "passed",
+    "sketch_storage_bytes": 123964,
+    "sketch_global_bytes": 66220
+  },
+  "native_tests": {
+    "compiler": "Zig 0.13.0 C++ driver",
+    "standard": "C++11",
+    "checks": "undefined behavior, no recovery; Wall/Wextra/Werror",
+    "result": "passed",
+    "inputs": "Synthetic block/feature/window/snapshot/wire fixtures only"
+  },
+  "python_tests": {
+    "count": 54,
+    "result": "passed"
+  },
+  "cross_language_wire_tests": {
+    "fixtures": 14,
+    "result": "passed",
+    "largest_reencoded_fixture_bytes": 743,
+    "input": "Actual native C++ serializer JSONL, synthetic only",
+    "receiver": "backend.validation.validate"
+  },
+  "source_hash_convention": "SHA256 of UTF-8 source with LF newlines, matching published blobs",
+  "source_sha256": {
+    "firmware/libraries/HvacCurrent/src/CurrentWire.h": "f861ed6c6de04b697515b0460eebf13db26d1d967631212049055d912f7ad9ab",
+    "firmware/libraries/HvacCurrent/src/CurrentSnapshot.h": "f4dac1511c81569ab5e91ada73aa5d01f86e883c5e1e3a515a120cd89e986954",
+    "firmware/current_block_selftest/CurrentWireTests.h": "ffc55a7b07e118912e97b7c9b76ca44d35721e07f6549f7103cd09d246c12193",
+    "firmware/current_block_selftest/current_block_selftest.ino": "786c4009c2fd43bb9b8f506a5847efafd6872952900cd8e434a22189f8e3bb16",
+    "tests/current_block_test.cpp": "a9803caf10060a56afc86aa209f33d1c26ef0486e5fd080369fbea16444c820e",
+    "tests/current_wire_fixtures.h": "f83c176752d8d1c144281280f2b848d24c70cad81e145b9391e522103896b7ab",
+    "backend/current_quality.py": "7c8bc0cf08143d19ba2e55fe468aa2276780115ae2a720fbba3c5820b5da021e",
+    "backend/validation.py": "e9651619ac51ddf3db7209beed80f3adfe84f5246917fb4ad417d3359f9b534c",
+    "backend/calibration.py": "f600670bff4d3ddc8729741ac85403a3d2f122da0e3c9e52fec5b3bbb9f15889",
+    "tests/test_current_quality.py": "5ff3747145876e9cae535f635b87cd6bfec622c2cdcef0336834071c4f5fd903",
+    "scripts/check_current_wire.py": "5471bb242aa138890eb547227cf5f1b3ab65935dce485f6ecb9c1b464b812045",
+    ".github/workflows/firmware.yml": "fd893230bf801e125983f2d88f79752ff7e281738c8549b672fe8449c88b2150"
+  },
+  "target_artifact_sha256": {
+    "current_block_selftest.ino.bin": "d218626c00a5a416ebfe6b8305dd7d355e70c94caeb251f98ee9245498f011e3",
+    "current_block_selftest.ino.bin-zsk.bin": "153291ec503152266c9b7812340ac823012956e127bb4cc900891c025d9e936e",
+    "current_block_selftest.ino.elf": "a6b5e510dc78ddb3446f1d03def4a8fa0a37f809f8c9fe562d7529f6fc49b075",
+    "current_block_selftest.ino.elf-zsk.bin": "455e7c268e41e65e205e2e4d0f740afbc1efe4ed5fab76da83137630c895353b",
+    "current_block_selftest.ino_debug.elf": "ba6e014fdcdacb1f1aa15dc4a52412150a2f0d037b56c6485c78ff3857b9e058",
+    "current_block_selftest.ino_temp.elf": "1850b90beb1437a6019f26da97105b9014b8fe5f782eec6e7695dc9f28be289c"
+  },
+  "hardware_execution": false,
+  "uploaded": false,
+  "sample_timing_measured": false,
+  "real_calibration_record_supplied": false,
+  "wire_schema_implemented": true,
+  "backend_wire_validation_implemented": true,
+  "bridge_transport_integrated": false,
+  "transport_capacity_or_latency_qualified": false,
+  "consumer_use_age_enforced": false,
+  "synchronized_worker_implemented": false,
+  "production_current_acquisition": false,
+  "ci_validation": "Configured; see commit workflow runs for remote results."
+}

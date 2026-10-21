@@ -6,6 +6,7 @@ struct CurrentSnapshot {
   uint64_t session = 0, requestedUs = 0;
   uint32_t maxAgeUs = 0;
   CurrentWindow channels[3];
+  bool observed[3] = {};
 };
 
 // Fixed storage, single owner. Serialize ALL calls externally before adding a
@@ -56,6 +57,7 @@ class CurrentSnapshotStore {
     for (unsigned c=0;c<3;++c) {
       if (active_ && observed_[c]) updateAge(latest_[c], ends_[c], nowUs);
       out.channels[c] = latest_[c];
+      out.observed[c] = observed_[c];
     }
     return out;
   }

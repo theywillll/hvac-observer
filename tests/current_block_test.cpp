@@ -4,7 +4,10 @@
 #include "../firmware/current_block_selftest/RawFeatureTests.h"
 #include "../firmware/current_block_selftest/CurrentWindowTests.h"
 #include "../firmware/current_block_selftest/CurrentSnapshotTests.h"
-int main() {
+#include "current_wire_fixtures.h"
+int main(int argc, char** argv) {
+  if(argc == 2 && strcmp(argv[1],"--current-wire-fixtures") == 0) return emitCurrentFixtures();
+  if(argc != 1) { fprintf(stderr,"Unknown test argument\n"); return 1; }
   const int failure = hvac_current_test::run();
   if (failure) { fprintf(stderr, "Block contract failed at test line %d\n", failure); return 1; }
   printf("Synthetic block contract passed (including 1000 queue reuse cycles).\n");
@@ -21,5 +24,8 @@ int main() {
   const int snapshotFailure = hvac_snapshot_test::run();
   if (snapshotFailure) { fprintf(stderr, "Snapshot store test failed at line %d\n", snapshotFailure); return 1; }
   printf("Synthetic snapshot expiry, invalidation and extended-clock tests passed.\n");
+  const int wireFailure = hvac_wire_test::run();
+  if (wireFailure) { fprintf(stderr, "Wire format test failed at line %d\n", wireFailure); return 1; }
+  printf("Synthetic bounded current-wire serialization tests passed.\n");
   return 0;
 }

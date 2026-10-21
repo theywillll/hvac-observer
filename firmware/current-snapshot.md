@@ -79,11 +79,12 @@ RouterBridge operations.
 A returned `CurrentSnapshot` is a detached value valid at `requestedUs`. It must
 not be cached and later presented as fresh. The future frame callback needs to
 request a fresh snapshot, preserve session/window identity and quality metadata,
-and enforce a justified transport/arrival-age budget. The backend currently has
-no current-quality wire schema, so this increment deliberately defines no
-accepted JSON format. Backend validation must reject inconsistent available/null
-states and avoid applying server calibration again to already calibrated MCU
-measurements. These integration changes are **pending**, not implemented here.
+and enforce a justified transport/arrival-age budget. The
+[current wire contract](current-wire.md) now implements bounded serialization
+and backend validation of available/null states and calibration ownership.
+It explicitly carries observed-window state instead of treating sequence zero
+as unobserved. Transport, consumer expiry and the concurrent worker remain
+**pending**; the writer is exercised only by synthetic tests.
 
 ## Verification and next step
 

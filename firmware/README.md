@@ -1,5 +1,11 @@
 # Firmware and acquisition adapters
 
+The [current wire contract](current-wire.md) now tests bounded JSON serialization
+against strict Python quality validation and prevents duplicate server current
+calibration. Numeric hardware current requires quality metadata. Legacy all-null
+hardware frames still work. The environmental sketch is unchanged; no live
+sampling, Bridge transport integration or consumer-age guarantee is enabled.
+
 The [current snapshot store](current-snapshot.md) now tests per-channel result
 replacement, expiry at request time, extended-clock rollover and stop/reset
 invalidation. It uses fixed storage and requires external serialization. Only

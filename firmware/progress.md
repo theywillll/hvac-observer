@@ -1,5 +1,48 @@
 # Current-sensing development record
 
+## 2026-10-21 — Nullable current payload and quality validation
+
+Remote baseline inspected: `a0776d4a53525fadf959b620ef425d24b99a0193`.
+Added a fixed-capacity JSON writer that requests a fresh current snapshot and
+emits all three measurements with schema-1 quality metadata. Failed/unobserved
+readings become null. Session/window uint64 IDs use canonical decimal strings;
+observed-window state is explicit, so window zero is not mistaken for missing.
+Buffer/range/format failures clear the output instead of leaving partial JSON.
+
+The Python service now requires quality metadata for numeric hardware currents,
+checks null/availability/fault/age/identity consistency and retains quality in
+state history. Legacy all-null hardware frames and explicitly synthetic/replay
+examples remain compatible. Server current calibration entries are rejected
+when quality metadata declares MCU conversion ownership, preventing duplicate
+gain/offset application. Temperature calibration is unaffected.
+
+Validation: 54 Python tests passed, including schema rejection, identity bounds,
+expiry/null consistency, calibration ownership and SQLite state-history tests.
+Native C++11 tests passed with undefined-behavior checks, including every
+undersized capacity for a populated payload and canary preservation. Fourteen
+actual C++ JSON fixtures passed the Python validator, covering failures, zero,
+decimal precision, maximum metadata and age boundaries. The largest re-encoded
+fixture payload was 743 bytes; that is not a bound on a complete Bridge frame.
+The expanded self-test compiles on pinned UNO Q CLI 1.5.1 / core 1.0.0; local
+sizes/hashes are in [wire-build-record.json](wire-build-record.json). CI adds the
+C++/Python fixture pipeline to native address/undefined-behavior checks and all
+four sketch builds. Consult the commit workflow runs for remote conclusions.
+Publication is traceable in the
+[commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
+All fixtures/evidence/gains are synthetic. No board upload, qualified aperture
+timing, real calibration, physical sampling or HVAC output occurred. The writer
+is not connected to the environmental sketch or RouterBridge. Validation checks
+declared request-time age, not transport delay, replay or future consumer age.
+Full provenance verification, persistent sessions/clock extension and a
+synchronized worker remain pending. See [wire contract and limits](current-wire.md).
+
+Next: establish a bounded transport envelope and test consumer freshness/replay
+and session/clock ownership before connecting the passive acquisition worker.
+Inspect both RPC directions rather than assuming that a local JSON buffer fits
+the pinned Bridge transport. Actual timing, CT calibration and accuracy still
+require a board, protected fixtures and reference instruments.
+
 ## 2026-10-20 — Expiring per-channel current snapshots
 
 Remote baseline inspected: `e8e6800421d2c84a4e731875ff5770844642b5c3`.

@@ -1,6 +1,7 @@
 """Strict wire contract; missing is never converted to zero."""
 import math
 from datetime import datetime, timezone
+from .current_quality import validate_current_quality
 
 RANGES = {
     'return_c': (-40, 100), 'supply_c': (-40, 120), 'outdoor_c': (-60, 70),
@@ -15,7 +16,7 @@ SIGNALS = ('R', 'Y', 'Y2', 'W', 'W2', 'G', 'OB', 'condensate', 'defrost')
 def validate(frame):
     if not isinstance(frame, dict):
         raise ValueError('Frame must be an object')
-    allowed = set(RANGES) | set(SIGNALS) | {'ts', 'seq', 'source', 'stage'}
+    allowed = set(RANGES) | set(SIGNALS) | {'ts', 'seq', 'source', 'stage', 'current_quality'}
     if set(frame) - allowed:
         raise ValueError('Unknown fields: ' + ', '.join(sorted(set(frame)-allowed)))
     if not isinstance(frame.get('ts'), str):
@@ -45,4 +46,7 @@ def validate(frame):
     if type(frame.get('stage', 1)) is not int or frame.get('stage', 1) not in (1, 2):
         raise ValueError('stage must be 1 or 2')
     result['stage'] = frame.get('stage', 1)
+    quality = validate_current_quality(result)
+    if quality is not None:
+        result['current_quality'] = quality
     return result, ts.timestamp()

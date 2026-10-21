@@ -12,6 +12,7 @@ jobs:
         run: |
           g++ -std=c++17 -Wall -Wextra -Werror -fsanitize=address,undefined -fno-omit-frame-pointer -g -Ifirmware/libraries/HvacCurrent/src tests/current_block_test.cpp -o /tmp/current-block-test
           /tmp/current-block-test
+          /tmp/current-block-test --current-wire-fixtures | python3 -m scripts.check_current_wire
       - uses: arduino/setup-arduino-cli@v2
         with:
           version: '1.5.1'
