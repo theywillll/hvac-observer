@@ -1,5 +1,10 @@
 # Firmware and acquisition adapters
 
+The [UNO receiver](current-receiver.md) now bounds/parses snapshot text and checks
+frame/window replay, session changes and conservative current receipt deadlines.
+Synthetic tests exercise the real adapter. This does not qualify Bridge latency
+or expire values retained later by consumers; no MCU current producer is enabled.
+
 The [current wire contract](current-wire.md) now tests bounded JSON serialization
 against strict Python quality validation and prevents duplicate server current
 calibration. Numeric hardware current requires quality metadata. Legacy all-null

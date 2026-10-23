@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-23",
+  "baseline_commit": "68761d8fe28b0095e4a42a82373c14f5a041055f",
+  "increment": "Python UNO receipt parsing, conservative deadlines and bounded window replay state; MCU source unchanged",
+  "target": {
+    "fqbn": "arduino:zephyr:unoq",
+    "cli": "1.5.1",
+    "core": "arduino:zephyr@1.0.0",
+    "result": "passed",
+    "sketch": "current_block_selftest (unchanged)",
+    "sketch_storage_bytes": 123964,
+    "sketch_global_bytes": 66220
+  },
+  "native_tests": {
+    "compiler": "Zig 0.13.0 C++ driver",
+    "standard": "C++11",
+    "checks": "undefined behavior, no recovery; Wall/Wextra/Werror",
+    "result": "passed",
+    "binary": "unchanged current-wire-session build; C++ test inputs unchanged"
+  },
+  "python_tests": {
+    "count": 66,
+    "result": "passed"
+  },
+  "cross_language_wire_tests": {
+    "fixtures": 14,
+    "result": "passed",
+    "receiver": "SnapshotReceiver plus backend.validation.validate",
+    "clock": "Synthetic zero-latency fixture requests only"
+  },
+  "source_hash_convention": "SHA256 of UTF-8 source with LF newlines, matching published blobs",
+  "source_sha256": {
+    "backend/uno_transport.py": "2133aceb773325c4289effdd68e0e08393b60cf9551b728431b0d25be61b0b4f",
+    "backend/acquisition.py": "ee144e6f794882d77a8b68ac4cabd914b03b05bbbb9b12c45571c424d31c8f65",
+    "tests/test_uno_transport.py": "4dde17b55706e60ec00b1e6dded019981e61bce42aef90ef5d5fc62331db419d",
+    "scripts/check_current_wire.py": "607338a7ddeedf12434487e40374040fd70db0d6866554680ae5fe072b76df57"
+  },
+  "inspected_upstream_versions": {
+    "Arduino_RouterBridge": "0.4.3",
+    "Arduino_RPClite": "0.3.0"
+  },
+  "inspected_upstream_raw_file_sha256": {
+    "Arduino_RouterBridge/src/bridge.h": "ca275c57d1865db16a24e14c901757c31fac7ada91bb09130e07dfb6b4b9febb",
+    "Arduino_RPClite/src/Arduino_RPClite.h": "35dd81b176aad21ebdc8b07715ebc466ba2c7f9ac91be7172aa1dac616faad1e",
+    "Arduino_RPClite/src/request.h": "e26197897d6fb145b2479ae685a95644b5d4e839e06b4c98a0dce07cde72ce7f",
+    "Arduino_RPClite/src/server.h": "c1111eca01bcd56ad358cdfcc1abb3271a6795039aaf44df05e2be4a5706bb1c",
+    "Arduino_RPClite/src/decoder.h": "817328dcfb400cf89a5cedf22384f06557829a55cc659e15b6681a8641a9b2be",
+    "Arduino_RPClite/src/dispatcher.h": "89b2da59a2c9b98370ef6452eec9beee9333d13c6bd3cd28ffcb0c7d954938a4"
+  },
+  "target_artifact_sha256": {
+    "current_block_selftest.ino.bin": "d218626c00a5a416ebfe6b8305dd7d355e70c94caeb251f98ee9245498f011e3",
+    "current_block_selftest.ino.bin-zsk.bin": "153291ec503152266c9b7812340ac823012956e127bb4cc900891c025d9e936e",
+    "current_block_selftest.ino.elf": "a6b5e510dc78ddb3446f1d03def4a8fa0a37f809f8c9fe562d7529f6fc49b075",
+    "current_block_selftest.ino.elf-zsk.bin": "455e7c268e41e65e205e2e4d0f740afbc1efe4ed5fab76da83137630c895353b",
+    "current_block_selftest.ino_debug.elf": "ba6e014fdcdacb1f1aa15dc4a52412150a2f0d037b56c6485c78ff3857b9e058",
+    "current_block_selftest.ino_temp.elf": "1850b90beb1437a6019f26da97105b9014b8fe5f782eec6e7695dc9f28be289c"
+  },
+  "application_snapshot_ascii_byte_limit": 896,
+  "hardware_execution": false,
+  "uploaded": false,
+  "rpc_latency_measured": false,
+  "router_capacity_qualified": false,
+  "numeric_current_callback_connected": false,
+  "consumer_use_expiry_implemented": false,
+  "hung_rpc_cancellation_implemented": false,
+  "real_calibration_record_supplied": false,
+  "ci_validation": "Configured; see commit workflow runs for remote results."
+}

@@ -1,5 +1,50 @@
 # Current-sensing development record
 
+## 2026-10-23 — Bounded UNO receipt and window replay checks
+
+Remote baseline inspected: `68761d8fe28b0095e4a42a82373c14f5a041055f`.
+The actual UNO adapter now brackets Bridge requests with the host monotonic
+clock and uses a bounded, strict snapshot receiver. It rejects oversized/non-
+ASCII/duplicate/nonfinite JSON, host-owned timestamp/source fields and repeated,
+backward or wrapped frame sequences. Legacy environment-only frames still work.
+
+Numeric current receipts must fit a conservative source-age plus host-round-trip
+budget. Per-channel ordinals cannot move backward, mutate or revive after being
+unavailable. Repeated windows cannot renew their first receipt deadline. Current
+session/age-policy/calibration changes require acquisition restart. State commits
+only after every channel passes; a failure cannot partly advance another channel.
+These checks assume fresh snapshot production during the request, truthful
+qualification evidence and justified clock margins; they do not create that proof.
+
+Reviewed pinned RouterBridge/RPClite source in both request and response paths.
+The 256-byte request array and separate response packer are distinct. The MCU
+decoder is 1,024 bytes; router capacity and physical latency remain unqualified.
+The chosen 896-byte text acceptance limit is an application policy, not a claim
+of a proved Bridge response limit. Upstream sources were not changed.
+
+Validation: 66 Python tests passed, including exact byte/receipt boundaries,
+clock errors, replay/session/calibration gates, independent channel progress,
+atomic failure and the actual adapter using a fake Bridge. All 14 C++ synthetic
+wire fixtures also passed the real receiver. Existing native C++11 contracts
+ran with undefined-behavior checks. The unchanged self-test compiled with pinned
+UNO Q CLI 1.5.1 / core 1.0.0; sizes and source/artifact hashes are in
+[receiver-build-record.json](receiver-build-record.json). CI runs sanitizer/
+cross-language checks and all four sketch builds; consult commit workflow runs
+for remote conclusions. Publication is traceable in the
+[commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
+No board upload, physical RPC capture, sampling, qualified timing, real calibration
+or HVAC output occurred. The MCU sketch remains unchanged with no numeric current
+producer. Receipt checks are not a hung-call timeout or later dashboard-use lease;
+source age metadata is retained and JSONL/Pi behavior is unchanged. See
+[receipt contract and remaining limits](current-receiver.md).
+
+Next: expire current values retained by status/dashboard consumers and clear old
+displayed current on acquisition error without rewriting historical measurements.
+Then establish persistent session/clock ownership and the complete router envelope
+before integrating the synchronized input-only worker. Hardware timing, clock
+margins, CT calibration and accuracy remain protected-bench dependencies.
+
 ## 2026-10-21 — Nullable current payload and quality validation
 
 Remote baseline inspected: `a0776d4a53525fadf959b620ef425d24b99a0193`.

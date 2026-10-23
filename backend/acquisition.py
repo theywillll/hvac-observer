@@ -31,14 +31,14 @@ def frames(source, path, stop):
         return
     if source=='uno':
         from arduino.app_utils import Bridge
-        last_seq=None
+        from .uno_transport import SnapshotReceiver
+        receiver=SnapshotReceiver()
         while not stop.is_set():
-            frame=json.loads(Bridge.call('hvac_snapshot'))
-            if frame.get('seq')==last_seq:
-                raise ValueError('MCU acquisition stalled')
-            last_seq=frame['seq']
-            frame['ts']=datetime.now(timezone.utc).isoformat()
-            frame['source']='hardware'
+            started_ns=time.monotonic_ns()
+            raw=Bridge.call('hvac_snapshot')
+            received_ns=time.monotonic_ns()
+            frame=receiver.receive(raw,started_ns,received_ns,
+                timestamp=datetime.now(timezone.utc).isoformat())
             yield frame
             stop.wait(2)
         return

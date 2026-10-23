@@ -31,6 +31,14 @@ The current serializer is tested with synthetic fixtures but is not connected
 to the environmental sketch or live sampling. Declared snapshot age alone does
 not bound transport delay or how long a consumer displays the received value.
 
+The UNO adapter now applies [bounded receipt/replay checks](../firmware/current-receiver.md):
+896-byte ASCII snapshot text, duplicate/nonfinite JSON rejection, increasing
+uint32 frame sequences and conservative request/receipt budgets for numeric
+current windows. Session/policy/calibration changes require acquisition restart.
+These checks assume the producer creates a fresh current snapshot during each
+request; they do not cancel a hung RPC or expire later consumer/display copies.
+The MCU sketch still publishes no current values. JSONL/Pi behavior is unchanged.
+
 `latest` contains state, quality, measured values, active alerts, newly emitted alert events, feature metrics and gap flag. Each alert contains severity, timestamp, rule ID, heuristic confidence, evidence, explanation, possible causes, recommended next action, threshold provenance and anomaly score. Anomaly score is a normalized deviation (0…1), not fault probability.
 
 `/api/history` is intentionally scoped to the active session, even though SQLite retains earlier sessions. Alert event rows log activations, while state payloads preserve the active alert set at each time. Acknowledgement/escalation/outbound messaging, user accounts and multi-installation routing are not implemented.
