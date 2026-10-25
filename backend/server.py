@@ -5,6 +5,7 @@ import logging
 import threading
 import time
 import uuid
+from copy import deepcopy
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -15,6 +16,7 @@ from .simulator import generate, SCENARIOS, demo_baseline
 from .profiles import profiles, match
 from .calibration import apply_calibration
 from .validation import validate
+from .current_live import receipt_deadlines, ingest_projection, live_projection
 
 class Application:
     def __init__(self, db, config, scenario, hardware=False, baseline=None):
@@ -24,6 +26,9 @@ class Application:
         self.store = Store(db, str(uuid.uuid4()), 'hardware' if hardware else 'simulator', config)
         self.latest = None
         self.received = None
+        self.current_deadlines = (None,None,None)
+        self.last_status_ns = None
+        self.current_revoked = False
         self.hardware = hardware
         self.scenario = scenario
         self.error = None
@@ -32,20 +37,37 @@ class Application:
     def ingest(self, frame):
         with self.lock:
             validate(frame)
-            result = self.engine.update(apply_calibration(frame,self.config))
-            result['raw_values'] = frame
+            now_ns=time.monotonic_ns()
+            deadlines=receipt_deadlines(frame,now_ns)
+            projected=ingest_projection(frame,deadlines,now_ns)
+            result = self.engine.update(apply_calibration(projected,self.config))
+            result['raw_values'] = deepcopy(dict(frame))
             result['calibration'] = self.config.get('calibration',{})
             self.store.save(result)
-            self.latest = result
+            self.latest = deepcopy(result)
+            self.current_deadlines = deadlines
+            self.last_status_ns = now_ns
+            self.current_revoked = False
             self.received = time.monotonic()
             self.error = None
             return result
 
+    def acquisition_failed(self, error):
+        with self.lock:
+            self.error=str(error)
+            self.current_revoked=True
+
     def status(self):
         with self.lock:
-            stale = self.received is None or time.monotonic()-self.received > 15
-            return dict(latest=self.latest, stale=stale, error=self.error, simulation=not self.hardware,
-                        scenario=self.scenario, age_s=None if self.received is None else time.monotonic()-self.received)
+            now_ns=time.monotonic_ns()
+            age=None if self.received is None else time.monotonic()-self.received
+            stale=age is None or age>15 or age<0
+            if self.last_status_ns is not None and now_ns<self.last_status_ns:self.current_revoked=True
+            self.last_status_ns=now_ns
+            blocked='acquisition_error' if self.error is not None else 'clock' if self.current_revoked else 'stale' if stale else None
+            latest,live=live_projection(self.latest,self.current_deadlines,now_ns,blocked)
+            return dict(latest=latest,current_live=live,stale=stale,error=self.error,simulation=not self.hardware,
+                        scenario=self.scenario,age_s=age)
 
 def handler_for(app):
     class Handler(BaseHTTPRequestHandler):
@@ -72,7 +94,7 @@ def handler_for(app):
                 except ValueError: return self.respond(400,{'error':'limit must be an integer'})
                 with app.lock: data=app.store.history(limit)
                 return self.respond(200,data)
-            names = {'/':'index.html','/app.js':'app.js','/style.css':'style.css'}
+            names = {'/':'index.html','/app.js':'app.js','/current-view.js':'current-view.js','/style.css':'style.css'}
             if parsed.path in names:
                 name=names[parsed.path]
                 mime={'html':'text/html; charset=utf-8','js':'text/javascript','css':'text/css'}[name.split('.')[-1]]
@@ -116,7 +138,7 @@ def main():
                 if args.source=='simulator' and app.stop.wait(5/args.speed): break
         except Exception as exc:
             logging.exception('Acquisition stopped')
-            app.error=str(exc)
+            app.acquisition_failed(exc)
     server=ThreadingHTTPServer(('127.0.0.1',args.port),handler_for(app))
     thread=threading.Thread(target=worker,daemon=True)
     thread.start()

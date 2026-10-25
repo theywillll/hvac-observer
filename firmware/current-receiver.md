@@ -105,11 +105,16 @@ this UNO-specific receiver. Their existing validation/spool behavior is unchange
 Receipt eligibility also is **not permission to display or diagnose from that
 value indefinitely**. Engine/SQLite results preserve measurements at ingestion;
 later dashboard/status retention still uses the existing whole-frame stale
-handling. Consumer-use expiry and immediate clearing of old displayed current
-after an acquisition error remain pending. In particular, the 15-second stale
-flag is not a microsecond current-window lease. The receiver is not a complete
+handling at this boundary. Consumer expiry/error clearing is implemented in the
+later live-view layer linked below. The 15-second whole-frame stale flag alone
+is not a microsecond current-window lease. The receiver is not a complete
 end-to-end freshness guarantee or an authentication system; a dishonest producer
 can invent a new ordinal or false evidence.
+
+The later [live-consumer increment](current-live.md) now carries receiver
+deadlines into ingestion/status and adds dashboard expiry/failure checks.
+Original source records remain historical; no physical clock/transport or
+hard real-time browser guarantee has been qualified.
 
 ## Pinned transport source review
 

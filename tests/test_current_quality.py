@@ -4,10 +4,12 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 from backend.validation import validate
 from backend.calibration import apply_calibration
 from backend.current_quality import CURRENT_FIELDS
 from backend.server import Application
+from backend.uno_transport import SnapshotReceiver
 
 
 def qualified_frame():
@@ -125,11 +127,16 @@ class CurrentQuality(unittest.TestCase):
         with tempfile.TemporaryDirectory() as td:
             app=Application(str(Path(td)/'db'),{},'normal_cooling',hardware=True)
             try:
-                f=qualified_frame(); result=app.ingest(f)
+                receiver=SnapshotReceiver()
+                def ingest(f):
+                    raw={k:v for k,v in f.items() if k not in ('ts','source')}
+                    received=receiver.receive(json.dumps(raw,separators=(',',':')),0,0,timestamp=f['ts'])
+                    with patch('backend.server.time.monotonic_ns',return_value=0):return app.ingest(received)
+                f=qualified_frame(); result=ingest(f)
                 self.assertEqual(result['values']['current_quality'],f['current_quality'])
                 f=copy.deepcopy(f);f.update(seq=1,ts='2026-10-21T01:00:05Z',compressor_a=None)
                 f['current_quality']['channels'][0].update(available=False,faults=128,age_us=6000)
-                result=app.ingest(f)
+                result=ingest(f)
                 self.assertIsNone(result['values']['compressor_a'])
                 history=app.store.history()
                 self.assertEqual(len(history),2)

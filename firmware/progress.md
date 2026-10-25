@@ -1,5 +1,50 @@
 # Current-sensing development record
 
+## 2026-10-26 — Live-consumer expiry without rewriting history
+
+Remote baseline inspected: `c89aa2da349dbb363194d8f2b9d56874fca2507d`.
+The UNO receiver now attaches frozen, payload-bound receipt deadlines as
+non-JSON process context. Ingestion preserves the original deadline and turns
+expired current into unknown before the engine sees it. Numeric hardware input
+without trusted context is rejected; environment-only and simulation/replay
+paths remain supported. Generic JSONL cannot invent a host-clock current lease.
+
+Status creates a detached live projection, expiring each channel independently
+and clearing current on acquisition errors/clock failures without waiting for
+whole-frame staleness. Derived diagnostics become unknown; the independent float
+warning remains marked as a timestamped last observation. Engine state, retained
+results and SQLite history are unchanged by reads. Original source inputs stay
+in historical raw_values, which is omitted from the live response.
+
+The dashboard charges fetch duration, checks retained budgets with its monotonic
+clock, schedules expiry separately from polling and rechecks on focus/visibility.
+Network failure latches until a successful response; tab return cannot revive
+an offline copy. Startup/reset without a latest sample clears previous tiles.
+Withheld runtime/current is not displayed as zero. Historical charts stay labelled
+historical. Browser event scheduling is not a hard real-time guarantee.
+
+Validation: 76 Python tests passed, including actual HTTP live/history separation,
+queue/ingest expiry, per-channel boundaries, context binding, immutable historical
+and engine state, error handling and float-warning retention. Node tests execute
+the real app with a synthetic DOM, fetches, clocks and timers, including fetch
+transit, expiry, offline/focus/visibility and startup cases. Existing native C++11
+contracts and 14 C++/Python wire/receiver fixtures passed. The unchanged self-test
+compiled with pinned UNO Q CLI 1.5.1 / core 1.0.0. Sizes/hashes and limits are in
+[live-build-record.json](live-build-record.json). CI adds Node checks alongside
+Python tests; firmware sanitizer/fixture and four-sketch build checks remain.
+Publication and remote conclusions are traceable in the
+[commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
+No board upload, physical sampling, browser timing experiment, actual RPC capture
+or measured calibration occurred. MCU current production is still disconnected;
+physical latency, clock margins, persistent boot identity, synchronized worker
+and router envelope qualification remain pending. See [live contract](current-live.md).
+
+Next: persistent acquisition-session and extended-clock ownership, then the
+bounded transport envelope and serialized worker integration behind unqualified
+defaults. Board/reference fixtures remain required for aperture cadence/skew,
+anti-aliasing, front-end limits, CT calibration and measurement accuracy.
+
 ## 2026-10-23 — Bounded UNO receipt and window replay checks
 
 Remote baseline inspected: `68761d8fe28b0095e4a42a82373c14f5a041055f`.

@@ -4,7 +4,7 @@ The server binds **127.0.0.1 only**, port 8765 by default. It has no internet-fa
 
 | Method and path | Response |
 |---|---|
-| GET `/api/status` | `latest`, `stale`, `age_s`, `error`, `simulation`, `scenario` |
+| GET `/api/status` | Live-projected `latest`, `current_live`, `stale`, `age_s`, `error`, `simulation`, `scenario` |
 | GET `/api/history?limit=720` | Current session result list, chronological; limit clamped to 1…2000 |
 | GET `/api/profiles` | Profile catalog with parameter citations and explicit unknowns |
 | GET `/api/profile?manufacturer=...&model=...` | Case-insensitive exact identity match, or null |
@@ -38,6 +38,17 @@ current windows. Session/policy/calibration changes require acquisition restart.
 These checks assume the producer creates a fresh current snapshot during each
 request; they do not cancel a hung RPC or expire later consumer/display copies.
 The MCU sketch still publishes no current values. JSONL/Pi behavior is unchanged.
+
+[Live current expiry](../firmware/current-live.md) now carries trusted process-local
+UNO deadlines through ingestion/status. Expired/error currents become null;
+`current_live` lists channel availability, reason and remaining microseconds.
+Copied `latest` may mark `live_limited`, withhold derived diagnostics and retain
+a float warning as last-observation context. `raw_values` is in history, not live
+status. Reads never rewrite history or engine state. Numeric hardware currents
+passed to `Application.ingest` need the receiver's non-JSON receipt context;
+a generic JSONL dictionary cannot create a trusted host lease. Environment-only
+hardware and explicit simulation/replay remain supported. Browser fetch/expiry
+checks are not a hard real-time guarantee.
 
 `latest` contains state, quality, measured values, active alerts, newly emitted alert events, feature metrics and gap flag. Each alert contains severity, timestamp, rule ID, heuristic confidence, evidence, explanation, possible causes, recommended next action, threshold provenance and anomaly score. Anomaly score is a normalized deviation (0…1), not fault probability.
 

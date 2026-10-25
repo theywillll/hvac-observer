@@ -159,6 +159,11 @@ on fresh request-time production. Source age metadata remains unchanged. Boot
 identity, cancellation/physical transport qualification and consumer-use expiry
 are still pending; the serializer is not connected to the MCU callback.
 
+The subsequent [live-consumer layer](current-live.md) now carries receipt
+deadlines to ingestion/status and adds browser expiry/error handling while
+preserving history. Physical qualification, persistent identity and a connected
+MCU current producer remain pending.
+
 No RouterBridge size or round-trip claim is made. The pinned local RPClite 0.3.0
 source defines `DECODER_BUFFER_SIZE` as 1,024 and its default request buffer as
 one quarter of that (`Arduino_RPClite.h`, `request.h`). Those constants alone do

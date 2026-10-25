@@ -3,6 +3,7 @@ from copy import deepcopy
 import json
 from .validation import validate
 from .current_quality import CURRENT_FIELDS
+from .current_live import ReceivedFrame
 
 # Conservative application text budget, NOT a qualified router/serial limit.
 MAX_SNAPSHOT_BYTES = 896
@@ -111,4 +112,5 @@ class SnapshotReceiver:
             self._age_policy = quality['max_age_us']
         self._frame_seq = seq
         self._received_ns = received_ns
-        return checked
+        return ReceivedFrame(checked,received_ns,
+            [w['deadline'] if w is not None and not w['revoked'] else None for w in windows])

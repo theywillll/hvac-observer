@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-26",
+  "baseline_commit": "c89aa2da349dbb363194d8f2b9d56874fca2507d",
+  "increment": "In-process current receipt context, ingestion/status expiry and browser retention checks; MCU source unchanged",
+  "target": {
+    "fqbn": "arduino:zephyr:unoq",
+    "cli": "1.5.1",
+    "core": "arduino:zephyr@1.0.0",
+    "result": "passed",
+    "sketch": "current_block_selftest (unchanged)",
+    "sketch_storage_bytes": 123964,
+    "sketch_global_bytes": 66220
+  },
+  "python_tests": {
+    "count": 76,
+    "result": "passed"
+  },
+  "javascript_tests": {
+    "runtime": "v24.21.0",
+    "ci_runtime": "Node 22",
+    "result": "passed locally",
+    "coverage": "Copy projection, actual app in synthetic DOM, timer expiry, fetch transit/failure, focus/visibility, startup clearing",
+    "actual_browser_timing_tested": false
+  },
+  "native_tests": {
+    "result": "passed unchanged C++11 contract binary with undefined-behavior checks",
+    "cross_language_wire_receiver_fixtures": 14
+  },
+  "source_hash_convention": "SHA256 of UTF-8 source with LF newlines, matching published blobs",
+  "source_sha256": {
+    "backend/current_live.py": "f03003be9bc6b3dae1f87b3d0efaf7d5d3a1f23a308e15e51eaa2a0f3e141f8e",
+    "backend/server.py": "e08840e514e97f3b24ac5633ee57b7fd212bc4f9fce4aba221f862507ba22cb4",
+    "backend/uno_transport.py": "8fd57aa6db7572722fdc002c519d730a47f1522f0194b832801ee877601e6010",
+    "dashboard/current-view.js": "bd7b2695faa4fa3c6dbe5ffe379aaccd9ea8330c8cb1fe1578bbdbd32cc71e07",
+    "dashboard/app.js": "6a6d2aca5ac9f52019b6efdf761105cd5e77fd86fb1dca5effa4239d092aaf05",
+    "dashboard/index.html": "ae76de56f513d88810aacf276b76b57234d89d4d5a429a4d0ba3daeb92f863ed",
+    "tests/test_current_live.py": "4c030729620bc777835a32b09e3315432739de6d9d5d2969615e784b120089de",
+    "tests/test_current_quality.py": "3b4b8f809144d21270e55b31eb1d4b7d1dfb84a3e847cc086db3b26553ebc6b2",
+    "tests/current_view_test.js": "152fdebf1093a9f293bd0f21eaa7d93ac906a9fa4cfab703d52537b85e134b62",
+    ".github/workflows/tests.yml": "0cf156b6e68d6740bb0cd2486b6dc0a66daad403b32768140ce88e2c82dcdf00"
+  },
+  "target_artifact_sha256": {
+    "current_block_selftest.ino.bin": "d218626c00a5a416ebfe6b8305dd7d355e70c94caeb251f98ee9245498f011e3",
+    "current_block_selftest.ino.bin-zsk.bin": "153291ec503152266c9b7812340ac823012956e127bb4cc900891c025d9e936e",
+    "current_block_selftest.ino.elf": "a6b5e510dc78ddb3446f1d03def4a8fa0a37f809f8c9fe562d7529f6fc49b075",
+    "current_block_selftest.ino.elf-zsk.bin": "455e7c268e41e65e205e2e4d0f740afbc1efe4ed5fab76da83137630c895353b",
+    "current_block_selftest.ino_debug.elf": "ba6e014fdcdacb1f1aa15dc4a52412150a2f0d037b56c6485c78ff3857b9e058",
+    "current_block_selftest.ino_temp.elf": "1850b90beb1437a6019f26da97105b9014b8fe5f782eec6e7695dc9f28be289c"
+  },
+  "hardware_execution": false,
+  "uploaded": false,
+  "numeric_current_callback_connected": false,
+  "physical_rpc_or_clock_qualified": false,
+  "real_calibration_record_supplied": false,
+  "hard_real_time_browser_guarantee": false,
+  "source_history_rewritten": false,
+  "consumer_expiry_logic_implemented": true,
+  "ci_validation": "Configured; see commit workflow runs for remote results."
+}
