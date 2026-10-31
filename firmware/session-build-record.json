@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-31",
+  "baseline_commit": "db03f578336f13587ae54e5ed0a57dfa53ca189b",
+  "increment": "Persistent host-session reservation and independent expected-session receiver binding; MCU source unchanged",
+  "target": {
+    "fqbn": "arduino:zephyr:unoq",
+    "cli": "1.5.1",
+    "core": "arduino:zephyr@1.0.0",
+    "result": "passed",
+    "sketch": "current_block_selftest (unchanged)",
+    "sketch_storage_bytes": 123964,
+    "sketch_global_bytes": 66220
+  },
+  "python_tests": {
+    "count": 88,
+    "result": "passed",
+    "sqlite_version": "3.53.1",
+    "concurrent_process_allocators": 6,
+    "process_exit_cases": [
+      "before transaction commit",
+      "after committed unused reservation"
+    ]
+  },
+  "javascript_tests": {
+    "runtime": "v24.21.0",
+    "result": "passed unchanged dashboard tests"
+  },
+  "native_tests": {
+    "result": "passed unchanged C++11 contract binary with undefined-behavior checks",
+    "cross_language_wire_receiver_fixtures": 14
+  },
+  "source_hash_convention": "SHA256 of UTF-8 source with LF newlines, matching published blobs",
+  "source_sha256": {
+    "backend/current_sessions.py": "9d44d1f0f07e7f285805f3aa1617901d05ef18c9d82418da761e7c7bf69ab870",
+    "backend/uno_transport.py": "ac0a1e64eaa6453e660caa395f0fc5e142eea128e2f06d80a2bded28e0dde489",
+    "backend/acquisition.py": "eacf26631f388f6e0f30e2cc2a1d403e2d52bdfc0264296b9cdc9fbea882b536",
+    "backend/server.py": "71c0e4793fce3c715d0031f2d8ae597f05a0cc81362240e0e35f1b3d3ccdaef0",
+    "scripts/current_sessions.py": "552da8a66418cd6553fecbe1a9eb84e18eaf8081732025105c84609eff8986e3",
+    "scripts/check_current_wire.py": "4b4d4de3eac2a9a8cc673e76dadc3a7de869bae75f26e2e6e39002a1b2aecea5",
+    "tests/test_current_sessions.py": "4fefa0cf12d23d96271c3636b7b866749733415da01d5e555c0d17ed7361316e",
+    "tests/test_uno_transport.py": "04109d830633005206c23f82c6634bad7b239f3af93f06f7c296f3c2398213d5",
+    "tests/test_current_live.py": "6277b79b7be785e9d1268a97d5a41f7dbc44bdd004898b1f4686f1b5e593de51",
+    "tests/test_current_quality.py": "e15ff104d6d8b333184f849666123aacbe3f83dfac113c761dded95b35cd9710"
+  },
+  "target_artifact_sha256": {
+    "current_block_selftest.ino.bin": "d218626c00a5a416ebfe6b8305dd7d355e70c94caeb251f98ee9245498f011e3",
+    "current_block_selftest.ino.bin-zsk.bin": "153291ec503152266c9b7812340ac823012956e127bb4cc900891c025d9e936e",
+    "current_block_selftest.ino.elf": "a6b5e510dc78ddb3446f1d03def4a8fa0a37f809f8c9fe562d7529f6fc49b075",
+    "current_block_selftest.ino.elf-zsk.bin": "455e7c268e41e65e205e2e4d0f740afbc1efe4ed5fab76da83137630c895353b",
+    "current_block_selftest.ino_debug.elf": "ba6e014fdcdacb1f1aa15dc4a52412150a2f0d037b56c6485c78ff3857b9e058",
+    "current_block_selftest.ino_temp.elf": "1850b90beb1437a6019f26da97105b9014b8fe5f782eec6e7695dc9f28be289c"
+  },
+  "primary_references": [
+    "https://www.sqlite.org/lang_transaction.html",
+    "https://www.sqlite.org/pragma.html#pragma_synchronous",
+    "https://www.sqlite.org/atomiccommit.html"
+  ],
+  "production_ledger_initialized": false,
+  "temporary_test_ledgers_only": true,
+  "mcu_session_configured": false,
+  "mcu_handshake_implemented": false,
+  "hardware_execution": false,
+  "uploaded": false,
+  "power_loss_or_storage_controller_qualified": false,
+  "backup_rollback_or_cloning_prevented": false,
+  "exclusive_active_device_lease_implemented": false,
+  "numeric_current_callback_connected": false,
+  "physical_rpc_or_clock_qualified": false,
+  "ci_validation": "Configured; see commit workflow runs for remote results."
+}

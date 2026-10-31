@@ -111,6 +111,11 @@ is not a microsecond current-window lease. The receiver is not a complete
 end-to-end freshness guarantee or an authentication system; a dishonest producer
 can invent a new ordinal or false evidence.
 
+[Persistent host session allocation](current-sessions.md) now supplies the
+expected ID independently. A nonnull incoming session no longer initializes
+the receiver's expected identity on its own. Physical boot/device binding and
+the MCU handshake remain pending.
+
 The later [live-consumer increment](current-live.md) now carries receiver
 deadlines into ingestion/status and adds dashboard expiry/failure checks.
 Original source records remain historical; no physical clock/transport or

@@ -15,7 +15,7 @@ def decode_sht(data):
         raise ValueError('SHT31 CRC failure')
     return -45+175*((data[0]<<8)|data[1])/65535, 100*((data[3]<<8)|data[4])/65535
 
-def frames(source, path, stop):
+def frames(source, path, stop, *, current_session=None):
     if source=='jsonl':
         if not path: raise ValueError('--input is required')
         with open(path,encoding='utf-8') as f:
@@ -32,7 +32,7 @@ def frames(source, path, stop):
     if source=='uno':
         from arduino.app_utils import Bridge
         from .uno_transport import SnapshotReceiver
-        receiver=SnapshotReceiver()
+        receiver=SnapshotReceiver(expected_session=current_session)
         while not stop.is_set():
             started_ns=time.monotonic_ns()
             raw=Bridge.call('hvac_snapshot')

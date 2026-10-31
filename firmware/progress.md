@@ -1,5 +1,47 @@
 # Current-sensing development record
 
+## 2026-10-31 — Persistent host session reservations
+
+Remote baseline inspected: `db03f578336f13587ae54e5ed0a57dfa53ca189b`.
+Added an explicitly initialized, dedicated local SQLite session ledger with an
+authority UUID and committed monotonic counter. Reservations serialize using
+BEGIN IMMEDIATE and verify DELETE/EXTRA settings, schema, integrity, authority
+and counter bounds. IDs are returned only after commit; unused committed IDs
+remain consumed. Missing/corrupt/wrong/locked/exhausted ledgers return no fallback
+ID. Existing files cannot be overwritten by initialization or automatically reset.
+
+Optional paired UNO CLI flags reserve once per service start and supply the
+expected session to the actual acquisition receiver. Nonnull current sessions
+must match this independent expectation; the receiver no longer learns an
+arbitrary first ID. Environment-only/unconfigured data still works without a
+ledger. No session setter/handshake RPC or MCU configuration was added.
+
+Validation: 88 Python tests passed, including six simultaneous process allocations,
+reopen persistence, lock failure, corruption/authority/schema rejection, exhaustion,
+exclusive initialization and abrupt process exit before commit/after a committed
+unused ID. Receiver, CLI and fake-Bridge adapter tests check reservation binding
+and confirm no configuration RPC. Existing Node dashboard checks, native C++11
+contracts and 14 C++/Python fixtures passed. The unchanged self-test compiled for
+pinned UNO Q CLI 1.5.1 / core 1.0.0; hashes/sizes and limits are in
+[session-build-record.json](session-build-record.json). CI runs Python/Node,
+sanitizer/fixture checks and all four sketches; remote conclusions are in the
+commit workflow runs. Publication is traceable in the
+[commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
+SQLite transaction/durability behavior was checked against primary documentation;
+local process-crash tests are not power-loss/storage qualification. Only temporary
+test ledgers were initialized. No production ledger, board session, sampling,
+hardware upload, RPC capture or real calibration occurred. The counter is a
+positive 63-bit subset of the uint64 wire contract, not a globally unique device
+identity. Backup rollback/cloning, device binding, exclusive active-board ownership
+and persistent MCU boot identity are not solved. See [session contract](current-sessions.md).
+
+Next: select and test the MCU monotonic 64-bit clock owner and explicit session/
+boot handshake semantics, then integrate the serialized passive worker and bounded
+router envelope behind unqualified defaults. Physical aperture timing, clock
+margins, anti-aliasing, front-end limits, CT calibration and accuracy still require
+protected board/reference measurements.
+
 ## 2026-10-26 — Live-consumer expiry without rewriting history
 
 Remote baseline inspected: `c89aa2da349dbb363194d8f2b9d56874fca2507d`.

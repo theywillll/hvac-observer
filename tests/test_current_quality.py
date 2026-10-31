@@ -127,7 +127,7 @@ class CurrentQuality(unittest.TestCase):
         with tempfile.TemporaryDirectory() as td:
             app=Application(str(Path(td)/'db'),{},'normal_cooling',hardware=True)
             try:
-                receiver=SnapshotReceiver()
+                receiver=SnapshotReceiver(expected_session="18446744073709551615")
                 def ingest(f):
                     raw={k:v for k,v in f.items() if k not in ('ts','source')}
                     received=receiver.receive(json.dumps(raw,separators=(',',':')),0,0,timestamp=f['ts'])

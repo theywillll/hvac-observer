@@ -23,7 +23,9 @@ def check(lines):
         # Exercise the real bounded UNO receiver too. Each fixture is an
         # independent synthetic stream; no physical RPC latency is asserted.
         raw=json.dumps(dict(payload,seq=0,stage=1),separators=(',',':'),allow_nan=False)
-        received=SnapshotReceiver().receive(raw,0,0,timestamp=frame['ts'])
+        # Synthetic expected IDs only; production must reserve independently,
+        # never learn the expected session from the incoming message.
+        received=SnapshotReceiver(expected_session=payload['current_quality']['session']).receive(raw,0,0,timestamp=frame['ts'])
         if received != dict(out,stage=1):raise ValueError('Receiver/validator disagreement')
         values=[out[k] for k in CURRENT_FIELDS]
         if name in ('valid','boundary'):

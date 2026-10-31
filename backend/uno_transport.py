@@ -2,7 +2,7 @@
 from copy import deepcopy
 import json
 from .validation import validate
-from .current_quality import CURRENT_FIELDS
+from .current_quality import CURRENT_FIELDS, _decimal64
 from .current_live import ReceivedFrame
 
 # Conservative application text budget, NOT a qualified router/serial limit.
@@ -29,7 +29,10 @@ class SnapshotReceiver:
     Source age is retained unchanged. A numeric result must separately satisfy
     a conservative host receipt deadline. That is not a lease for later display.
     """
-    def __init__(self):
+    def __init__(self, expected_session=None):
+        if expected_session is not None and not _decimal64(expected_session):
+            raise ValueError('Expected current session must be a nonzero uint64 decimal string')
+        self._expected_session=expected_session
         self._frame_seq = None
         self._received_ns = None
         self._session = None
@@ -60,6 +63,8 @@ class SnapshotReceiver:
         checked, _ = validate(frame)
         quality = checked.get('current_quality')
         session = quality['session'] if quality is not None else None
+        if session is not None and session!=self._expected_session:
+            raise ValueError('Current session does not match host reservation')
         if self._session is not None and session != self._session:
             raise ValueError('Current session changed/disappeared; restart acquisition')
         if self._age_policy is not None and quality['max_age_us'] != self._age_policy:

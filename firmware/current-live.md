@@ -24,6 +24,10 @@ wall-clock-age check cannot mint microsecond host deadlines. Do not relabel real
 hardware as simulation to bypass this rule. Pure wire validation alone does not
 qualify live ingestion.
 
+The later [host-session ledger](current-sessions.md) also requires nonnull UNO
+current sessions to match a reservation supplied independently by the service.
+It supplies host allocation history, not an MCU boot handshake or clock proof.
+
 If a trusted window expires between receipt and ingestion, its current becomes
 null before entering the engine, with an unavailable copied quality entry and
 age-fault bit. It is never interpreted as zero or proof of motor stoppage.

@@ -5,6 +5,7 @@ import logging
 import threading
 import time
 import uuid
+import sqlite3
 from copy import deepcopy
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -17,6 +18,7 @@ from .profiles import profiles, match
 from .calibration import apply_calibration
 from .validation import validate
 from .current_live import receipt_deadlines, ingest_projection, live_projection
+from .current_sessions import reserve_for_source
 
 class Application:
     def __init__(self, db, config, scenario, hardware=False, baseline=None):
@@ -117,6 +119,8 @@ def main():
     p.add_argument('--source',choices=['simulator','uno','pi','jsonl'],default='simulator')
     p.add_argument('--input',help='JSONL acquisition spool for jsonl source')
     p.add_argument('--baseline',help='Reviewed baseline JSON (hardware only)')
+    p.add_argument('--current-session-ledger',help='Existing dedicated local ledger for optional UNO current session')
+    p.add_argument('--current-session-authority',help='Expected ledger authority printed at explicit initialization')
     p.add_argument('--speed',type=float,default=20,help='Simulation speed multiplier')
     args=p.parse_args()
     if args.speed <= 0: p.error('speed must be positive')
@@ -124,6 +128,11 @@ def main():
     baseline=json.loads(Path(args.baseline).read_text()) if args.baseline else None
     if args.source != 'simulator' and baseline and baseline.get('synthetic'):
         p.error('Synthetic baselines cannot be used with hardware')
+    try:
+        if args.current_session_ledger and Path(args.current_session_ledger).resolve()==Path(args.db).resolve():
+            raise ValueError('Current session ledger must be separate from measurement database')
+        current_session=reserve_for_source(args.source,args.current_session_ledger,args.current_session_authority)
+    except (ValueError,OSError,sqlite3.Error) as exc:p.error(str(exc))
     app=Application(args.db,config,args.scenario,args.source!='simulator',baseline)
     def worker():
         try:
@@ -131,7 +140,7 @@ def main():
                 stream=generate(args.scenario,count=10**8,start=datetime.now(timezone.utc))
             else:
                 from .acquisition import frames
-                stream=frames(args.source,args.input,app.stop)
+                stream=frames(args.source,args.input,app.stop,current_session=current_session)
             for frame in stream:
                 if app.stop.is_set(): break
                 app.ingest(frame)

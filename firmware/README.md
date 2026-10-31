@@ -1,5 +1,10 @@
 # Firmware and acquisition adapters
 
+[Persistent host sessions](current-sessions.md) now provide explicit ledger
+initialization, committed monotonic reservations and independently expected
+receiver IDs. No MCU session setter, handshake or current producer is connected.
+The environment-only path remains usable without a ledger.
+
 [Live current expiry](current-live.md) now carries receipt deadlines through
 ingestion and masks retained readings in status/dashboard consumers. Historical
 measurements remain unchanged. Tests use synthetic clocks/DOM; MCU production,

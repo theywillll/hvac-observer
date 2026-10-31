@@ -19,7 +19,7 @@ def frame(ages=(1000,2000,3000)):
             dict(channel=c,available=True,faults=0,age_us=a,window_seq='0',
                  timing_evidence_id=7,calibration_id=9+c,calibration_revision=2)
             for c,a in enumerate(ages)]))
-    return SnapshotReceiver().receive(json.dumps(raw,separators=(',',':')),0,0,
+    return SnapshotReceiver(expected_session="1").receive(json.dumps(raw,separators=(',',':')),0,0,
                                      timestamp='2026-10-26T01:00:00Z')
 
 

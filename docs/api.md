@@ -50,6 +50,15 @@ a generic JSONL dictionary cannot create a trusted host lease. Environment-only
 hardware and explicit simulation/replay remain supported. Browser fetch/expiry
 checks are not a hard real-time guarantee.
 
+[Persistent current sessions](../firmware/current-sessions.md) now require any
+nonnull UNO current session to match an independently reserved host ID. Paired
+`--current-session-ledger` and `--current-session-authority` flags reserve from
+an explicitly initialized dedicated local ledger. No ledger is auto-created or
+reset. Without these flags, legacy environment-only/unconfigured data still
+works; configured current data is rejected. The service does not yet configure
+or negotiate an MCU current session. These are acquisition options, not an API
+write endpoint or equipment controls.
+
 `latest` contains state, quality, measured values, active alerts, newly emitted alert events, feature metrics and gap flag. Each alert contains severity, timestamp, rule ID, heuristic confidence, evidence, explanation, possible causes, recommended next action, threshold provenance and anomaly score. Anomaly score is a normalized deviation (0…1), not fault probability.
 
 `/api/history` is intentionally scoped to the active session, even though SQLite retains earlier sessions. Alert event rows log activations, while state payloads preserve the active alert set at each time. Acknowledgement/escalation/outbound messaging, user accounts and multi-installation routing are not implemented.
