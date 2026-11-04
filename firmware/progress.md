@@ -1,5 +1,24 @@
 # Current-sensing development record
 
+## 2026-11-04 — MCU boot-relative uptime reader
+
+Remote baseline: `73dca3f22ed05b83b2a339bba92dac3529851e53`.
+Added a UNO Q adapter for full-width Zephyr uptime ticks with the pinned
+10 kHz configuration enforced at compile time. Conversion to nominal
+microseconds checks overflow; negative or regressing ticks latch failure.
+The reader neither counts 32-bit wraps nor substitutes uptime for ADC
+sample timestamps. See [clock boundary and limits](current-uptime.md).
+
+Native C++11 undefined-behavior checks, 14 cross-language fixtures and
+88 Python tests passed. Arduino CLI 1.5.1 / Zephyr core 1.0.0 compiled
+the self-test for UNO Q (124,380 bytes storage; 66,432 bytes globals).
+Its real uptime API and two-read smoke check were not run on hardware. No current
+producer, handshake, board configuration, acquisition or I2C change was
+made. Next: explicit MCU boot/session handshake and acknowledgement.
+
+Publication and CI are recorded in the
+[commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
 ## 2026-10-31 — Persistent host session reservations
 
 Remote baseline inspected: `db03f578336f13587ae54e5ed0a57dfa53ca189b`.

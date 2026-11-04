@@ -5,9 +5,13 @@
 #include "../firmware/current_block_selftest/CurrentWindowTests.h"
 #include "../firmware/current_block_selftest/CurrentSnapshotTests.h"
 #include "current_wire_fixtures.h"
+#include "../firmware/current_block_selftest/CurrentUptimeTests.h"
 int main(int argc, char** argv) {
   if(argc == 2 && strcmp(argv[1],"--current-wire-fixtures") == 0) return emitCurrentFixtures();
   if(argc != 1) { fprintf(stderr,"Unknown test argument\n"); return 1; }
+  const int uptimeFailure = hvac_uptime_test::run();
+  if (uptimeFailure) { fprintf(stderr, "Uptime contract failed at line %d\n", uptimeFailure); return 1; }
+  printf("Synthetic uptime rollover and sticky fault tests passed.\n");
   const int failure = hvac_current_test::run();
   if (failure) { fprintf(stderr, "Block contract failed at test line %d\n", failure); return 1; }
   printf("Synthetic block contract passed (including 1000 queue reuse cycles).\n");

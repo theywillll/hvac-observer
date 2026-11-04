@@ -5,6 +5,8 @@
 #include "CurrentWindowTests.h"
 #include "CurrentSnapshotTests.h"
 #include "CurrentWireTests.h"
+#include "CurrentUptimeTests.h"
+#include <UnoQUptimeClock.h>
 #if !defined(ARDUINO_UNO_Q) || !defined(ARDUINO_ARCH_ZEPHYR)
 #error "Compile this self-test for arduino:zephyr:unoq"
 #endif
@@ -12,6 +14,15 @@
 hvac_current::RawBlockPool<800> researchPool;
 void setup() {
   Serial.begin(115200);
+  const int uptimeFailure = hvac_uptime_test::run();
+  Serial.print("Synthetic uptime contract: ");
+  if (uptimeFailure) { Serial.print("FAIL at test line "); Serial.println(uptimeFailure); }
+  else Serial.println("PASS");
+  hvac_current::UnoQUptimeClock clock;
+  uint64_t firstUs, secondUs;
+  const bool clockOk = clock.read(firstUs) && clock.read(secondUs) && secondUs >= firstUs;
+  Serial.print("UNO Q uptime read (no timing qualification): ");
+  Serial.println(clockOk ? "PASS" : "FAIL");
   researchPool.reset(1, {120, 130, 20, 4095, 8}); // Synthetic limits, not qualified.
   const int failure = hvac_current_test::run();
   Serial.print("Synthetic block contract: ");
