@@ -6,6 +6,7 @@
 #include "CurrentSnapshotTests.h"
 #include "CurrentWireTests.h"
 #include "CurrentUptimeTests.h"
+#include "CurrentSessionTests.h"
 #include <UnoQUptimeClock.h>
 #if !defined(ARDUINO_UNO_Q) || !defined(ARDUINO_ARCH_ZEPHYR)
 #error "Compile this self-test for arduino:zephyr:unoq"
@@ -14,6 +15,10 @@
 hvac_current::RawBlockPool<800> researchPool;
 void setup() {
   Serial.begin(115200);
+  const int sessionFailure = hvac_session_test::run();
+  Serial.print("Synthetic session contract: ");
+  if (sessionFailure) { Serial.print("FAIL at test line "); Serial.println(sessionFailure); }
+  else Serial.println("PASS");
   const int uptimeFailure = hvac_uptime_test::run();
   Serial.print("Synthetic uptime contract: ");
   if (uptimeFailure) { Serial.print("FAIL at test line "); Serial.println(uptimeFailure); }

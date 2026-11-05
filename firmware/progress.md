@@ -1,5 +1,29 @@
 # Current-sensing development record
 
+## 2026-11-05 — Confirmed-session snapshot boundary
+
+Remote baseline: `07f91f0ee199153656d37759e61f199a9b0f1d16` (both CI workflows
+succeeded). Added `CurrentSessionStore`, a fixed-storage, noncopyable wrapper
+that requires a newer host-range session offer and matching confirmation before
+publication/serialization. Offers revoke the old state; failed configurations
+consume valid newer IDs. Stop retains the high-water ID. Clock regressions or
+explicit clock-read failures latch across session changes. Duplicate confirmations
+are idempotent; queued windows starting before confirmation cannot publish.
+
+Shared synthetic tests cover transitions, current/null payloads, age expiry,
+stale confirmations/windows, invalid policies, stop, ID exhaustion and sticky
+clock failures. Native C++11 checks with undefined-behavior instrumentation,
+14 cross-language fixtures and all 88 Python tests passed. The expanded
+self-test is compiled for pinned Arduino CLI 1.5.1 / Zephyr 1.0.0 UNO Q;
+it has not been uploaded or run on a board. See the commit's CI runs for the
+independent build results and [the contract](current-session-contract.md).
+
+This is the state boundary only: no Bridge RPC, host confirmation caller,
+boot identity/challenge, timeout/disconnect owner or ADC worker is implemented.
+No live-current or I2C behavior changed. Next: bounded handshake messages and
+boot/connection binding before connecting the state boundary to production.
+Hardware timing, calibration and reset validation remain outstanding.
+
 ## 2026-11-04 — MCU boot-relative uptime reader
 
 Remote baseline: `73dca3f22ed05b83b2a339bba92dac3529851e53`.
