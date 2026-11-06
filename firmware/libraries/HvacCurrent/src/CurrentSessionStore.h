@@ -2,6 +2,7 @@
 #include <CurrentWire.h>
 
 namespace hvac_current {
+static constexpr uint64_t CurrentSessionMax = UINT64_C(9223372036854775807);
 // One externally serialized owner for one MCU boot. This is the state contract,
 // not an RPC transport or proof of boot identity. Do not expose the inner store.
 class CurrentSessionStore {
@@ -14,7 +15,7 @@ class CurrentSessionStore {
   // A positive, in-range newer ID is consumed even if its policy is rejected.
   bool offer(uint64_t session, WindowPolicy policy, uint64_t nowUs) {
     stop();
-    if (!advance(nowUs) || !session || session > maxSession || session <= highest_) return false;
+    if (!advance(nowUs) || !session || session > CurrentSessionMax || session <= highest_) return false;
     highest_ = session;
     if (!store_.reset(session, policy, nowUs)) return false;
     pending_ = true;
@@ -59,7 +60,6 @@ class CurrentSessionStore {
     seenClock_ = true; lastUs_ = nowUs;
     return true;
   }
-  static constexpr uint64_t maxSession = UINT64_C(9223372036854775807);
   CurrentSnapshotStore store_;
   uint64_t highest_ = 0, lastUs_ = 0, confirmedUs_ = 0;
   bool pending_ = false, active_ = false, seenClock_ = false, clockFault_ = false;

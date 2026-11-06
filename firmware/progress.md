@@ -1,5 +1,23 @@
 # Current-sensing development record
 
+## 2026-11-06 — Boot-bound current session commands
+
+Remote baseline `d4dd87a5b5fe8c9ee26c37fa80c0bfd6c136a22d` passed both CI
+workflows. Added a versioned, bounded command handler for offers and
+confirmations. It validates the message, reply capacity and caller-supplied
+boot token before touching the current store. Successful replies echo the
+boot token and reservation after the store accepts the transition.
+
+Native C++11 checks with undefined-behavior instrumentation, 14 cross-language
+snapshot fixtures and 88 Python tests passed. The expanded self-test compiled
+for the pinned UNO Q target. Synthetic command tests reject old boot tokens
+even when a delayed confirmation carries the current pending session number.
+Hardware execution, boot-token generation and discovery, host reply matching,
+and Bridge transport integration remain pending. The next increment is host
+reply matching and reservation handling. See the
+[command contract](current-session-contract.md) and
+[commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
 ## 2026-11-05 — Confirmed-session snapshot boundary
 
 Remote baseline: `07f91f0ee199153656d37759e61f199a9b0f1d16` (both CI workflows

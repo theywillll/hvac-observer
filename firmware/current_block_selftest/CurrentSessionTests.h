@@ -1,11 +1,60 @@
 #pragma once
 #include <CurrentSessionStore.h>
+#include <CurrentSessionCommand.h>
 #include "CurrentWindowTests.h"
 #include <string.h>
 #include <type_traits>
 
 namespace hvac_session_test {
+inline int runCommands() {
+  using namespace hvac_current;
+  const char firstBoot[] = "00000000000000000000000000000001";
+  const char secondBoot[] = "00000000000000000000000000000002";
+  CurrentSessionStore first, second;
+  char reply[CurrentSessionCommandCapacity];
+  const auto policy = hvac_window_test::policy();
+  const auto send = [&](CurrentSessionStore& store, const char (&boot)[33], const char* input) {
+    return applyCurrentSessionCommand(store, boot, input, strlen(input), policy, 100, reply, sizeof(reply));
+  };
+  const char offer[] = "1 O 00000000000000000000000000000001 9223372036854775807";
+  const char confirm[] = "1 C 00000000000000000000000000000001 9223372036854775807";
+  if (applyCurrentSessionCommand(first, firstBoot, offer, sizeof(offer)-1,
+                                policy, 100, reply, sizeof(offer)-1)) return __LINE__;
+  if (!send(first, firstBoot, offer) || first.active() ||
+      strcmp(reply, "1 A 00000000000000000000000000000001 9223372036854775807")) return __LINE__;
+  if (!send(first, firstBoot, confirm) || !first.active() ||
+      strcmp(reply, "1 K 00000000000000000000000000000001 9223372036854775807")) return __LINE__;
+  if (!send(second, secondBoot, "1 O 00000000000000000000000000000002 1")) return __LINE__;
+  if (send(second, secondBoot, offer) || reply[0]) return __LINE__;
+  if (send(second, secondBoot, "1 C 00000000000000000000000000000001 1") ||
+      reply[0] || second.active()) return __LINE__;
+  if (!send(second, secondBoot, "1 C 00000000000000000000000000000002 1") || !second.active()) return __LINE__;
+
+  const char* bad[] = {
+    "2 O 00000000000000000000000000000002 2",
+    "1 A 00000000000000000000000000000002 2",
+    "1 O 00000000000000000000000000000002 0",
+    "1 O 00000000000000000000000000000002 02",
+    "1 O 00000000000000000000000000000002 +2",
+    "1 O 00000000000000000000000000000002 2\n",
+    "1 O 00000000000000000000000000000002 9223372036854775808",
+    "1 O 00000000000000000000000000000002 18446744073709551616",
+  };
+  for (const char* input : bad)
+    if (send(second, secondBoot, input) || reply[0] || !second.active()) return __LINE__;
+  char embedded[] = "1 O 00000000000000000000000000000002 2\0x";
+  if (applyCurrentSessionCommand(second, secondBoot, embedded, sizeof(embedded)-1,
+                                 policy, 100, reply, sizeof(reply))) return __LINE__;
+  if (!second.active()) return __LINE__;
+  const char zero[] = "00000000000000000000000000000000";
+  if (send(second, zero, "1 O 00000000000000000000000000000000 2")) return __LINE__;
+  if (!send(second, secondBoot, "1 O 00000000000000000000000000000002 2") || second.active()) return __LINE__;
+  return 0;
+}
+
 inline int run() {
+  const int commandFailure = runCommands();
+  if (commandFailure) return commandFailure;
   using namespace hvac_current;
   using namespace hvac_window_test;
   static_assert(!std::is_copy_constructible<CurrentSessionStore>::value, "One boot owner");

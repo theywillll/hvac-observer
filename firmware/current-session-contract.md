@@ -56,12 +56,35 @@ It must flush queued acquisition work when changing sessions and start new
 acquisition only after confirmation; this class cannot identify a preconfirmation
 sample whose caller fabricated valid stamps. No pending timeout is built in.
 
-**There is no boot identity or authentication here.** A newly constructed owner
-has no knowledge of IDs from previous MCU boots. Before production use, design
-a boot/connection challenge and stale-message rejection with the host ledger
-authority, then test MCU reset, host restart, lost replies, delayed RPCs and
-disconnects end to end. Session IDs alone do not authenticate a sender or prove
-a new boot. No Bridge RPC or host confirmation caller exists yet.
+### Version 1 command format
+
+`applyCurrentSessionCommand` handles a bounded ASCII request for one serialized
+store and a caller-supplied boot token. The four fields are separated by exactly
+one space. The token is 32 lowercase hex digits and must be nonzero. The
+session is canonical decimal in the host ledger range, 1 through 2^63-1.
+The entire request is 38–56 bytes, excluding the C terminator.
+
+| Direction | Message | Meaning |
+| --- | --- | --- |
+| Host → MCU | `1 O <boot> <session>` | Offer a reservation with the MCU's local policy |
+| MCU → host | `1 A <boot> <session>` | Offer accepted and waiting for confirmation |
+| Host → MCU | `1 C <boot> <session>` | Confirm the exact offer acknowledged by the MCU |
+| MCU → host | `1 K <boot> <session>` | Store confirmed the session |
+
+Supply the exact transport byte count and a reply buffer with at least 57 bytes
+for the longest reply and its terminator. Malformed input, a different token
+or insufficient reply capacity leaves the store untouched. A well-formed offer
+for this boot reaches the store and follows its revocation rules, even when
+the store rejects the session or policy. Failure clears a writable reply
+buffer. If a reply is lost, a duplicate confirmation can succeed, while
+offer recovery requires a fresh reservation.
+
+The token check distinguishes boots only when the caller supplies a distinct
+token for each boot and holds it fixed for the life of the store. The token
+does not authenticate peers. A production owner must establish token
+generation and discovery, validate reply tokens and reservations on the host,
+and handle MCU reset, host restart, lost replies, delayed RPCs and disconnects.
+Bridge RPCs, token generation and host transport remain pending.
 
 ## Verification and next increment
 
@@ -73,5 +96,8 @@ explicit failed clock reads and the 2^63-1 boundary. They run through
 `tests/current_block_test.cpp` and compile into `current_block_selftest`.
 This is software-contract evidence, not a board reset, transport or sampling test.
 
-Next: specify and test the bounded host/MCU message exchange and boot binding
-before adding configuration RPCs. No live current acquisition is enabled.
+The command tests use two synthetic boot tokens. They cover a delayed offer
+and a delayed confirmation carrying the same session ID as the new pending
+offer. They also cover malformed and overflowing IDs, embedded null bytes,
+reply capacity, and the largest ledger ID. Next: host reply matching and
+reservation handling, followed by a real boot-token owner and transport.
