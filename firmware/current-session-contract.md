@@ -82,9 +82,19 @@ offer recovery requires a fresh reservation.
 The token check distinguishes boots only when the caller supplies a distinct
 token for each boot and holds it fixed for the life of the store. The token
 does not authenticate peers. A production owner must establish token
-generation and discovery, validate reply tokens and reservations on the host,
-and handle MCU reset, host restart, lost replies, delayed RPCs and disconnects.
-Bridge RPCs, token generation and host transport remain pending.
+generation and discovery, and handle MCU reset, host restart, lost replies,
+delayed RPCs and disconnects. Bridge RPCs and token generation remain pending.
+
+The host helper `backend.current_handshake.negotiate_current_session` commits
+a fresh ledger reservation before sending the offer. It requires the exact
+ASCII reply text for that boot token, command phase and reservation before
+continuing. It returns the session only after the matching confirmation reply.
+The connection owner supplies a discovered token and a serialized exchange
+with transport deadlines. A failed exchange consumes its reservation. Keep
+live current unavailable and retire the connection on failure, since the MCU
+could have applied the command before its reply was lost. Production
+acquisition still needs to call this helper and pass its result to
+`SnapshotReceiver` as the expected session.
 
 ## Verification and next increment
 
@@ -99,5 +109,6 @@ This is software-contract evidence, not a board reset, transport or sampling tes
 The command tests use two synthetic boot tokens. They cover a delayed offer
 and a delayed confirmation carrying the same session ID as the new pending
 offer. They also cover malformed and overflowing IDs, embedded null bytes,
-reply capacity, and the largest ledger ID. Next: host reply matching and
-reservation handling, followed by a real boot-token owner and transport.
+reply capacity, and the largest ledger ID. Host tests use a real temporary
+ledger and a simulated connection to exercise reply matching, timeout and
+reservation consumption. Next is a real boot-token owner and transport.

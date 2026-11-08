@@ -1,5 +1,20 @@
 # Current-sensing development record
 
+## 2026-11-09 — Verify current-session replies on the host
+
+Added host negotiation over an injected, deadline-bounded exchange. It commits
+the reservation before sending an offer, requires an exact acceptance before
+sending confirmation, and exposes the session only after the exact confirmation
+reply. Failed or ambiguous exchanges consume their reservations.
+
+All 92 Python tests passed, including four new tests using the real SQLite
+ledger and simulated replies. The unchanged firmware was compiled by the
+[baseline UNO Q workflow](https://github.com/theywillll/hvac-observer/actions/runs/42155296066)
+at `c75a7277ced86d815172356d34e9bb5b6b457641`. Hardware validation and production
+connection ownership remain pending. Next is MCU boot-token generation and
+discovery with the pinned core. See the [session contract](current-session-contract.md)
+and [commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
 ## 2026-11-06 — Boot-bound current session commands
 
 Remote baseline `d4dd87a5b5fe8c9ee26c37fa80c0bfd6c136a22d` passed both CI
