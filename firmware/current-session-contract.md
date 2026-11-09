@@ -79,11 +79,22 @@ the store rejects the session or policy. Failure clears a writable reply
 buffer. If a reply is lost, a duplicate confirmation can succeed, while
 offer recovery requires a fresh reservation.
 
-The token check distinguishes boots only when the caller supplies a distinct
-token for each boot and holds it fixed for the life of the store. The token
-does not authenticate peers. A production owner must establish token
-generation and discovery, and handle MCU reset, host restart, lost replies,
-delayed RPCs and disconnects. Bridge RPCs and token generation remain pending.
+The token check depends on a fresh token held fixed for the life of the
+store. The UNO Q self-test now initializes a boot token using Zephyr's
+[`sys_csrand_get()`](https://docs.zephyrproject.org/latest/services/crypto/random/index.html).
+The pinned core 1.0.0 UNO Q configuration selects the hardware-device
+CSPRNG and STM32 entropy driver, and exports the syscall implementation to
+the sketch. The adapter requires both configuration flags. It requests 16
+bytes once and encodes them as 32 lowercase hexadecimal digits. An RNG error
+or all-zero result leaves the token empty for that owner lifetime. There is
+no timer-derived fallback. Use the token for stale-message separation only.
+
+Production discovery and Bridge RPCs remain pending. The production owner
+must hold one token and store for the MCU boot, suppress discovery when
+initialization fails, and handle MCU reset, host restart, lost replies,
+delayed RPCs and disconnects. The compiled self-test reports success or
+failure without printing the token. A board run is needed to check actual
+entropy availability and token changes across resets.
 
 The host helper `backend.current_handshake.negotiate_current_session` commits
 a fresh ledger reservation before sending the offer. It requires the exact
@@ -111,4 +122,4 @@ and a delayed confirmation carrying the same session ID as the new pending
 offer. They also cover malformed and overflowing IDs, embedded null bytes,
 reply capacity, and the largest ledger ID. Host tests use a real temporary
 ledger and a simulated connection to exercise reply matching, timeout and
-reservation consumption. Next is a real boot-token owner and transport.
+reservation consumption. Next is the production owner and discovery transport.

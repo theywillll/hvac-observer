@@ -1,11 +1,30 @@
 #pragma once
 #include <CurrentSessionStore.h>
 #include <CurrentSessionCommand.h>
+#include <CurrentBootToken.h>
 #include "CurrentWindowTests.h"
 #include <string.h>
 #include <type_traits>
 
 namespace hvac_session_test {
+inline int runBootToken() {
+  hvac_current::CurrentBootToken valid, failed, zero;
+  int calls = 0;
+  const auto source = [&](uint8_t* bytes, size_t length) {
+    ++calls;
+    if (length != 16) return -1;
+    for (size_t i = 0; i < length; ++i) bytes[i] = uint8_t(i * 17);
+    return 0;
+  };
+  if (valid.value()[0] || !valid.initialize(source) || !valid.initialize(source) ||
+      calls != 1 || strcmp(valid.value(), "00112233445566778899aabbccddeeff")) return __LINE__;
+  if (failed.initialize([](uint8_t* bytes, size_t) { bytes[0] = 1; return -1; }) ||
+      failed.value()[0] || failed.initialize(source) || calls != 1) return __LINE__;
+  if (zero.initialize([](uint8_t*, size_t) { return 0; }) || zero.value()[0] ||
+      zero.initialize(source) || calls != 1) return __LINE__;
+  return 0;
+}
+
 inline int runCommands() {
   using namespace hvac_current;
   const char firstBoot[] = "00000000000000000000000000000001";
@@ -53,6 +72,8 @@ inline int runCommands() {
 }
 
 inline int run() {
+  const int bootFailure = runBootToken();
+  if (bootFailure) return bootFailure;
   const int commandFailure = runCommands();
   if (commandFailure) return commandFailure;
   using namespace hvac_current;

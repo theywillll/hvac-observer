@@ -1,5 +1,20 @@
 # Current-sensing development record
 
+## 2026-11-09 — Generate an MCU boot token
+
+Remote baseline `c14e185616087d45c080775ec63c393bd8054153`. Added a one-shot
+token holder and the pinned UNO Q hardware RNG adapter. The holder encodes
+16 bytes as the existing 32-character token and latches failures, including
+an all-zero result. Synthetic checks cover encoding, repeated initialization
+and failure after a partial write. The UNO Q self-test exercises the adapter
+when run on a board.
+
+Native C++11 checks with undefined-behavior instrumentation, 14 cross-language
+fixtures, 92 Python tests and the pinned UNO Q self-test compile passed.
+Runtime entropy and token changes across resets remain unverified. Next is
+production ownership and discovery. See the [session contract](current-session-contract.md)
+and [commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
 ## 2026-11-09 — Verify current-session replies on the host
 
 Added host negotiation over an injected, deadline-bounded exchange. It commits

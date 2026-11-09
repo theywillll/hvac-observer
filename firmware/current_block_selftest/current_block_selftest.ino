@@ -8,13 +8,18 @@
 #include "CurrentUptimeTests.h"
 #include "CurrentSessionTests.h"
 #include <UnoQUptimeClock.h>
+#include <UnoQBootToken.h>
 #if !defined(ARDUINO_UNO_Q) || !defined(ARDUINO_ARCH_ZEPHYR)
 #error "Compile this self-test for arduino:zephyr:unoq"
 #endif
 // Reserve the proposed 800-sample/channel pool to check its target memory cost.
 hvac_current::RawBlockPool<800> researchPool;
+hvac_current::CurrentBootToken bootToken;
 void setup() {
   Serial.begin(115200);
+  const bool bootTokenOk = hvac_current::initializeUnoQBootToken(bootToken);
+  Serial.print("UNO Q boot token initialization: ");
+  Serial.println(bootTokenOk && bootToken.value()[0] ? "PASS" : "FAIL");
   const int sessionFailure = hvac_session_test::run();
   Serial.print("Synthetic session contract: ");
   if (sessionFailure) { Serial.print("FAIL at test line "); Serial.println(sessionFailure); }
