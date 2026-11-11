@@ -36,7 +36,7 @@ target; building a custom Zephyr loader is a different task.
 arduino-cli core update-index
 arduino-cli core install arduino:zephyr@1.0.0
 arduino-cli lib install --no-deps 'Arduino_RouterBridge@0.4.3' 'Arduino_RPClite@0.3.0' 'MsgPack@0.4.2' 'DebugLog@0.8.4' 'ArxTypeTraits@0.3.2' 'ArxContainer@0.7.0'
-arduino-cli compile --fqbn arduino:zephyr:unoq --warnings all --output-dir build/environmental firmware/hvac_observer
+arduino-cli compile --fqbn arduino:zephyr:unoq --warnings all --libraries firmware/libraries --output-dir build/environmental firmware/hvac_observer
 arduino-cli compile --fqbn arduino:zephyr:unoq --warnings all --output-dir build/adc-probe firmware/current_adc_probe
 ```
 

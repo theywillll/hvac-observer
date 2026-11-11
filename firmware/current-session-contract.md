@@ -89,12 +89,15 @@ bytes once and encodes them as 32 lowercase hexadecimal digits. An RNG error
 or all-zero result leaves the token empty for that owner lifetime. There is
 no timer-derived fallback. Use the token for stale-message separation only.
 
-Production discovery and Bridge RPCs remain pending. The production owner
-must hold one token and store for the MCU boot, suppress discovery when
-initialization fails, and handle MCU reset, host restart, lost replies,
-delayed RPCs and disconnects. The compiled self-test reports success or
-failure without printing the token. A board run is needed to check actual
-entropy availability and token changes across resets.
+The main sketch initializes one token before registering Bridge callbacks.
+The read-only `hvac_current_boot` RPC takes no arguments and returns the
+cached token or an empty string when initialization fails.
+`backend.current_handshake.discover_current_boot` validates the reply over
+the caller's bounded connection and rejects an empty or malformed token.
+The host acquisition loop still needs to call discovery and negotiation.
+The session command RPC, store ownership and disconnect handling remain
+pending. A board run is needed to check actual entropy availability, token
+changes across resets and Bridge round trips.
 
 The host helper `backend.current_handshake.negotiate_current_session` commits
 a fresh ledger reservation before sending the offer. It requires the exact
@@ -122,4 +125,5 @@ and a delayed confirmation carrying the same session ID as the new pending
 offer. They also cover malformed and overflowing IDs, embedded null bytes,
 reply capacity, and the largest ledger ID. Host tests use a real temporary
 ledger and a simulated connection to exercise reply matching, timeout and
-reservation consumption. Next is the production owner and discovery transport.
+reservation consumption. Next is connecting the session command handler
+to the MCU's Bridge transport and testing the full exchange on the host.

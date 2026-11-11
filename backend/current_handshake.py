@@ -3,13 +3,7 @@
 from .current_sessions import reserve
 
 
-def negotiate_current_session(exchange, boot_token, ledger, authority):
-    """Return the reserved session only after both MCU replies match.
-
-    The caller supplies a discovered boot token and a serialized, deadline-
-    bounded exchange callable for that connection. On failure the caller must
-    keep current unavailable and retire the connection before negotiating again.
-    """
+def _checked_boot_token(boot_token):
     if (
         type(boot_token) is not str
         or len(boot_token) != 32
@@ -17,6 +11,22 @@ def negotiate_current_session(exchange, boot_token, ledger, authority):
         or any(char not in "0123456789abcdef" for char in boot_token)
     ):
         raise ValueError("Expected a nonzero, lowercase hexadecimal MCU boot token")
+    return boot_token
+
+
+def discover_current_boot(call):
+    """Read the boot token over the caller's serialized, bounded RPC connection."""
+    return _checked_boot_token(call("hvac_current_boot"))
+
+
+def negotiate_current_session(exchange, boot_token, ledger, authority):
+    """Return the reserved session only after both MCU replies match.
+
+    The caller supplies a discovered boot token and a serialized, deadline-
+    bounded exchange callable for that connection. On failure the caller must
+    keep current unavailable and retire the connection before negotiating again.
+    """
+    _checked_boot_token(boot_token)
 
     session = reserve(ledger, authority)
     binding = f"{boot_token} {session}"

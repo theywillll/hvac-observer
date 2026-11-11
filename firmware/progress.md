@@ -1,5 +1,20 @@
 # Current-sensing development record
 
+## 2026-11-11 — Expose the current-session boot token over Bridge
+
+Both CI workflows passed at baseline `26a3caee7c61c510861d3d9bd41e7861544893a5`.
+The main sketch initializes one token at startup and exposes it through a
+read-only Bridge callback. The host discovery helper shares the existing
+negotiation validator and treats empty or malformed replies as unavailable.
+The environmental build now includes the repository's firmware libraries.
+
+All 94 Python tests passed, including simulated discovery replies. The
+main sketch compiled with the pinned UNO Q toolchain. Physical startup
+and Bridge behavior across resets still require a board run. Next is the
+session command RPC and serialized MCU store ownership. See the
+[session contract](current-session-contract.md) and
+[commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
 ## 2026-11-09 — Generate an MCU boot token
 
 Remote baseline `c14e185616087d45c080775ec63c393bd8054153`. Added a one-shot

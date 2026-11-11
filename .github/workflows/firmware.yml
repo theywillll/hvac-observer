@@ -26,7 +26,7 @@ jobs:
           arduino-cli version
           arduino-cli core list
           arduino-cli lib list
-          arduino-cli compile --fqbn arduino:zephyr:unoq --warnings all --output-dir build/environmental firmware/hvac_observer
+          arduino-cli compile --fqbn arduino:zephyr:unoq --warnings all --libraries firmware/libraries --output-dir build/environmental firmware/hvac_observer
           arduino-cli compile --fqbn arduino:zephyr:unoq --warnings all --output-dir build/adc-probe firmware/current_adc_probe
           arduino-cli compile --fqbn arduino:zephyr:unoq --warnings all --libraries firmware/libraries --output-dir build/block-selftest firmware/current_block_selftest
           arduino-cli compile --fqbn arduino:zephyr:unoq --warnings all --libraries firmware/libraries --output-dir build/sequence-probe firmware/current_sequence_probe

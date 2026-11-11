@@ -3,13 +3,23 @@ import unittest
 from pathlib import Path
 from unittest.mock import Mock, call
 
-from backend.current_handshake import negotiate_current_session
+from backend.current_handshake import discover_current_boot, negotiate_current_session
 from backend.current_sessions import initialize, reserve
 
 
 class CurrentHandshakeTests(unittest.TestCase):
     boot = "0123456789abcdef" * 2
     other_boot = "fedcba9876543210" * 2
+
+    def test_discovery_returns_the_exact_token(self):
+        rpc = Mock(return_value=self.boot)
+        self.assertEqual(discover_current_boot(rpc), self.boot)
+        rpc.assert_called_once_with("hvac_current_boot")
+
+    def test_discovery_rejects_unavailable_or_invalid_tokens(self):
+        for reply in ("", "0" * 32, self.boot + "\n", self.boot.upper(), None):
+            with self.subTest(reply=reply), self.assertRaises(ValueError):
+                discover_current_boot(Mock(return_value=reply))
 
     def setUp(self):
         directory = tempfile.TemporaryDirectory()

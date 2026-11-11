@@ -5,6 +5,7 @@
 #include <Arduino.h>
 #include <Wire.h>
 #include <Arduino_RouterBridge.h>
+#include <UnoQBootToken.h>
 #include <math.h>
 
 // Set true ONLY after isolated AC input channels have been commissioned.
@@ -16,6 +17,7 @@ uint32_t lastLow[7] = {};
 bool seenLow[7] = {};
 uint32_t seq=0, lastAcquire=0;
 String snapshot="{\"seq\":0,\"stage\":1}";
+hvac_current::CurrentBootToken currentBootToken;
 
 uint8_t crc8(const uint8_t* p, uint8_t n) {
   uint8_t c=0xff;
@@ -48,12 +50,15 @@ float readPressure() {
 }
 String number(float v) { return isfinite(v) ? String(v,3) : String("null"); }
 String getSnapshot() { return snapshot; }
+String getCurrentBootToken() { return String(currentBootToken.value()); }
 void setup() {
   Wire.begin(); Wire.setClock(100000);
   for(auto p:controlPins) pinMode(p,INPUT_PULLUP);
   pinMode(9,INPUT_PULLUP);
+  hvac_current::initializeUnoQBootToken(currentBootToken);
   Bridge.begin();
   Bridge.provide_safe("hvac_snapshot",getSnapshot);
+  Bridge.provide_safe("hvac_current_boot",getCurrentBootToken);
 }
 void loop() {
   uint32_t now=millis();
