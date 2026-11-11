@@ -94,10 +94,17 @@ The read-only `hvac_current_boot` RPC takes no arguments and returns the
 cached token or an empty string when initialization fails.
 `backend.current_handshake.discover_current_boot` validates the reply over
 the caller's bounded connection and rejects an empty or malformed token.
-The host acquisition loop still needs to call discovery and negotiation.
-The session command RPC, store ownership and disconnect handling remain
-pending. A board run is needed to check actual entropy availability, token
-changes across resets and Bridge round trips.
+The main sketch also exposes `hvac_current_session`, which accepts one
+Bridge string and returns the command acknowledgement or an empty string on
+rejection. The pinned RouterBridge safe callbacks run from the sketch loop
+hook. This callback owns the session store and checked uptime clock.
+It passes the string length to the bounded command handler and latches
+clock read failures. The provisional policy allows handshake testing with
+zero calibration IDs. Sampling and current fields remain pending.
+
+The host acquisition loop still needs to call discovery and negotiation,
+and connection expiry and disconnect handling remain pending. A board run
+is needed to check entropy availability, reset behavior and Bridge round trips.
 
 The host helper `backend.current_handshake.negotiate_current_session` commits
 a fresh ledger reservation before sending the offer. It requires the exact
@@ -125,5 +132,5 @@ and a delayed confirmation carrying the same session ID as the new pending
 offer. They also cover malformed and overflowing IDs, embedded null bytes,
 reply capacity, and the largest ledger ID. Host tests use a real temporary
 ledger and a simulated connection to exercise reply matching, timeout and
-reservation consumption. Next is connecting the session command handler
-to the MCU's Bridge transport and testing the full exchange on the host.
+reservation consumption. Next is host acquisition integration with the
+Bridge command endpoint and tests for startup and failed negotiation.

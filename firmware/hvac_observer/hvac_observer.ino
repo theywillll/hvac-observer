@@ -6,6 +6,8 @@
 #include <Wire.h>
 #include <Arduino_RouterBridge.h>
 #include <UnoQBootToken.h>
+#include <UnoQUptimeClock.h>
+#include <CurrentSessionCommand.h>
 #include <math.h>
 
 // Set true ONLY after isolated AC input channels have been commissioned.
@@ -18,6 +20,20 @@ bool seenLow[7] = {};
 uint32_t seq=0, lastAcquire=0;
 String snapshot="{\"seq\":0,\"stage\":1}";
 hvac_current::CurrentBootToken currentBootToken;
+// The safe Bridge loop hook owns the store and clock.
+hvac_current::CurrentSessionStore currentSessions;
+hvac_current::UnoQUptimeClock currentClock;
+
+hvac_current::WindowPolicy currentHandshakePolicy() {
+  hvac_current::WindowPolicy policy;
+  // Provisional bounds for exercising negotiation. Calibration IDs stay zero.
+  policy.samples = 800;
+  policy.minIntervalUs = 120;
+  policy.maxIntervalUs = 130;
+  policy.maxAgeUs = 1000000;
+  policy.codeMax = 4095;
+  return policy;
+}
 
 uint8_t crc8(const uint8_t* p, uint8_t n) {
   uint8_t c=0xff;
@@ -51,6 +67,20 @@ float readPressure() {
 String number(float v) { return isfinite(v) ? String(v,3) : String("null"); }
 String getSnapshot() { return snapshot; }
 String getCurrentBootToken() { return String(currentBootToken.value()); }
+String handleCurrentSession(String request) {
+  uint64_t nowUs;
+  if (!currentClock.read(nowUs)) {
+    currentSessions.clockFailed();
+    return String();
+  }
+  char reply[hvac_current::CurrentSessionCommandCapacity];
+  if (!hvac_current::applyCurrentSessionCommand(
+          currentSessions, currentBootToken.value(), request.c_str(), request.length(),
+          currentHandshakePolicy(), nowUs, reply, sizeof(reply))) {
+    return String();
+  }
+  return String(reply);
+}
 void setup() {
   Wire.begin(); Wire.setClock(100000);
   for(auto p:controlPins) pinMode(p,INPUT_PULLUP);
@@ -59,6 +89,7 @@ void setup() {
   Bridge.begin();
   Bridge.provide_safe("hvac_snapshot",getSnapshot);
   Bridge.provide_safe("hvac_current_boot",getCurrentBootToken);
+  Bridge.provide_safe("hvac_current_session",handleCurrentSession);
 }
 void loop() {
   uint32_t now=millis();

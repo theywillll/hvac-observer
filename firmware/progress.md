@@ -1,5 +1,21 @@
 # Current-sensing development record
 
+## 2026-11-11 — Connect current session commands to Bridge
+
+Both CI workflows passed at baseline `e576aebbae77109adfe9ee60d1baef24231425e3`.
+The main sketch now routes `hvac_current_session` through the boot-bound
+command handler, using the safe Bridge loop hook as the sole store and clock
+owner. Acknowledgements reflect the completed transition. Rejections return
+an empty string and clock failures latch. The handshake policy has zero
+calibration IDs, so current values still require a qualified policy and an
+acquisition producer.
+
+The pinned UNO Q main sketch compiled. All 94 Python tests and native
+synthetic contracts passed. Physical Bridge exchange and reset testing
+remain pending. Next is host acquisition integration and deadline handling.
+See the [session contract](current-session-contract.md) and
+[commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
 ## 2026-11-11 — Expose the current-session boot token over Bridge
 
 Both CI workflows passed at baseline `26a3caee7c61c510861d3d9bd41e7861544893a5`.
