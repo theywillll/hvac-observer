@@ -102,8 +102,8 @@ It passes the string length to the bounded command handler and latches
 clock read failures. The provisional policy allows handshake testing with
 zero calibration IDs. Sampling and current fields remain pending.
 
-The host acquisition loop still needs to call discovery and negotiation,
-and connection expiry and disconnect handling remain pending. A board run
+The opt-in host acquisition loop completes discovery and negotiation before
+polling snapshots. MCU-side expiry and disconnect handling remain pending. A board run
 is needed to check entropy availability, reset behavior and Bridge round trips.
 
 The host helper `backend.current_handshake.negotiate_current_session` commits
@@ -113,9 +113,10 @@ continuing. It returns the session only after the matching confirmation reply.
 The connection owner supplies a discovered token and a serialized exchange
 with transport deadlines. A failed exchange consumes its reservation. Keep
 live current unavailable and retire the connection on failure, since the MCU
-could have applied the command before its reply was lost. Production
-acquisition still needs to call this helper and pass its result to
-`SnapshotReceiver` as the expected session.
+could have applied the command before its reply was lost. With the paired
+ledger flags, the acquisition worker passes the confirmed result to
+`SnapshotReceiver` as the expected session. Failure ends the stream and the
+service revokes live current. A service restart begins a fresh exchange.
 
 ## Verification and next increment
 
@@ -132,5 +133,6 @@ and a delayed confirmation carrying the same session ID as the new pending
 offer. They also cover malformed and overflowing IDs, embedded null bytes,
 reply capacity, and the largest ledger ID. Host tests use a real temporary
 ledger and a simulated connection to exercise reply matching, timeout and
-reservation consumption. Next is host acquisition integration with the
-Bridge command endpoint and tests for startup and failed negotiation.
+reservation consumption. Acquisition tests cover discovery through the first
+snapshot, a lost confirmation and environment-only compatibility. Next is
+MCU-side session expiry and disconnect behavior.

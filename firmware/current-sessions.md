@@ -57,8 +57,9 @@ The service accepts paired optional flags:
 --current-session-authority AUTHORITY
 ```
 
-It reserves once per service start, before acquisition, and supplies the ID to
-`frames(..., current_session=id)` and `SnapshotReceiver(expected_session=id)`.
+The acquisition worker discovers the boot token, reserves one ID and completes
+offer and confirmation before polling snapshots. It supplies the acknowledged
+ID to `SnapshotReceiver(expected_session=id)`.
 Ledger flags are rejected for other sources or if the ledger path resolves to
 the measurement database. Startup/configuration failure may consume an ID;
 the service must never reclaim that ID to avoid gaps.
@@ -76,10 +77,12 @@ contract; they are not real ledger reservations or board evidence. In-process
 code can misuse the public APIs, so this boundary is not authentication against
 local code or an untrusted device forging an expected number.
 
-The current sketch has no session setter/acknowledgement RPC. This increment
-does not add one, send a reserved ID to a board, or claim the MCU adopted it.
-The receiver expects matching data; a later reviewed handshake must establish
-that match and bind it to the correct boot/clock before enabling acquisition.
+The optional path passes a two-second response timeout to each Bridge call.
+The router client's initial connection has its own timeout. A failed exchange
+stops the acquisition worker and revokes live current. Restart the service
+to negotiate again with a fresh reservation. MCU-side expiry and physical
+Bridge behavior remain pending.
+See the [Arduino Bridge implementation](https://github.com/arduino/app-bricks-py/blob/main/src/arduino/app_utils/bridge.py).
 Without ledger flags, the environment-only UNO path continues to work, but any
 configured nonnull current session fails closed rather than being learned.
 
@@ -113,13 +116,13 @@ and after a committed unused reservation demonstrate rollback/gap behavior on
 the test filesystem. They do not simulate a physical power failure.
 
 Receiver tests reject old/missing expected IDs. A fake-Bridge test exercises the
-actual adapter with a reserved ID and confirms its only RPC is `hvac_snapshot`.
+actual adapter with a reserved ID, exercises a lost confirmation, and checks
+that the unconfigured path calls only `hvac_snapshot`.
 CLI tests reject foreign sources and measurement-database collisions. The existing
 live-expiry, dashboard, C++/Python fixture and pinned UNO Q compile checks remain.
 See [session-build-record.json](session-build-record.json) and commit workflows
 for evidence. No upload, real RPC capture, sampling or calibrated result occurred.
 
-Next: select/test the MCU's monotonic 64-bit clock owner and explicit boot/session
-handshake semantics, then integrate the synchronized passive worker and bounded
-router envelope behind unqualified defaults. Actual aperture timing, clock
+Next is MCU session expiry and disconnect behavior before connecting the
+passive worker and snapshot serialization. Actual aperture timing, clock
 margins, CT calibration and accuracy still need protected board/reference tests.

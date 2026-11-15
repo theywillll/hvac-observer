@@ -135,18 +135,66 @@ class CurrentSessions(unittest.TestCase):
         for invalid in (0,True,'0','01','18446744073709551616'):
             with self.assertRaises(ValueError):SnapshotReceiver(expected_session=invalid)
 
-    def test_actual_adapter_receives_reserved_id_without_configuring_board(self):
-        expected=reserve(self.path,self.authority)
+    def test_uno_adapter_negotiates_before_accepting_reserved_id(self):
+        token = 'a' * 32
         calls=[]
-        def call(method):calls.append(method);return packet(expected)
+        def call(method, *args, timeout):
+            calls.append((method, args, timeout))
+            return {
+                ('hvac_current_boot', ()): token,
+                ('hvac_current_session', (f'1 O {token} 1',)): f'1 A {token} 1',
+                ('hvac_current_session', (f'1 C {token} 1',)): f'1 K {token} 1',
+                ('hvac_snapshot', ()): packet('1'),
+            }[method, args]
         bridge=types.SimpleNamespace(call=call)
         modules={'arduino':types.ModuleType('arduino'),
                  'arduino.app_utils':types.SimpleNamespace(Bridge=bridge)}
         with patch.dict(sys.modules,modules),patch('backend.acquisition.time.monotonic_ns',side_effect=[0,0]):
-            stream=frames('uno',None,threading.Event(),current_session=expected)
-            self.assertEqual(next(stream)['current_quality']['session'],expected)
+            stream=frames('uno',None,threading.Event(),current_session_config=(self.path,self.authority))
+            self.assertEqual(next(stream)['current_quality']['session'],'1')
             stream.close()
-        self.assertEqual(calls,['hvac_snapshot']) # No session setter, ADC upload or actuator call.
+        self.assertEqual(calls, [
+            ('hvac_current_boot', (), 2.0),
+            ('hvac_current_session', (f'1 O {token} 1',), 2.0),
+            ('hvac_current_session', (f'1 C {token} 1',), 2.0),
+            ('hvac_snapshot', (), 2.0),
+        ])
+        self.assertEqual(reserve(self.path,self.authority),'2')
+
+    def test_uno_adapter_stops_after_lost_confirmation(self):
+        token = 'a' * 32
+        calls = []
+        def call(method, *args, timeout):
+            calls.append(method)
+            if method == 'hvac_current_boot':
+                return token
+            if args == (f'1 O {token} 1',):
+                return f'1 A {token} 1'
+            self.assertEqual(args, (f'1 C {token} 1',))
+            raise TimeoutError('confirmation reply lost')
+        bridge = types.SimpleNamespace(call=call)
+        modules = {'arduino': types.ModuleType('arduino'),
+                   'arduino.app_utils': types.SimpleNamespace(Bridge=bridge)}
+        with patch.dict(sys.modules, modules):
+            stream = frames('uno', None, threading.Event(),
+                            current_session_config=(self.path, self.authority))
+            with self.assertRaises(TimeoutError):
+                next(stream)
+            with self.assertRaises(StopIteration):
+                next(stream)
+        self.assertEqual(calls, ['hvac_current_boot', 'hvac_current_session', 'hvac_current_session'])
+        self.assertEqual(reserve(self.path,self.authority),'2')
+
+    def test_uno_without_ledger_polls_only_environment(self):
+        def call(method):
+            self.assertEqual(method, 'hvac_snapshot')
+            return '{"seq":0}'
+        modules = {'arduino': types.ModuleType('arduino'),
+                   'arduino.app_utils': types.SimpleNamespace(Bridge=types.SimpleNamespace(call=call))}
+        with patch.dict(sys.modules, modules):
+            stream = frames('uno', None, threading.Event())
+            self.assertEqual(next(stream)['seq'], 0)
+            stream.close()
 
     def test_cli_rejects_foreign_source_and_measurement_database_collision(self):
         for arguments in [

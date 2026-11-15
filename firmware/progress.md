@@ -1,5 +1,20 @@
 # Current-sensing development record
 
+## 2026-11-16 — Negotiate current sessions before UNO Q acquisition
+
+With the optional ledger flags, the acquisition worker discovers the MCU
+boot token, reserves a session, verifies both acknowledgements and passes
+the confirmed ID to the snapshot receiver. It requests a two-second Bridge
+response timeout per call. A timeout ends acquisition and the service
+revokes live current. A restart uses a fresh reservation.
+
+All 96 Python tests passed, including the simulated startup exchange and
+lost confirmation. The firmware source is unchanged from baseline
+`9b5079861925ecbe2154628f7474726d892127df`, which passed the
+[pinned UNO Q build](https://github.com/theywillll/hvac-observer/actions/runs/43074763879).
+Physical Bridge behavior requires a board test. Next is MCU-side expiry
+and disconnect handling. See the [commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
 ## 2026-11-11 — Connect current session commands to Bridge
 
 Both CI workflows passed at baseline `e576aebbae77109adfe9ee60d1baef24231425e3`.

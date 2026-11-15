@@ -18,7 +18,7 @@ from .profiles import profiles, match
 from .calibration import apply_calibration
 from .validation import validate
 from .current_live import receipt_deadlines, ingest_projection, live_projection
-from .current_sessions import reserve_for_source
+from .current_sessions import session_config_for_source
 
 class Application:
     def __init__(self, db, config, scenario, hardware=False, baseline=None):
@@ -131,7 +131,8 @@ def main():
     try:
         if args.current_session_ledger and Path(args.current_session_ledger).resolve()==Path(args.db).resolve():
             raise ValueError('Current session ledger must be separate from measurement database')
-        current_session=reserve_for_source(args.source,args.current_session_ledger,args.current_session_authority)
+        current_session_config=session_config_for_source(
+            args.source,args.current_session_ledger,args.current_session_authority)
     except (ValueError,OSError,sqlite3.Error) as exc:p.error(str(exc))
     app=Application(args.db,config,args.scenario,args.source!='simulator',baseline)
     def worker():
@@ -140,7 +141,7 @@ def main():
                 stream=generate(args.scenario,count=10**8,start=datetime.now(timezone.utc))
             else:
                 from .acquisition import frames
-                stream=frames(args.source,args.input,app.stop,current_session=current_session)
+                stream=frames(args.source,args.input,app.stop,current_session_config=current_session_config)
             for frame in stream:
                 if app.stop.is_set(): break
                 app.ingest(frame)

@@ -89,8 +89,15 @@ def reserve(path, authority, *, timeout=5):
     return str(next_session)
 
 
-def reserve_for_source(source, ledger=None, authority=None):
+def session_config_for_source(source, ledger=None, authority=None):
     if ledger is None and authority is None:return None
     if source!='uno' or not ledger or not authority:
         raise ValueError('Session ledger and authority must be paired with --source uno')
-    return reserve(ledger,authority)
+    if not _authority(authority):
+        raise ValueError('Expected canonical ledger authority required')
+    return ledger, authority
+
+
+def reserve_for_source(source, ledger=None, authority=None):
+    config = session_config_for_source(source, ledger, authority)
+    return reserve(*config) if config else None

@@ -15,7 +15,7 @@ def decode_sht(data):
         raise ValueError('SHT31 CRC failure')
     return -45+175*((data[0]<<8)|data[1])/65535, 100*((data[3]<<8)|data[4])/65535
 
-def frames(source, path, stop, *, current_session=None):
+def frames(source, path, stop, *, current_session_config=None):
     if source=='jsonl':
         if not path: raise ValueError('--input is required')
         with open(path,encoding='utf-8') as f:
@@ -32,10 +32,27 @@ def frames(source, path, stop, *, current_session=None):
     if source=='uno':
         from arduino.app_utils import Bridge
         from .uno_transport import SnapshotReceiver
-        receiver=SnapshotReceiver(expected_session=current_session)
+        session = None
+        call = Bridge.call
+        if current_session_config is not None:
+            from .current_handshake import discover_current_boot, negotiate_current_session
+
+            def call(method, *args):
+                if stop.is_set():
+                    raise InterruptedError("UNO current acquisition stopped")
+                return Bridge.call(method, *args, timeout=2.0)
+
+            if stop.is_set():
+                return
+            boot = discover_current_boot(call)
+            session = negotiate_current_session(
+                lambda request: call("hvac_current_session", request),
+                boot, *current_session_config,
+            )
+        receiver=SnapshotReceiver(expected_session=session)
         while not stop.is_set():
             started_ns=time.monotonic_ns()
-            raw=Bridge.call('hvac_snapshot')
+            raw=call('hvac_snapshot')
             received_ns=time.monotonic_ns()
             frame=receiver.receive(raw,started_ns,received_ns,
                 timestamp=datetime.now(timezone.utc).isoformat())
