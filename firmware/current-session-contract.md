@@ -54,7 +54,8 @@ The transport must validate bounded input and policy, invalidate the host's
 live-current projection while negotiating, and stop on disconnect/timeout.
 It must flush queued acquisition work when changing sessions and start new
 acquisition only after confirmation; this class cannot identify a preconfirmation
-sample whose caller fabricated valid stamps. No pending timeout is built in.
+sample whose caller fabricated valid stamps. A nonzero lease bounds the
+pending and confirmed states.
 
 ### Version 1 command format
 
@@ -70,6 +71,8 @@ The entire request is 38–56 bytes, excluding the C terminator.
 | MCU → host | `1 A <boot> <session>` | Offer accepted and waiting for confirmation |
 | Host → MCU | `1 C <boot> <session>` | Confirm the exact offer acknowledged by the MCU |
 | MCU → host | `1 K <boot> <session>` | Store confirmed the session |
+| Host → MCU | `1 R <boot> <session>` | Renew the confirmed session |
+| MCU → host | `1 L <boot> <session>` | Store renewed the session |
 
 Supply the exact transport byte count and a reply buffer with at least 57 bytes
 for the longest reply and its terminator. Malformed input, a different token
@@ -102,8 +105,16 @@ It passes the string length to the bounded command handler and latches
 clock read failures. The provisional policy allows handshake testing with
 zero calibration IDs. Sampling and current fields remain pending.
 
-The opt-in host acquisition loop completes discovery and negotiation before
-polling snapshots. MCU-side expiry and disconnect handling remain pending. A board run
+The opt-in host acquisition loop completes discovery and negotiation, then
+requires a matching renewal reply before every snapshot poll. The main
+sketch expires pending offers six seconds after acceptance and confirmed
+sessions six seconds after confirmation or the last valid renewal. A
+duplicate confirmation, snapshot poll or other session's renewal cannot
+extend that interval. The store retains its session high-water mark on
+expiry, so recovery requires a new reservation. The sketch loop and safe
+Bridge hook share one owner. Loss of host contact is inferred from elapsed
+MCU uptime. Expiry takes effect when the sketch next checks that clock.
+A board run
 is needed to check entropy availability, reset behavior and Bridge round trips.
 
 The host helper `backend.current_handshake.negotiate_current_session` commits
@@ -134,5 +145,6 @@ offer. They also cover malformed and overflowing IDs, embedded null bytes,
 reply capacity, and the largest ledger ID. Host tests use a real temporary
 ledger and a simulated connection to exercise reply matching, timeout and
 reservation consumption. Acquisition tests cover discovery through the first
-snapshot, a lost confirmation and environment-only compatibility. Next is
-MCU-side session expiry and disconnect behavior.
+snapshot, a lost confirmation, a mismatched renewal and environment-only
+compatibility. Next is integrating the current snapshot into the MCU frame
+under the session and size limits.

@@ -1,5 +1,20 @@
 # Current-sensing development record
 
+## 2026-11-16 — Expire UNO Q current sessions when host contact lapses
+
+Baseline `a5ae40d1b93e8e71aaa7de7529c91d5688db7a29`. The sketch checks a
+six-second session lease from its loop. A matching boot/session renewal
+extends an active lease, and the host verifies its acknowledgement before
+polling each snapshot. Expiry retains the high-water session ID and revokes
+the pending or active state. Recovery requires a fresh reservation.
+
+All 97 Python tests passed. Native C++11 checks cover expiry at the deadline,
+renewal, duplicate confirmations and stale session or boot tokens. The
+pinned UNO Q main sketch compiled. Physical reconnect timing remains a
+board test. Next is integrating current snapshots into the MCU frame.
+See the [session contract](current-session-contract.md) and
+[commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
 ## 2026-11-16 — Negotiate current sessions before UNO Q acquisition
 
 With the optional ledger flags, the acquisition worker discovers the MCU

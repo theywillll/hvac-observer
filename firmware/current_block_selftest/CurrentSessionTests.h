@@ -48,6 +48,9 @@ inline int runCommands() {
   if (send(second, secondBoot, "1 C 00000000000000000000000000000001 1") ||
       reply[0] || second.active()) return __LINE__;
   if (!send(second, secondBoot, "1 C 00000000000000000000000000000002 1") || !second.active()) return __LINE__;
+  if (!send(second, secondBoot, "1 R 00000000000000000000000000000002 1") ||
+      strcmp(reply, "1 L 00000000000000000000000000000002 1")) return __LINE__;
+  if (send(second, secondBoot, "1 R 00000000000000000000000000000001 1")) return __LINE__;
 
   const char* bad[] = {
     "2 O 00000000000000000000000000000002 2",
@@ -81,6 +84,20 @@ inline int run() {
   static_assert(!std::is_copy_constructible<CurrentSessionStore>::value, "One boot owner");
   static_assert(!std::is_copy_assignable<CurrentSessionStore>::value, "One boot owner");
 #define SESSION_CHECK(x) do { if (!(x)) return __LINE__; } while(false)
+  CurrentSessionStore leased(100);
+  SESSION_CHECK(leased.offer(1,policy(),0));
+  SESSION_CHECK(!leased.renew(1,50));
+  SESSION_CHECK(!leased.confirm(1,100));
+  SESSION_CHECK(!leased.offer(1,policy(),100));
+  SESSION_CHECK(leased.offer(2,policy(),100) && leased.confirm(2,190));
+  SESSION_CHECK(leased.renew(2,289));
+  SESSION_CHECK(!leased.renew(1,388));
+  SESSION_CHECK(leased.confirm(2,388)); // Duplicate confirmation is not renewal.
+  SESSION_CHECK(!leased.renew(2,389));
+  SESSION_CHECK(!leased.active() && !leased.confirm(2,389));
+  SESSION_CHECK(leased.offer(3,policy(),389) && leased.confirm(3,389));
+  leased.expire(489);
+  SESSION_CHECK(!leased.active() && !leased.confirm(3,489));
   CurrentSessionStore s;
   char text[CurrentWireCapacity] = "old";
   SESSION_CHECK(!s.write(0,text,sizeof(text)) && text[0] == '\0');

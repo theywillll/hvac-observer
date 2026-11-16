@@ -144,6 +144,7 @@ class CurrentSessions(unittest.TestCase):
                 ('hvac_current_boot', ()): token,
                 ('hvac_current_session', (f'1 O {token} 1',)): f'1 A {token} 1',
                 ('hvac_current_session', (f'1 C {token} 1',)): f'1 K {token} 1',
+                ('hvac_current_session', (f'1 R {token} 1',)): f'1 L {token} 1',
                 ('hvac_snapshot', ()): packet('1'),
             }[method, args]
         bridge=types.SimpleNamespace(call=call)
@@ -157,9 +158,29 @@ class CurrentSessions(unittest.TestCase):
             ('hvac_current_boot', (), 2.0),
             ('hvac_current_session', (f'1 O {token} 1',), 2.0),
             ('hvac_current_session', (f'1 C {token} 1',), 2.0),
+            ('hvac_current_session', (f'1 R {token} 1',), 2.0),
             ('hvac_snapshot', (), 2.0),
         ])
         self.assertEqual(reserve(self.path,self.authority),'2')
+
+    def test_uno_adapter_stops_before_snapshot_on_wrong_renewal(self):
+        token = 'a' * 32
+        def call(method, *args, timeout):
+            if method == 'hvac_current_boot':
+                return token
+            self.assertEqual(method, 'hvac_current_session')
+            return {
+                f'1 O {token} 1': f'1 A {token} 1',
+                f'1 C {token} 1': f'1 K {token} 1',
+                f'1 R {token} 1': f'1 L {token} 2',
+            }[args[0]]
+        modules = {'arduino': types.ModuleType('arduino'),
+                   'arduino.app_utils': types.SimpleNamespace(Bridge=types.SimpleNamespace(call=call))}
+        with patch.dict(sys.modules, modules):
+            stream = frames('uno', None, threading.Event(),
+                            current_session_config=(self.path, self.authority))
+            with self.assertRaisesRegex(ValueError, 'renewal'):
+                next(stream)
 
     def test_uno_adapter_stops_after_lost_confirmation(self):
         token = 'a' * 32

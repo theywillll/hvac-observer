@@ -20,8 +20,8 @@ bool seenLow[7] = {};
 uint32_t seq=0, lastAcquire=0;
 String snapshot="{\"seq\":0,\"stage\":1}";
 hvac_current::CurrentBootToken currentBootToken;
-// The safe Bridge loop hook owns the store and clock.
-hvac_current::CurrentSessionStore currentSessions;
+// The sketch loop and its safe Bridge hook serialize store and clock access.
+hvac_current::CurrentSessionStore currentSessions(6000000);
 hvac_current::UnoQUptimeClock currentClock;
 
 hvac_current::WindowPolicy currentHandshakePolicy() {
@@ -92,6 +92,9 @@ void setup() {
   Bridge.provide_safe("hvac_current_session",handleCurrentSession);
 }
 void loop() {
+  uint64_t currentNowUs;
+  if (currentClock.read(currentNowUs)) currentSessions.expire(currentNowUs);
+  else currentSessions.clockFailed();
   uint32_t now=millis();
   // AC optocouplers pulse each half-cycle. Latch pulses for 150 ms.
   for(uint8_t i=0;i<7;i++) if(digitalRead(controlPins[i])==LOW) { lastLow[i]=now; seenLow[i]=true; }

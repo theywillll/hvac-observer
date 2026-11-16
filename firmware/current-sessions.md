@@ -77,11 +77,13 @@ contract; they are not real ledger reservations or board evidence. In-process
 code can misuse the public APIs, so this boundary is not authentication against
 local code or an untrusted device forging an expected number.
 
-The optional path passes a two-second response timeout to each Bridge call.
+The optional path renews the confirmed session before each snapshot and
+passes a two-second response timeout to each Bridge call.
 The router client's initial connection has its own timeout. A failed exchange
 stops the acquisition worker and revokes live current. Restart the service
-to negotiate again with a fresh reservation. MCU-side expiry and physical
-Bridge behavior remain pending.
+to negotiate again with a fresh reservation. The MCU expires a pending or
+confirmed session after six seconds without the relevant confirmation or
+renewal. Physical Bridge and expiry behavior remain to be verified.
 See the [Arduino Bridge implementation](https://github.com/arduino/app-bricks-py/blob/main/src/arduino/app_utils/bridge.py).
 Without ledger flags, the environment-only UNO path continues to work, but any
 configured nonnull current session fails closed rather than being learned.
@@ -123,6 +125,5 @@ live-expiry, dashboard, C++/Python fixture and pinned UNO Q compile checks remai
 See [session-build-record.json](session-build-record.json) and commit workflows
 for evidence. No upload, real RPC capture, sampling or calibrated result occurred.
 
-Next is MCU session expiry and disconnect behavior before connecting the
-passive worker and snapshot serialization. Actual aperture timing, clock
+Next is snapshot serialization and the passive worker. Actual aperture timing, clock
 margins, CT calibration and accuracy still need protected board/reference tests.

@@ -35,7 +35,9 @@ def frames(source, path, stop, *, current_session_config=None):
         session = None
         call = Bridge.call
         if current_session_config is not None:
-            from .current_handshake import discover_current_boot, negotiate_current_session
+            from .current_handshake import (
+                discover_current_boot, negotiate_current_session, renew_current_session,
+            )
 
             def call(method, *args):
                 if stop.is_set():
@@ -45,12 +47,14 @@ def frames(source, path, stop, *, current_session_config=None):
             if stop.is_set():
                 return
             boot = discover_current_boot(call)
-            session = negotiate_current_session(
-                lambda request: call("hvac_current_session", request),
-                boot, *current_session_config,
-            )
+            def exchange(request):
+                return call("hvac_current_session", request)
+
+            session = negotiate_current_session(exchange, boot, *current_session_config)
         receiver=SnapshotReceiver(expected_session=session)
         while not stop.is_set():
+            if session is not None:
+                renew_current_session(exchange, boot, session)
             started_ns=time.monotonic_ns()
             raw=call('hvac_snapshot')
             received_ns=time.monotonic_ns()

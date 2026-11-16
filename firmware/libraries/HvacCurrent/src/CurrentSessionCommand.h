@@ -3,8 +3,8 @@
 #include <string.h>
 
 namespace hvac_current {
-// Requests: "1 O <boot> <session>" or "1 C <boot> <session>".
-// Replies echo the request with A (accepted) or K (confirmed) in place of O/C.
+// Requests use O (offer), C (confirm) or R (renew), followed by boot and session.
+// Replies echo the request with A, K or L respectively.
 // Length excludes the terminator. The caller owns the serialized store, an
 // immutable token for this boot and the local policy. The token must be fresh
 // across boots. This function does not generate tokens or authenticate peers.
@@ -22,7 +22,7 @@ inline bool applyCurrentSessionCommand(CurrentSessionStore& store,
   if (!request || !reply || length < 38 || length >= CurrentSessionCommandCapacity ||
       capacity <= length || boot[32] != '\0') return reject();
   if (request[0] != '1' || request[1] != ' ' ||
-      (request[2] != 'O' && request[2] != 'C') || request[3] != ' ' ||
+      (request[2] != 'O' && request[2] != 'C' && request[2] != 'R') || request[3] != ' ' ||
       request[36] != ' ' || memcmp(request + 4, boot, 32) != 0) return reject();
 
   bool nonzero = false;
@@ -42,11 +42,22 @@ inline bool applyCurrentSessionCommand(CurrentSessionStore& store,
     session = session * 10 + digit;
   }
 
-  const bool offer = request[2] == 'O';
-  const bool accepted = offer ? store.offer(session, policy, nowUs) : store.confirm(session, nowUs);
-  if (!accepted) return reject();
+  char acknowledgement;
+  switch (request[2]) {
+    case 'O':
+      if (!store.offer(session, policy, nowUs)) return reject();
+      acknowledgement = 'A';
+      break;
+    case 'C':
+      if (!store.confirm(session, nowUs)) return reject();
+      acknowledgement = 'K';
+      break;
+    default:
+      if (!store.renew(session, nowUs)) return reject();
+      acknowledgement = 'L';
+  }
   memmove(reply, request, length);
-  reply[2] = offer ? 'A' : 'K';
+  reply[2] = acknowledgement;
   reply[length] = '\0';
   return true;
 }

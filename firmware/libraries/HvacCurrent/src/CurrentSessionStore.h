@@ -7,7 +7,8 @@ static constexpr uint64_t CurrentSessionMax = UINT64_C(9223372036854775807);
 // not an RPC transport or proof of boot identity. Do not expose the inner store.
 class CurrentSessionStore {
  public:
-  CurrentSessionStore() = default;
+  // Zero preserves the standalone contract without a transport lease.
+  explicit CurrentSessionStore(uint64_t leaseUs = 0) : leaseUs_(leaseUs) {}
   CurrentSessionStore(const CurrentSessionStore&) = delete;
   CurrentSessionStore& operator=(const CurrentSessionStore&) = delete;
 
@@ -19,6 +20,7 @@ class CurrentSessionStore {
     highest_ = session;
     if (!store_.reset(session, policy, nowUs)) return false;
     pending_ = true;
+    lastContactUs_ = nowUs;
     return true;
   }
 
@@ -26,10 +28,19 @@ class CurrentSessionStore {
   // acceptance reply. Repeated confirmations are harmless; old ones do nothing.
   bool confirm(uint64_t session, uint64_t nowUs) {
     if (!advance(nowUs) || session != highest_ || (!pending_ && !active_)) return false;
-    if (pending_) confirmedUs_ = nowUs;
+    if (pending_) {
+      confirmedUs_ = nowUs;
+      lastContactUs_ = nowUs;
+    }
     pending_ = false; active_ = true;
     return true;
   }
+  bool renew(uint64_t session, uint64_t nowUs) {
+    if (!advance(nowUs) || !active_ || session != highest_) return false;
+    lastContactUs_ = nowUs;
+    return true;
+  }
+  void expire(uint64_t nowUs) { advance(nowUs); }
   void stop() { pending_ = false; active_ = false; store_.stop(); }
   // A failed clock read cannot be cured by a new session within this owner.
   void clockFailed() { clockFault_ = true; stop(); }
@@ -58,9 +69,12 @@ class CurrentSessionStore {
     if (clockFault_) return false;
     if (seenClock_ && nowUs < lastUs_) { clockFailed(); return false; }
     seenClock_ = true; lastUs_ = nowUs;
+    if (leaseUs_ && (pending_ || active_) && nowUs - lastContactUs_ >= leaseUs_) stop();
     return true;
   }
   CurrentSnapshotStore store_;
+  const uint64_t leaseUs_;
+  uint64_t lastContactUs_ = 0;
   uint64_t highest_ = 0, lastUs_ = 0, confirmedUs_ = 0;
   bool pending_ = false, active_ = false, seenClock_ = false, clockFault_ = false;
 };
