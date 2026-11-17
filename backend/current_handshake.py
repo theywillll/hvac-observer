@@ -36,11 +36,3 @@ def negotiate_current_session(exchange, boot_token, ledger, authority):
         if type(reply) is not str or len(reply) != len(expected) or reply != expected:
             raise ValueError(f"MCU current session reply did not match {acknowledgement}")
     return session
-
-
-def renew_current_session(exchange, boot_token, session):
-    """Require the MCU to acknowledge renewal before polling a snapshot."""
-    binding = f"{boot_token} {session}"
-    reply = exchange(f"1 R {binding}")
-    if type(reply) is not str or reply != f"1 L {binding}":
-        raise ValueError("MCU current session renewal did not match")

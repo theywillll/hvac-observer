@@ -77,7 +77,7 @@ contract; they are not real ledger reservations or board evidence. In-process
 code can misuse the public APIs, so this boundary is not authentication against
 local code or an untrusted device forging an expected number.
 
-The optional path renews the confirmed session before each snapshot and
+The optional path renews the confirmed session in each current snapshot call and
 passes a two-second response timeout to each Bridge call.
 The router client's initial connection has its own timeout. A failed exchange
 stops the acquisition worker and revokes live current. Restart the service
@@ -125,5 +125,5 @@ live-expiry, dashboard, C++/Python fixture and pinned UNO Q compile checks remai
 See [session-build-record.json](session-build-record.json) and commit workflows
 for evidence. No upload, real RPC capture, sampling or calibrated result occurred.
 
-Next is snapshot serialization and the passive worker. Actual aperture timing, clock
+Next is the passive acquisition worker. Actual aperture timing, clock
 margins, CT calibration and accuracy still need protected board/reference tests.

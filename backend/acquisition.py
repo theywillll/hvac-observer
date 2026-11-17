@@ -36,7 +36,7 @@ def frames(source, path, stop, *, current_session_config=None):
         call = Bridge.call
         if current_session_config is not None:
             from .current_handshake import (
-                discover_current_boot, negotiate_current_session, renew_current_session,
+                discover_current_boot, negotiate_current_session,
             )
 
             def call(method, *args):
@@ -53,13 +53,16 @@ def frames(source, path, stop, *, current_session_config=None):
             session = negotiate_current_session(exchange, boot, *current_session_config)
         receiver=SnapshotReceiver(expected_session=session)
         while not stop.is_set():
-            if session is not None:
-                renew_current_session(exchange, boot, session)
             started_ns=time.monotonic_ns()
-            raw=call('hvac_snapshot')
+            if session is None:
+                raw = call('hvac_snapshot')
+            else:
+                raw = call('hvac_current_snapshot', f'1 R {boot} {session}')
             received_ns=time.monotonic_ns()
             frame=receiver.receive(raw,started_ns,received_ns,
                 timestamp=datetime.now(timezone.utc).isoformat())
+            if session is not None and frame.get('current_quality', {}).get('session') != session:
+                raise ValueError('Current snapshot missing the confirmed session')
             yield frame
             stop.wait(2)
         return

@@ -157,7 +157,17 @@ The [UNO receiver increment](current-receiver.md) now adds process-local
 frame/window replay checks and conservative host receipt deadlines, conditional
 on fresh request-time production. Source age metadata remains unchanged. Boot
 identity, cancellation/physical transport qualification and consumer-use expiry
-are still pending; the serializer is not connected to the MCU callback.
+were pending at that stage.
+
+The current sketch now serializes the session snapshot at request time into
+the same JSON object as the cached environmental readings. It uses the
+boot-bound `hvac_current_snapshot` endpoint and limits combined text to
+896 bytes, excluding the terminator. Failure returns an empty reply, so the
+configured host stops acquisition through its existing error path. The
+environment-only endpoint has a separate callback. Tests cover an exact-fit
+frame, a one-byte overflow and a full combined pending frame through the
+real Python receiver. A numerical producer could increase metadata size, so
+recheck the combined budget before enabling one.
 
 The subsequent [live-consumer layer](current-live.md) now carries receipt
 deadlines to ingestion/status and adds browser expiry/error handling while
@@ -189,8 +199,8 @@ CI uses the real Python validator and compiles the shared self-test on UNO Q.
 Only native execution and target compilation have occurred; no board upload.
 See [wire-build-record.json](wire-build-record.json) for the local evidence.
 
-Next: choose and test a bounded transport envelope, consumer-age/replay rules and
-session/clock ownership, then connect a synchronized worker behind unqualified
-defaults. Keep waveform work separate from slow I2C and RPC. Actual sample
+Next: check the combined frame over physical Bridge transport and connect
+a synchronized worker behind unqualified defaults. Keep waveform work
+separate from slow I2C and RPC. Actual sample
 aperture timing, anti-aliasing, CT calibration and accuracy require protected
 fixtures, a board and reference measurements before current can be enabled.

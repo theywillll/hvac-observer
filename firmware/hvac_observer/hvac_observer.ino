@@ -8,6 +8,7 @@
 #include <UnoQBootToken.h>
 #include <UnoQUptimeClock.h>
 #include <CurrentSessionCommand.h>
+#include <CurrentFrame.h>
 #include <math.h>
 
 // Set true ONLY after isolated AC input channels have been commissioned.
@@ -81,6 +82,24 @@ String handleCurrentSession(String request) {
   }
   return String(reply);
 }
+String getCurrentSnapshot(String renewal) {
+  if (renewal.length() < 3 || renewal[2] != 'R') return String();
+  uint64_t nowUs;
+  if (!currentClock.read(nowUs)) {
+    currentSessions.clockFailed();
+    return String();
+  }
+  char reply[hvac_current::CurrentSessionCommandCapacity];
+  if (!hvac_current::applyCurrentSessionCommand(
+          currentSessions, currentBootToken.value(), renewal.c_str(), renewal.length(),
+          currentHandshakePolicy(), nowUs, reply, sizeof(reply))) return String();
+
+  // Only this serialized callback uses the buffer. String copies the reply.
+  static char frame[hvac_current::CurrentFrameCapacity];
+  if (!hvac_current::writeCurrentFrame(currentSessions, nowUs, snapshot.c_str(),
+                                        snapshot.length(), frame, sizeof(frame))) return String();
+  return String(frame);
+}
 void setup() {
   Wire.begin(); Wire.setClock(100000);
   for(auto p:controlPins) pinMode(p,INPUT_PULLUP);
@@ -90,6 +109,7 @@ void setup() {
   Bridge.provide_safe("hvac_snapshot",getSnapshot);
   Bridge.provide_safe("hvac_current_boot",getCurrentBootToken);
   Bridge.provide_safe("hvac_current_session",handleCurrentSession);
+  Bridge.provide_safe("hvac_current_snapshot",getCurrentSnapshot);
 }
 void loop() {
   uint64_t currentNowUs;

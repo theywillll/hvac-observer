@@ -2,6 +2,7 @@
 #include <CurrentSessionStore.h>
 #include <CurrentSessionCommand.h>
 #include <CurrentBootToken.h>
+#include <CurrentFrame.h>
 #include "CurrentWindowTests.h"
 #include <string.h>
 #include <type_traits>
@@ -113,6 +114,22 @@ inline int run() {
   SESSION_CHECK(s.confirm(1,1000));
   SESSION_CHECK(s.write(1000,text,sizeof(text)));
   SESSION_CHECK(strstr(text,"\"compressor_a\":null") != nullptr);
+  const size_t payloadLength = strlen(text);
+  char frame[CurrentFrameCapacity + 1];
+  char environment[CurrentFrameCapacity];
+  memset(environment, ' ', sizeof(environment));
+  memcpy(environment, "{\"seq\":0", 8);
+  const size_t exactLength = CurrentFrameCapacity - payloadLength;
+  environment[exactLength - 1] = '}';
+  frame[CurrentFrameCapacity] = '#';
+  SESSION_CHECK(writeCurrentFrame(s,1000,environment,exactLength,frame,sizeof(frame)));
+  SESSION_CHECK(strlen(frame) == CurrentFrameCapacity - 1);
+  SESSION_CHECK(frame[exactLength - 1] == ',' && frame[CurrentFrameCapacity] == '#');
+  SESSION_CHECK(strstr(frame,"\"session\":\"1\"") != nullptr);
+  environment[exactLength - 1] = ' ';
+  environment[exactLength] = '}';
+  SESSION_CHECK(!writeCurrentFrame(s,1000,environment,exactLength+1,frame,sizeof(frame)));
+  SESSION_CHECK(!frame[0] && frame[CurrentFrameCapacity] == '#');
   SESSION_CHECK(s.publish(features(),stamp(),calibration(),16000,17000));
   SESSION_CHECK(s.write(17000,text,sizeof(text)));
   SESSION_CHECK(strstr(text,"\"compressor_a\":1,") != nullptr);
@@ -133,6 +150,7 @@ inline int run() {
   SESSION_CHECK(s.write(37001,text,sizeof(text)));
   SESSION_CHECK(strstr(text,"\"compressor_a\":null") != nullptr); // normal age gate retained
   s.stop();
+  SESSION_CHECK(!writeCurrentFrame(s,37001,"{\"seq\":0}",9,frame,sizeof(frame)) && !frame[0]);
   SESSION_CHECK(!s.confirm(2,37001));
   SESSION_CHECK(!s.offer(2,policy(),37001));
   auto bad = policy(); bad.samples = 0;

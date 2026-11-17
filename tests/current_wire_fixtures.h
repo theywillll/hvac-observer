@@ -1,5 +1,6 @@
 #pragma once
 #include "../firmware/current_block_selftest/CurrentWireTests.h"
+#include <CurrentFrame.h>
 
 // Explicitly synthetic transport fixtures; never sensor/board measurements.
 inline bool emitCurrentFixture(const char* name, hvac_current::CurrentSnapshotStore& store,
@@ -10,6 +11,19 @@ inline bool emitCurrentFixture(const char* name, hvac_current::CurrentSnapshotSt
 }
 inline int emitCurrentFixtures() {
   using namespace hvac_wire_test;
+  hvac_current::CurrentSessionStore session;
+  auto framePolicy = policy();
+  framePolicy.maxAgeUs = 1000000;
+  if (!session.offer(CurrentSessionMax,framePolicy,0) ||
+      !session.confirm(CurrentSessionMax,0)) return 1;
+  const char environment[] =
+      "{\"seq\":4294967295,\"stage\":2,\"return_c\":-40.000,\"supply_c\":120.000,"
+      "\"indoor_rh\":100.000,\"supply_rh\":100.000,\"filter_pa\":-500.000,"
+      "\"R\":false,\"Y\":false,\"Y2\":false,\"W\":false,\"W2\":false,"
+      "\"G\":false,\"OB\":false,\"condensate\":false}";
+  char frame[CurrentFrameCapacity];
+  if (!writeCurrentFrame(session,0,environment,sizeof(environment)-1,frame,sizeof(frame))) return 1;
+  printf("{\"fixture\":\"frame_pending\",\"payload\":%s}\n",frame);
   CurrentSnapshotStore store;
   if(!emitCurrentFixture("default",store,0)) return 1;
   if(!store.reset(UINT64_MAX,policy(),0)) return 1;

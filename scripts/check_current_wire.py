@@ -9,7 +9,7 @@ from backend.uno_transport import SnapshotReceiver
 
 def check(lines):
     expected={'default','pending','valid','boundary','expired','full_cycle',
-              'stopped','failed','clock','reset','future','maximum','decimal','zero'}
+              'stopped','failed','clock','reset','future','maximum','decimal','zero','frame_pending'}
     seen=set(); max_bytes=0
     for line in lines:
         item=json.loads(line)
@@ -18,15 +18,17 @@ def check(lines):
         seen.add(name)
         # Hardware source exercises strict validation; all measurements are
         # explicitly synthetic test data, never claimed as a board capture.
-        frame=dict(payload,ts='2026-10-21T01:00:00Z',seq=0,source='hardware')
+        wire = dict(seq=0,stage=1)
+        wire.update(payload)
+        frame=dict(wire,ts='2026-10-21T01:00:00Z',source='hardware')
         out,_=validate(frame)
         # Exercise the real bounded UNO receiver too. Each fixture is an
         # independent synthetic stream; no physical RPC latency is asserted.
-        raw=json.dumps(dict(payload,seq=0,stage=1),separators=(',',':'),allow_nan=False)
+        raw=json.dumps(wire,separators=(',',':'),allow_nan=False)
         # Synthetic expected IDs only; production must reserve independently,
         # never learn the expected session from the incoming message.
         received=SnapshotReceiver(expected_session=payload['current_quality']['session']).receive(raw,0,0,timestamp=frame['ts'])
-        if received != dict(out,stage=1):raise ValueError('Receiver/validator disagreement')
+        if received != out:raise ValueError('Receiver/validator disagreement')
         values=[out[k] for k in CURRENT_FIELDS]
         if name in ('valid','boundary'):
             if values != [1,2,3]:raise ValueError('Numeric round trip failed')

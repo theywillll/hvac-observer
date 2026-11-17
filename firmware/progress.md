@@ -1,5 +1,20 @@
 # Current-sensing development record
 
+## 2026-11-17 — Return current metadata in negotiated snapshots
+
+Baseline `d6f89cc7a987e9293e937968bc25aa5782cd57e7`. The configured host
+sends the boot-bound renewal to a dedicated snapshot RPC. One MCU callback
+renews the session, serializes its current state at request time and
+combines it with the cached environmental JSON. The 896-byte application
+limit applies to the entire response. Pending channels return null values.
+
+All 97 Python tests, native C++11 checks and 15 cross-language fixtures
+passed. The main sketch compiled for pinned UNO Q. The combined pending
+fixture is 827 bytes after Python re-encoding. Physical transport capacity
+and live acquisition remain unverified. Next is a passive acquisition
+producer and a board round trip. See the [wire contract](current-wire.md)
+and [commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
 ## 2026-11-16 — Expire UNO Q current sessions when host contact lapses
 
 Baseline `a5ae40d1b93e8e71aaa7de7529c91d5688db7a29`. The sketch checks a

@@ -103,13 +103,17 @@ rejection. The pinned RouterBridge safe callbacks run from the sketch loop
 hook. This callback owns the session store and checked uptime clock.
 It passes the string length to the bounded command handler and latches
 clock read failures. The provisional policy allows handshake testing with
-zero calibration IDs. Sampling and current fields remain pending.
+zero calibration IDs. The negotiated current frame reports pending channels
+with null values until an acquisition producer is available.
 
 The opt-in host acquisition loop completes discovery and negotiation, then
-requires a matching renewal reply before every snapshot poll. The main
+uses `hvac_current_snapshot` to renew and fetch the frame in one call. It
+sends the same boot-bound `1 R` command and requires the confirmed session
+in the returned JSON. The no-argument `hvac_snapshot` remains the
+environment-only endpoint. The main
 sketch expires pending offers six seconds after acceptance and confirmed
 sessions six seconds after confirmation or the last valid renewal. A
-duplicate confirmation, snapshot poll or other session's renewal cannot
+duplicate confirmation, environment-only poll or other session's renewal cannot
 extend that interval. The store retains its session high-water mark on
 expiry, so recovery requires a new reservation. The sketch loop and safe
 Bridge hook share one owner. Loss of host contact is inferred from elapsed
@@ -145,6 +149,6 @@ offer. They also cover malformed and overflowing IDs, embedded null bytes,
 reply capacity, and the largest ledger ID. Host tests use a real temporary
 ledger and a simulated connection to exercise reply matching, timeout and
 reservation consumption. Acquisition tests cover discovery through the first
-snapshot, a lost confirmation, a mismatched renewal and environment-only
-compatibility. Next is integrating the current snapshot into the MCU frame
-under the session and size limits.
+snapshot, a lost confirmation, missing session metadata and environment-only
+compatibility. Next is the passive acquisition producer and board validation
+of the combined frame.
