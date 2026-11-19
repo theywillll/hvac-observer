@@ -8,6 +8,12 @@ worker thread, DMA engine or HVAC control output.
 
 ## What the request does
 
+The probe uses `UnoQSequenceReader` from the HvacCurrent library. One
+thread owns the reader, its ADC device and capture buffer. Initialization is
+attempted once per reader. Subsequent initialization calls return the
+recorded setup status, and a read before successful setup returns an error.
+The reader preserves the three-channel mapping and native code scale.
+
 The installed devicetree maps A0/PA4, A1/PA5 and A2/PA6 to ADC1 channels 9, 10
 and 11. Compile-time checks reject changed channel IDs; startup checks require
 the same device, native 14-bit resolution, matching oversampling and single-ended
@@ -24,7 +30,8 @@ identity tests. These are multiplexed conversions, not simultaneous samples.
 The request uses `interval_us=1000`, a deliberately conservative bench setting.
 It does **not** establish a 1-kHz actual rate, precise spacing, or the research
 target of 8 ksample/s/channel. Interval accuracy is driver-dependent. Only
-`micros()` before/after the whole blocking request is recorded. There are no
+`micros()` before/after the reader call is recorded. That bracket includes
+buffer preparation and driver dispatch. There are no
 individual sample timestamps, no per-channel aperture/skew measurements and no
 time continuity between requests. A nominal 100-ms loop starts requests without
 catch-up; conversion and serial delays can extend that period.
@@ -42,7 +49,9 @@ preserving the original driver status and guard result. In particular, Zephyr's
 `-EBUSY` can mean delayed sampling despite a filled buffer; that request remains
 invalid and its codes are discarded. Setup failures and guard damage latch the
 probe off until manual reset. Other failed requests remain observable on later
-slow retries. Guard words detect some problems after return; they cannot prevent
+slow retries. The reader also latches guard damage and refuses another read,
+even if the caller subsequently resets the buffer guards. Guard words detect
+some problems after return; they cannot prevent
 arbitrary memory corruption or certify the driver.
 
 This standalone sketch owns ADC1 exclusively. Do not add unrelated analogRead,

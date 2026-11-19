@@ -1,5 +1,22 @@
 # Current-sensing development record
 
+## 2026-11-19 — Reuse the pinned UNO Q sequence reader
+
+Both CI workflows passed at baseline
+`b9517ce943562f5eee55da832790910f43f61856`. Moved the sequence probe's
+ADC setup and blocking reads into `UnoQSequenceReader`, used by the existing
+probe. The reader retains the devicetree and 14-bit checks, records the first
+setup result and latches buffer guard damage. Its call bracket now includes
+buffer preparation. It requires a single owner outside the I2C/Bridge loop.
+
+The sequence probe compiled against the pinned UNO Q toolchain. All 97 Python
+tests, existing native contracts and 15 wire fixtures passed. Setup and
+capture behavior still require a board run. The next worker increment can
+use this reader, but will need explicit synchronization, session invalidation
+and a native 14-bit policy. Per-channel aperture timing and calibration remain
+hardware dependencies. See the [sequence probe](sequence-probe.md) and
+[commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
 ## 2026-11-17 — Return current metadata in negotiated snapshots
 
 Baseline `d6f89cc7a987e9293e937968bc25aa5782cd57e7`. The configured host
