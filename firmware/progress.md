@@ -1,5 +1,23 @@
 # Current-sensing development record
 
+## 2026-11-20 — Run the diagnostic ADC reader on a worker thread
+
+Baseline `4dc88c12239a2da22d72f1a9aec8d5d168105818` passed both CI workflows.
+Added a standalone UNO Q worker probe with a two-record Zephyr queue.
+The worker owns ADC setup, reads and the local clock. The foreground
+computes per-channel code statistics and prints JSON. Full queues discard
+new captures and count losses, preserving unread records. Terminal records
+report clock or guard failure and request-counter exhaustion.
+
+The pinned UNO Q build passed (89,080 bytes storage, 41,588 bytes globals).
+All 97 Python tests, native C++11 undefined-behavior checks and 15 wire
+fixtures passed. New synthetic channel patterns check 14-bit demultiplexing,
+offset removal, constant input, near-rail handling and failed captures.
+Thread scheduling and queue behavior under load require a board run.
+Next is worker/session integration and reset invalidation. See the
+[worker probe](worker-probe.md) and
+[commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
 ## 2026-11-19 — Reuse the pinned UNO Q sequence reader
 
 Both CI workflows passed at baseline
