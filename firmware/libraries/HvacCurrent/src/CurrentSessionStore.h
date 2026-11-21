@@ -3,6 +3,9 @@
 
 namespace hvac_current {
 static constexpr uint64_t CurrentSessionMax = UINT64_C(9223372036854775807);
+struct CurrentCaptureTicket {
+  uint64_t session = 0, ordinal = 0, issuedUs = 0;
+};
 // One externally serialized owner for one MCU boot. This is the state contract,
 // not an RPC transport or proof of boot identity. Do not expose the inner store.
 class CurrentSessionStore {
@@ -19,6 +22,7 @@ class CurrentSessionStore {
     if (!advance(nowUs) || !session || session > CurrentSessionMax || session <= highest_) return false;
     highest_ = session;
     if (!store_.reset(session, policy, nowUs)) return false;
+    lastIssued_ = 0;
     pending_ = true;
     lastContactUs_ = nowUs;
     return true;
@@ -41,7 +45,33 @@ class CurrentSessionStore {
     return true;
   }
   void expire(uint64_t nowUs) { advance(nowUs); }
-  void stop() { pending_ = false; active_ = false; store_.stop(); }
+  void stop() {
+    pending_ = false; active_ = false; captureInFlight_ = false;
+    store_.stop();
+  }
+  // Call under the same external serialization as offer/stop/renew. The ADC
+  // worker holds only the returned copy while its blocking read runs.
+  bool beginCapture(uint64_t nowUs, CurrentCaptureTicket& ticket) {
+    ticket = CurrentCaptureTicket{};
+    if (!advance(nowUs) || !active_ || captureInFlight_) return false;
+    if (lastIssued_ == UINT64_MAX) { stop(); return false; }
+    ticket.session = highest_;
+    ticket.ordinal = ++lastIssued_;
+    ticket.issuedUs = nowUs;
+    issuedUs_ = nowUs;
+    captureInFlight_ = true;
+    return true;
+  }
+  // Consume exactly one matching completion. A rejected completion cannot
+  // release a newer capture. Success permits processing, subject to the
+  // existing publication gates and the same owner serialization.
+  bool finishCapture(const CurrentCaptureTicket& ticket, uint64_t nowUs) {
+    if (!advance(nowUs) || !active_ || !captureInFlight_ ||
+        ticket.session != highest_ || ticket.ordinal != lastIssued_ ||
+        ticket.issuedUs != issuedUs_) return false;
+    captureInFlight_ = false;
+    return true;
+  }
   // A failed clock read cannot be cured by a new session within this owner.
   void clockFailed() { clockFault_ = true; stop(); }
   bool clockFault() const { return clockFault_; }
@@ -76,6 +106,8 @@ class CurrentSessionStore {
   const uint64_t leaseUs_;
   uint64_t lastContactUs_ = 0;
   uint64_t highest_ = 0, lastUs_ = 0, confirmedUs_ = 0;
+  uint64_t lastIssued_ = 0, issuedUs_ = 0;
+  bool captureInFlight_ = false;
   bool pending_ = false, active_ = false, seenClock_ = false, clockFault_ = false;
 };
 } // namespace hvac_current

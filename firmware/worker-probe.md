@@ -86,6 +86,10 @@ input review described in [sequence-probe.md](sequence-probe.md).
    failure records and latched termination without automatically restarting
    the worker.
 
-Next is binding worker results to negotiated sessions and safely discarding
-captures after stop, expiry or reconfiguration. A worker result will need
+The session store now supplies dispatch and completion checks for the next
+integration. A request must carry the ticket issued by `beginCapture`;
+the owner checks it with `finishCapture` after the worker returns. The
+standalone probe still has its own queue and independent capture loop.
+Next is connecting that queue to the serialized session owner and safely
+discarding captures after stop, expiry or reconfiguration. A worker result will need
 qualified per-channel timing and calibration before producing amperes.

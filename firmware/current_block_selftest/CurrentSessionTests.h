@@ -8,6 +8,63 @@
 #include <type_traits>
 
 namespace hvac_session_test {
+inline int runCaptureTickets() {
+  using namespace hvac_current;
+  using hvac_window_test::policy;
+#define TICKET_CHECK(x) do { if (!(x)) return __LINE__; } while(false)
+  CurrentSessionStore store(100);
+  CurrentCaptureTicket first, second, old;
+  TICKET_CHECK(!store.beginCapture(0, first) && !first.session && !first.ordinal);
+  TICKET_CHECK(store.offer(1, policy(), 0));
+  TICKET_CHECK(!store.beginCapture(10, first));
+  TICKET_CHECK(store.confirm(1, 10) && store.beginCapture(10, first));
+  TICKET_CHECK(first.session == 1 && first.ordinal == 1 && first.issuedUs == 10);
+  TICKET_CHECK(!store.beginCapture(10, second) && !second.ordinal);
+  old = first;
+  ++old.ordinal;
+  TICKET_CHECK(!store.finishCapture(old, 20));
+  old = first;
+  ++old.issuedUs;
+  TICKET_CHECK(!store.finishCapture(old, 20));
+  TICKET_CHECK(store.finishCapture(first, 20));
+  TICKET_CHECK(!store.finishCapture(first, 20));
+  TICKET_CHECK(store.beginCapture(20, second) && second.ordinal == 2);
+  TICKET_CHECK(!store.finishCapture(first, 20));
+  TICKET_CHECK(store.finishCapture(second, 20));
+  TICKET_CHECK(store.beginCapture(20, second) && second.ordinal == 3);
+  store.stop();
+  TICKET_CHECK(!store.finishCapture(second, 20));
+  TICKET_CHECK(store.offer(2, policy(), 20) && store.confirm(2, 20));
+  TICKET_CHECK(store.beginCapture(20, second) && second.ordinal == 1);
+  TICKET_CHECK(!store.finishCapture(first, 21));
+  TICKET_CHECK(store.finishCapture(second, 21));
+  TICKET_CHECK(store.beginCapture(21, second));
+  TICKET_CHECK(!store.finishCapture(second, 120)); // Lease expired at confirmation + 100.
+  TICKET_CHECK(!store.active());
+  TICKET_CHECK(store.offer(3, policy(), 120) && store.confirm(3, 120));
+  TICKET_CHECK(store.beginCapture(120, second));
+  TICKET_CHECK(!store.finishCapture(second, 119) && store.clockFault());
+  TICKET_CHECK(!store.beginCapture(121, first) && !first.session);
+
+  CurrentSessionStore wrap(100);
+  const uint64_t beforeWrap = UINT64_C(4294967290);
+  TICKET_CHECK(wrap.offer(1, policy(), beforeWrap) && wrap.confirm(1, beforeWrap));
+  TICKET_CHECK(wrap.beginCapture(beforeWrap, first));
+  TICKET_CHECK(wrap.finishCapture(first, beforeWrap + 20));
+  CurrentSessionStore renewed(100);
+  TICKET_CHECK(renewed.offer(1, policy(), 0) && renewed.confirm(1, 0));
+  TICKET_CHECK(renewed.beginCapture(0, first) && renewed.renew(1, 90));
+  TICKET_CHECK(renewed.finishCapture(first, 150));
+  CurrentSessionStore changed;
+  TICKET_CHECK(changed.offer(1, policy(), 0) && changed.confirm(1, 0));
+  TICKET_CHECK(changed.beginCapture(0, first));
+  auto bad = policy(); bad.samples = 0;
+  TICKET_CHECK(!changed.offer(2, bad, 1));
+  TICKET_CHECK(!changed.finishCapture(first, 2));
+  return 0;
+#undef TICKET_CHECK
+}
+
 inline int runBootToken() {
   hvac_current::CurrentBootToken valid, failed, zero;
   int calls = 0;
@@ -76,6 +133,8 @@ inline int runCommands() {
 }
 
 inline int run() {
+  const int ticketFailure = runCaptureTickets();
+  if (ticketFailure) return ticketFailure;
   const int bootFailure = runBootToken();
   if (bootFailure) return bootFailure;
   const int commandFailure = runCommands();

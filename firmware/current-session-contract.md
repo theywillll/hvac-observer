@@ -135,6 +135,36 @@ service revokes live current. A service restart begins a fresh exchange.
 
 ## Verification and next increment
 
+### Worker dispatch and completion
+
+`beginCapture(nowUs, ticket)` grants one in-flight capture for a confirmed,
+unexpired session. It returns the session, a per-session ordinal and the
+issue time. A second dispatch waits until the first is consumed. Failed
+dispatch clears the supplied output ticket, so keep the original in-flight
+ticket in a separate object. Ordinals start at one and are independent of
+the per-channel window sequences. Ordinal exhaustion stops the session.
+
+`finishCapture(ticket, nowUs)` accepts one matching completion and checks
+expiry again. A duplicate completion or one from an old session cannot clear
+a newer in-flight capture. Stop, expiry, failed configuration and clock
+failure invalidate the in-flight state. A fresh valid offer resets the
+ordinal in its newer session.
+
+The future connection owner must serialize dispatch with session changes,
+copy the ticket into the worker request, and release that serialization
+while the blocking ADC call runs. On completion, reacquire serialization,
+read the current owner clock and call `finishCapture`. Discard rejected
+captures. Process and publish an accepted capture before releasing the
+same serialization, subject to all existing timing and calibration gates.
+An ADC failure still requires invalid source handling after consuming its
+ticket. The ticket's issue time is a bookkeeping timestamp.
+
+These methods are exercised by native tests and compiled into the shared
+UNO Q self-test. The standalone worker probe still runs independently.
+The runtime connection between the Bridge owner and worker queue remains
+the next integration step. Do not reconstruct a store to reset ticket
+state within a boot.
+
 Shared synthetic tests cover inactive startup, zero/out-of-range IDs, offers,
 confirmation mismatch/duplication, actual valid synthetic current publication,
 replacement clearing, rejection of old-session samples, ordinary age expiry,

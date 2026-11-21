@@ -1,5 +1,23 @@
 # Current-sensing development record
 
+## 2026-11-22 — Reject worker completions after session invalidation
+
+Baseline `1e005cd3972a610bc3241edfe4943b0622921368`. Added session-store
+dispatch and completion methods. Only a confirmed, unexpired session can
+issue a capture. Each ticket identifies its session and ordinal, and only
+one capture can be in flight. Stop, expiry, rejected configuration and
+clock failure invalidate the outstanding ticket. Old or duplicate
+completions cannot consume a newer capture.
+
+All 97 Python tests, native C++11 undefined-behavior checks and 15 wire
+fixtures passed. The shared UNO Q self-test compiled with the new cases.
+Synthetic transitions cover delayed and duplicate completion, session
+replacement, expiry, clock regression and the 32-bit uptime boundary.
+The Bridge owner and standalone worker queue still need runtime wiring.
+Next is that synchronized handoff. See the
+[session contract](current-session-contract.md) and
+[commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
 ## 2026-11-20 — Run the diagnostic ADC reader on a worker thread
 
 Baseline `4dc88c12239a2da22d72f1a9aec8d5d168105818` passed both CI workflows.
