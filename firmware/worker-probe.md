@@ -2,20 +2,24 @@
 
 `current_worker_probe` exercises the pinned UNO Q blocking ADC reader from
 a dedicated Zephyr thread. The sketch loop receives complete captures and
-prints diagnostic JSON. It is a standalone bench sketch. The production
+prints diagnostic JSON for negotiated sessions. It is a standalone bench sketch. The production
 environmental sketch still reports pending current channels.
 
 ## Ownership and queue
 
-The worker owns ADC1, the sequence reader, capture buffer and boot-relative
-clock. It initializes the reader once, then requests 16 sweeps of A0/A1/A2
+The worker owns ADC1, the sequence reader, capture buffer and its diagnostic
+clock. It initializes the reader once and waits for capture requests.
+Each request reads 16 sweeps of A0/A1/A2
 with a 1,000-us driver interval and a 100-ms sleep after each attempt. These
 are requested settings. Actual conversion spacing and scheduling delay
 require measurement.
 
-The worker passes copies through a two-record `k_msgq`. Capture puts use
-`K_NO_WAIT`. A full queue discards the new record and increments a cumulative
-loss count. Unread captures retain their FIFO order. The foreground owns
+The foreground dispatches tickets through a one-record `k_msgq` and
+the worker returns copies through a two-record completion queue. Completion
+puts wait for room, providing backpressure. Unread captures retain their
+FIFO order. A full request queue stops the session and emits
+`dispatch_failed`, preserving the queued request.
+The foreground owns
 Serial and computes per-channel mean and AC RMS in native ADC codes using
 the existing accumulator. The clock brackets the whole reader call.
 Its nominal 100-us resolution supplies request diagnostics. Per-channel
@@ -34,8 +38,8 @@ The actual pinned-toolchain compile is the compatibility check.
 
 ## Diagnostic records
 
-The first line identifies `hvac_adc_worker`, schema version 1, the native
-14-bit range, ADC channel order, sweep count and queue depth. A subsequent
+The first line identifies `hvac_adc_worker`, schema version 2, the native
+14-bit range, ADC channel order, sweep count and both queue depths. A subsequent
 `setup_status` record reports the driver's setup result. A setup error
 ends the worker.
 
@@ -43,8 +47,10 @@ Capture records include these fields.
 
 | Field | Meaning |
 | --- | --- |
-| `request` | Zero-based ADC attempt ordinal, including dropped captures |
-| `dropped_before` | Total capture records rejected by the queue before this attempt |
+| `request` | Zero-based ADC attempt ordinal across the worker lifetime |
+| `session` | Decimal string identifying the dispatch session |
+| `capture_ordinal` | Decimal string identifying the capture within its session |
+| `accepted` | Foreground accepted this completion's ticket and clock checks |
 | `clock_ok` | Both local clock reads succeeded |
 | `started_us`, `returned_us` | Boot-relative reader-call bracket |
 | `driver_status`, `guard_ok` | Original ADC return and buffer guard check |
@@ -53,17 +59,42 @@ Capture records include these fields.
 The channel statistics are finite-block mathematical quantities. A
 16-sample block at the requested interval is insufficient to establish a
 50/60-Hz motor-current RMS measurement. The probe reports ADC codes.
-Failed, incomplete or out-of-range sequences suppress all channel statistics.
+Rejected completions, failed, incomplete or out-of-range sequences suppress
+all channel statistics.
 A near-rail observation suppresses that channel's numeric statistics while
 retaining its fault and count. A constant, usable block has zero AC RMS.
 The synthetic tests exercise these cases with known channel patterns.
 
 Clock failure, guard damage or request-counter exhaustion ends ADC activity.
 A final `terminal_reason` record uses 1 for clock failure, 2 for guard damage
-and 3 for counter exhaustion. It includes `dropped_total`. Setup and terminal
+and 3 for counter exhaustion. Setup and terminal
 records wait for a queue slot so the foreground can observe them. A stalled
 consumer can delay those records indefinitely. The driver read itself also
 has no application cancellation timeout.
+
+## Session owner and Bridge
+
+The sketch loop and safe Bridge callbacks own the session store and its
+clock. The worker receives ticket copies and keeps its own diagnostic clock.
+The owner calls `beginCapture` before queuing a request and `finishCapture`
+when a completion arrives. The ADC read runs outside the owner's context.
+Expiry or a new offer can invalidate its ticket while that read is running.
+The foreground then prints `accepted:false` and null statistics.
+
+The probe provides the same `hvac_current_boot` and `hvac_current_session`
+commands described in [current-session-contract.md](current-session-contract.md).
+Wait for `setup_status:0` before negotiating. Discover the token, reserve a
+fresh host session, send its offer and confirmation, then renew it within
+six seconds. Capture dispatch starts after confirmation. The diagnostic policy
+uses the native 14-bit range and 16-sweep size with zero calibration IDs.
+The probe reports records on Serial and provides these two handshake endpoints.
+The host service uses the environmental sketch's snapshot endpoints.
+
+Clock or terminal reader failures stop the session. A new offer stops
+the previous session and the foreground rejects its remaining completions.
+Reconfiguration leaves the ADC owner running so it can drain old work and
+accept a later request. Blocking reads can finish after expiry. Their
+completions still pass through the session check.
 
 ## Build and manual bench checks
 
@@ -75,21 +106,20 @@ This increment compiled the sketch and ran synthetic software tests. The
 following board checks remain pending. Use the protected SELV fixtures and
 input review described in [sequence-probe.md](sequence-probe.md).
 
-1. Capture the startup and setup records under manual supervision. Apply known
+1. Capture the startup and setup records under manual supervision, negotiate a
+   session and keep its lease renewed. Apply known
    safe DC levels to each channel and check channel identity and mean codes.
 2. Record reader duration, task scheduling and channel aperture behavior with
    a suitable reference instrument. Check the thread stack margin.
 3. Set `CONSUMER_PAUSE_MS` to 250 for a deliberate slow-consumer run. Confirm
-   increasing attempt gaps and loss counts, FIFO order and recovery after
-   normal consumption resumes. Keep resets in separate captures.
+   backpressure, FIFO order and recovery after normal consumption resumes.
+   Stop renewals or offer a new session while a read is outstanding and check
+   that old completions report `accepted:false`. Keep resets in separate captures.
 4. Exercise setup and reader failures through reviewed fixtures. Verify
    failure records and latched termination without automatically restarting
    the worker.
 
-The session store now supplies dispatch and completion checks for the next
-integration. A request must carry the ticket issued by `beginCapture`;
-the owner checks it with `finishCapture` after the worker returns. The
-standalone probe still has its own queue and independent capture loop.
-Next is connecting that queue to the serialized session owner and safely
-discarding captures after stop, expiry or reconfiguration. A worker result will need
+The queue now carries session tickets through dispatch and completion in
+the diagnostic probe. Physical timing and reset checks remain pending.
+Next is integrating the worker with the environmental sketch. A worker result will need
 qualified per-channel timing and calibration before producing amperes.

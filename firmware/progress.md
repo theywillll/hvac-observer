@@ -1,5 +1,23 @@
 # Current-sensing development record
 
+## 2026-11-22 — Bind the diagnostic worker queue to Bridge sessions
+
+Baseline `08f7ae7a6d135e56607ef5ec87fc24b68b8cd787` passed both CI workflows.
+The standalone worker probe now serves boot and session commands.
+Its foreground dispatches tickets through a one-record queue, the ADC
+thread returns complete captures, and the owner consumes each ticket
+before exposing statistics. Expired or replaced sessions suppress the
+returned statistics. Completion queues apply backpressure while retaining
+unread records. The diagnostic JSON format advances to version 2.
+
+All 97 Python tests, existing native session contracts and 15 wire fixtures
+passed. The worker probe compiled for the pinned UNO Q target. Session
+changes during physical reads and queue backpressure remain board checks.
+Next is the environmental sketch's worker integration. Per-channel aperture
+timing and calibration remain prerequisites for amperes.
+See the [worker probe](worker-probe.md) and
+[commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
 ## 2026-11-22 — Reject worker completions after session invalidation
 
 Baseline `1e005cd3972a610bc3241edfe4943b0622921368`. Added session-store
