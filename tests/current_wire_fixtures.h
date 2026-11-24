@@ -24,6 +24,13 @@ inline int emitCurrentFixtures() {
   char frame[CurrentFrameCapacity];
   if (!writeCurrentFrame(session,0,environment,sizeof(environment)-1,frame,sizeof(frame))) return 1;
   printf("{\"fixture\":\"frame_pending\",\"payload\":%s}\n",frame);
+  CurrentCaptureTicket ticket;
+  RawFeatures unqualified[3] = {features(), features(), features()};
+  unqualified[1].faults = FeatureRail;
+  if (!session.beginCapture(0, ticket) ||
+      !session.finishUnqualifiedCapture(ticket, unqualified, 1) ||
+      !writeCurrentFrame(session,1,environment,sizeof(environment)-1,frame,sizeof(frame))) return 1;
+  printf("{\"fixture\":\"frame_unqualified\",\"payload\":%s}\n",frame);
   CurrentSnapshotStore store;
   if(!emitCurrentFixture("default",store,0)) return 1;
   if(!store.reset(UINT64_MAX,policy(),0)) return 1;

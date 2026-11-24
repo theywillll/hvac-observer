@@ -72,6 +72,12 @@ class CurrentSessionStore {
     captureInFlight_ = false;
     return true;
   }
+  bool finishUnqualifiedCapture(const CurrentCaptureTicket& ticket,
+                               const RawFeatures (&channels)[3], uint64_t nowUs) {
+    if (!finishCapture(ticket, nowUs)) return false;
+    store_.invalidateUnqualifiedCapture(channels);
+    return true;
+  }
   // A failed clock read cannot be cured by a new session within this owner.
   void clockFailed() { clockFault_ = true; stop(); }
   bool clockFault() const { return clockFault_; }

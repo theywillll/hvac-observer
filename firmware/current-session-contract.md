@@ -162,8 +162,13 @@ ticket. The ticket's issue time is a bookkeeping timestamp.
 These methods are exercised by native tests and compiled into the shared
 UNO Q self-test. The diagnostic worker probe now carries tickets through
 its request and completion queues under its Bridge session owner.
-The environmental sketch's worker integration remains pending. Do not
-reconstruct a store to reset ticket state within a boot.
+The environmental sketch now has an opt-in worker path that consumes tickets
+with `finishUnqualifiedCapture`. Accepted raw captures revoke numeric
+current and add timing/calibration fault metadata while preserving any
+earlier window identity. Each source failure adds a feature fault for its
+channel. This path supplies no new sample timestamps.
+See the [bench build instructions](worker-probe.md). Do not reconstruct a
+store to reset ticket state within a boot.
 
 Shared synthetic tests cover inactive startup, zero/out-of-range IDs, offers,
 confirmation mismatch/duplication, actual valid synthetic current publication,

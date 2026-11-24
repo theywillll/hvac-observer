@@ -1,5 +1,24 @@
 # Current-sensing development record
 
+## 2026-11-25 — Integrate the worker into the environmental sketch
+
+Baseline `93317f5c253747b2c36d3b6a358d350be79c1e28` passed both CI workflows.
+Extracted `UnoQCaptureWorker` for use by the diagnostic and environmental
+sketches. The environmental sketch has a disabled-by-default opt-in path
+that polls completions, consumes session tickets and dispatches work while
+ADC calls run on the dedicated thread. Captures with unknown aperture timing
+and calibration add fault metadata and keep current null. Source errors
+invalidate affected channels without inventing window identity or sample ends.
+
+All 97 Python tests, native C++11 undefined-behavior checks and 16 wire
+fixtures passed. Native cases check value revocation, metadata preservation
+and rejection after session change. Pinned UNO Q builds cover the default
+environmental sketch, opt-in worker variant and diagnostic probe. Physical
+combined-load, expiry and stack behavior remain pending. Next is a
+review of the remaining timing/calibration interfaces and bench acceptance
+requirements. See the [worker guide](worker-probe.md) and
+[commit history](https://github.com/theywillll/hvac-observer/commits/main).
+
 ## 2026-11-22 — Bind the diagnostic worker queue to Bridge sessions
 
 Baseline `08f7ae7a6d135e56607ef5ec87fc24b68b8cd787` passed both CI workflows.

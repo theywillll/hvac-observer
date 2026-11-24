@@ -29,6 +29,16 @@ class CurrentSnapshotStore {
 
   // A stop requires a strictly newer session before publication can resume.
   void stop() { active_ = false; invalidate(WindowStopped); }
+  // A completed raw capture with unknown aperture timing/calibration revokes
+  // numeric current without inventing sample endpoints or window identity.
+  void invalidateUnqualifiedCapture(const RawFeatures (&channels)[3]) {
+    if (!active_) return;
+    for (unsigned channel = 0; channel < 3; ++channel) {
+      latest_[channel].faults |= WindowTiming | WindowCalibration;
+      if (channels[channel].faults) latest_[channel].faults |= WindowFeatures;
+      latest_[channel].rmsAmps = NAN;
+    }
+  }
 
   // lastSampleUs is the SAME sample-end time as stamp.lastUs, extended into the
   // monotonic 64-bit domain. Request/callback completion is not a substitute.

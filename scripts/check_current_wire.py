@@ -9,7 +9,7 @@ from backend.uno_transport import SnapshotReceiver
 
 def check(lines):
     expected={'default','pending','valid','boundary','expired','full_cycle',
-              'stopped','failed','clock','reset','future','maximum','decimal','zero','frame_pending'}
+              'stopped','failed','clock','reset','future','maximum','decimal','zero','frame_pending','frame_unqualified'}
     seen=set(); max_bytes=0
     for line in lines:
         item=json.loads(line)

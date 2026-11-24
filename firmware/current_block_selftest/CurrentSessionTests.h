@@ -61,6 +61,23 @@ inline int runCaptureTickets() {
   auto bad = policy(); bad.samples = 0;
   TICKET_CHECK(!changed.offer(2, bad, 1));
   TICKET_CHECK(!changed.finishCapture(first, 2));
+  CurrentSessionStore unqualified;
+  TICKET_CHECK(unqualified.offer(1, policy(), 0) && unqualified.confirm(1, 0));
+  TICKET_CHECK(unqualified.beginCapture(0, first));
+  RawFeatures channels[3] = {
+    hvac_window_test::features(), hvac_window_test::features(), hvac_window_test::features()
+  };
+  channels[1].faults = FeatureRail;
+  TICKET_CHECK(unqualified.finishUnqualifiedCapture(first, channels, 1));
+  TICKET_CHECK(!unqualified.finishUnqualifiedCapture(first, channels, 1));
+  char output[CurrentWireCapacity];
+  TICKET_CHECK(unqualified.write(1, output, sizeof(output)));
+  TICKET_CHECK(strstr(output, "\"faults\":2368") && strstr(output, "\"faults\":2400"));
+  TICKET_CHECK(strstr(output, "\"compressor_a\":null") && strstr(output, "\"window_seq\":null"));
+  TICKET_CHECK(unqualified.offer(2, policy(), 2) && unqualified.confirm(2, 2));
+  TICKET_CHECK(!unqualified.finishUnqualifiedCapture(first, channels, 2));
+  TICKET_CHECK(unqualified.write(2, output, sizeof(output)));
+  TICKET_CHECK(strstr(output, "\"faults\":2048") && !strstr(output, "\"faults\":2400"));
   return 0;
 #undef TICKET_CHECK
 }

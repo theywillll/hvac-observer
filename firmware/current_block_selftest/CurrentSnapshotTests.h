@@ -130,6 +130,17 @@ inline int run() {
   SNAP_CHECK(limit.snapshot(UINT64_MAX).channels[0].ageUs == 1000);
   SNAP_CHECK(limit.snapshot(UINT64_MAX).channels[0].available());
   SNAP_CHECK(limit.snapshot(0).channels[0].faults == WindowClock);
+  CurrentSnapshotStore unqualified;
+  SNAP_CHECK(unqualified.reset(1, policy(), 0));
+  SNAP_CHECK(unqualified.publish(features(), stamp(), calibration(), 16000, 17000));
+  RawFeatures raw[3] = {features(), features(), features()};
+  raw[1].faults = FeatureRail;
+  unqualified.invalidateUnqualifiedCapture(raw);
+  snap = unqualified.snapshot(18000);
+  SNAP_CHECK(!snap.channels[0].available() && isnan(snap.channels[0].rmsAmps));
+  SNAP_CHECK(snap.observed[0] && snap.channels[0].sequence == 0 && snap.channels[0].ageUs == 2000);
+  SNAP_CHECK(snap.channels[0].faults == (WindowTiming | WindowCalibration));
+  SNAP_CHECK(snap.channels[1].faults == (WindowPending | WindowTiming | WindowCalibration | WindowFeatures));
   return 0;
 #undef SNAP_CHECK
 }

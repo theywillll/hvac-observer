@@ -10,6 +10,15 @@
 #include <CurrentSessionCommand.h>
 #include <CurrentFrame.h>
 #include <math.h>
+#ifndef HVAC_ENABLE_CURRENT_WORKER
+#define HVAC_ENABLE_CURRENT_WORKER 0
+#endif
+#if HVAC_ENABLE_CURRENT_WORKER
+#include <UnoQCaptureWorker.h>
+#include <SequenceFeatures.h>
+hvac_current::UnoQCaptureWorker currentWorker;
+bool currentWorkerReady = false;
+#endif
 
 // Set true ONLY after isolated AC input channels have been commissioned.
 constexpr bool CONTROL_INPUTS_INSTALLED = false;
@@ -33,8 +42,44 @@ hvac_current::WindowPolicy currentHandshakePolicy() {
   policy.maxIntervalUs = 130;
   policy.maxAgeUs = 1000000;
   policy.codeMax = 4095;
+#if HVAC_ENABLE_CURRENT_WORKER
+  policy.samples = hvac_current::RawSequence::Sweeps;
+  policy.minIntervalUs = 990;
+  policy.maxIntervalUs = 1010;
+  policy.codeMax = hvac_current::RawSequence::CodeMax;
+#endif
   return policy;
 }
+
+#if HVAC_ENABLE_CURRENT_WORKER
+void serviceCurrentWorker() {
+  hvac_current::CapturePacket packet;
+  if (currentWorker.poll(packet)) {
+    if (packet.kind == hvac_current::CapturePacketKind::Setup) {
+      currentWorkerReady = packet.status == 0;
+      if (!currentWorkerReady) currentSessions.stop();
+    } else if (packet.kind == hvac_current::CapturePacketKind::Terminal) {
+      currentWorkerReady = false;
+      currentSessions.stop();
+    } else {
+      uint64_t nowUs;
+      if (!packet.clockOk || !currentClock.read(nowUs)) {
+        currentSessions.clockFailed();
+      } else {
+        hvac_current::RawFeatures channels[3];
+        hvac_current::sequenceFeatures(packet.raw, packet.status, channels);
+        currentSessions.finishUnqualifiedCapture(packet.ticket, channels, nowUs);
+      }
+    }
+  }
+  if (!currentWorkerReady) return;
+  uint64_t nowUs;
+  if (!currentClock.read(nowUs)) { currentSessions.clockFailed(); return; }
+  hvac_current::CurrentCaptureTicket ticket;
+  if (currentSessions.beginCapture(nowUs, ticket) && !currentWorker.submit(ticket))
+    currentSessions.stop();
+}
+#endif
 
 uint8_t crc8(const uint8_t* p, uint8_t n) {
   uint8_t c=0xff;
@@ -69,6 +114,9 @@ String number(float v) { return isfinite(v) ? String(v,3) : String("null"); }
 String getSnapshot() { return snapshot; }
 String getCurrentBootToken() { return String(currentBootToken.value()); }
 String handleCurrentSession(String request) {
+#if HVAC_ENABLE_CURRENT_WORKER
+  if (!currentWorkerReady) return String();
+#endif
   uint64_t nowUs;
   if (!currentClock.read(nowUs)) {
     currentSessions.clockFailed();
@@ -83,6 +131,9 @@ String handleCurrentSession(String request) {
   return String(reply);
 }
 String getCurrentSnapshot(String renewal) {
+#if HVAC_ENABLE_CURRENT_WORKER
+  if (!currentWorkerReady) return String();
+#endif
   if (renewal.length() < 3 || renewal[2] != 'R') return String();
   uint64_t nowUs;
   if (!currentClock.read(nowUs)) {
@@ -110,11 +161,17 @@ void setup() {
   Bridge.provide_safe("hvac_current_boot",getCurrentBootToken);
   Bridge.provide_safe("hvac_current_session",handleCurrentSession);
   Bridge.provide_safe("hvac_current_snapshot",getCurrentSnapshot);
+#if HVAC_ENABLE_CURRENT_WORKER
+  currentWorker.begin();
+#endif
 }
 void loop() {
   uint64_t currentNowUs;
   if (currentClock.read(currentNowUs)) currentSessions.expire(currentNowUs);
   else currentSessions.clockFailed();
+#if HVAC_ENABLE_CURRENT_WORKER
+  serviceCurrentWorker();
+#endif
   uint32_t now=millis();
   // AC optocouplers pulse each half-cycle. Latch pulses for 150 ms.
   for(uint8_t i=0;i<7;i++) if(digitalRead(controlPins[i])==LOW) { lastLow[i]=now; seenLow[i]=true; }

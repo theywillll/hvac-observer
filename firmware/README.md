@@ -69,3 +69,10 @@ Pi alternative: install `smbus2==0.5.0`, enable I2C through the supported OS con
 Expanded current, vibration, 1-Wire remote probes and a real-power meter need their corresponding acquisition tasks. See the data contract, reference circuits and calibration notes before adding those drivers. Use `--source jsonl --input readings.jsonl` for a tested external feature acquisition process producing fresh frames.
 
 `current_adc_probe/` is a separate, compiled raw ADC bench tool with per-channel read-call timing and visible errors. It deliberately runs slowly and provides no RMS/current acquisition or production-frame integration. Its [capture analyzer](../scripts/check_adc_probe.py), [bench instructions](current-acquisition.md) and [development record](progress.md) distinguish implemented tools from the planned waveform driver.
+
+The environmental sketch's ADC worker integration is disabled by default.
+The [worker bench guide](worker-probe.md) describes the opt-in build.
+That path runs ADC calls on a separate thread, checks capture tickets in the
+session owner, and reports unqualified captures as null current with timing
+and calibration faults. Physical timing, calibration and combined-load
+validation remain pending.

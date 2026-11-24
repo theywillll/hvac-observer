@@ -121,5 +121,34 @@ input review described in [sequence-probe.md](sequence-probe.md).
 
 The queue now carries session tickets through dispatch and completion in
 the diagnostic probe. Physical timing and reset checks remain pending.
-Next is integrating the worker with the environmental sketch. A worker result will need
+The environmental sketch now has an opt-in path using the same worker.
+A worker result will need
 qualified per-channel timing and calibration before producing amperes.
+
+## Environmental sketch bench build
+
+The default build leaves the ADC worker disabled. For a reviewed SELV bench
+setup, compile its integration path with this option.
+
+```sh
+arduino-cli compile --fqbn arduino:zephyr:unoq --warnings all --libraries firmware/libraries --build-property compiler.cpp.extra_flags="-DHVAC_ENABLE_CURRENT_WORKER=1" --output-dir build/environmental-worker firmware/hvac_observer
+```
+
+The worker initializes in its own thread. The sketch owner waits for its
+setup result before accepting session commands, then dispatches captures
+only for a confirmed session. It drains completions outside the I2C reads
+and rejects expired or replaced tickets. The shared implementation is
+`UnoQCaptureWorker`. Each instance requires global boot-lifetime storage.
+
+An accepted capture updates the combined frame's fault metadata through
+`finishUnqualifiedCapture`. Channels retain null current, with timing and
+calibration faults. Source/rail failures also set the feature fault for
+the affected channels. Existing sample/window metadata is preserved when
+revoking an earlier value. New sample endpoints and window IDs require
+qualified timing evidence. Faults latch until a fresh qualified publication
+or a new session.
+
+The opt-in policy uses 16 samples and the native 14-bit range. Its requested
+sampling settings are still diagnostic. Captures, setup failures, backpressure,
+expiry and responsiveness during environmental I2C reads require board testing.
+CI compiles both environmental variants and the diagnostic probe.
