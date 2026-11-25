@@ -1,5 +1,20 @@
 # Current-sensing development record
 
+## 2026-11-25 — Handoff for timing and calibration measurements
+
+Audited `94c1317c51a4e828fb12a29549a8e578f922ab19`. Both GitHub workflows
+passed, including all six firmware builds. The remaining qualified backend,
+per-channel aperture mapping and measured CT/ADC calibration depend on
+bench evidence. The diagnostic worker remains disabled by default in the
+environmental build and current values remain null.
+
+Added the [bench handoff](current-bench-handoff.md) with the verified
+software boundary, required captures/instruments and the implementation
+resume point. This documentation-only increment checks links and whitespace
+against the existing successful code/build baseline. Recurring development
+ends pending those measurements, as requested. Hardware acquisition,
+calibrated current and physical validation remain unfinished.
+
 ## 2026-11-25 — Integrate the worker into the environmental sketch
 
 Baseline `93317f5c253747b2c36d3b6a358d350be79c1e28` passed both CI workflows.

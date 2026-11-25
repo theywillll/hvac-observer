@@ -1,5 +1,11 @@
 # Optional current acquisition: design and first build
 
+Current status, 2026-11-25: the opt-in environmental worker, session handoff
+and nullable fault frames compile and pass software checks. Qualified
+waveform timing and end-to-end calibration require bench evidence.
+See the [bench handoff](current-bench-handoff.md) for the readiness audit
+and measurements needed to resume development.
+
 Status on 2026-10-13: the environmental sketch and a separate raw ADC probe compile
 for UNO Q. No board has been connected, no upload has been performed, and no
 waveform acquisition or RMS-current firmware is implemented yet.
